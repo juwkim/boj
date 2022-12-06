@@ -1,0 +1,1 @@
+for _ in[0]*int(input()):print((s:=input())[0]+s[-1])
