@@ -1,0 +1,1 @@
+while(s:=input())!='EOI':print(['Missing','Found']['nemo'in s.lower()])
