@@ -1,0 +1,1 @@
+print(2 * (int(input()) + 3.141592 * int(input())))
