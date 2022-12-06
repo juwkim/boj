@@ -1,0 +1,1 @@
+while n:=int(input()):print([n,max(1,n//2)][n<5])
