@@ -1,0 +1,1 @@
+for i in range(int(input())):print(f'Data Set {i+1}:\n{int(input())-len(s:=input())+2*s.count("c")}\n')
