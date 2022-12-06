@@ -1,0 +1,1 @@
+print(int(input().count('1')%4>0))
