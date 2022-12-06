@@ -1,0 +1,1 @@
+print(int((2*int(input())+.25)**.5-.5))
