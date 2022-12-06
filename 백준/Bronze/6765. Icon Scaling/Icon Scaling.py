@@ -1,0 +1,5 @@
+n=int(input())
+g=lambda s:print('\n'.join([''.join(map(lambda t:t*n,s))]*n))
+g('*x*')
+g(' xx')
+g('* *')
