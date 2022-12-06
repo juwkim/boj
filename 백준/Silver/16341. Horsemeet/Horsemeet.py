@@ -1,0 +1,1 @@
+print('white' if (sum(map(int, input().split())) - sum(map(int, input().split()))) % 2 else 'black')
