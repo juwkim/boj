@@ -1,0 +1,1 @@
+print(round(int(n:=input()),-len(n)+1))
