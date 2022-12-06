@@ -1,0 +1,1 @@
+print(sum((ord(c) - 64) * pow(26, i) for i, c in enumerate(input()[::-1])))
