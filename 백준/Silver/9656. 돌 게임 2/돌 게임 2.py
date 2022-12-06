@@ -1,0 +1,1 @@
+print('SCKY'[int(input())&1::2])
