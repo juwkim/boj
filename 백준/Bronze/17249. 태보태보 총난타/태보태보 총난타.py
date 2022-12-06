@@ -1,0 +1,1 @@
+print(*map(lambda s:s.count('@'),input().split('0')))
