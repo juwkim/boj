@@ -1,0 +1,1 @@
+for _ in" "*int(input()):k,*l=map(int,input().split());x,y=sorted(l);print(max(0,k-y,x+2-y))
