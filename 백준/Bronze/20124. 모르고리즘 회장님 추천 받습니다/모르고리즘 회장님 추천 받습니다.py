@@ -1,0 +1,1 @@
+print(min([input().split()for _ in[0]*int(input())],key=lambda s:(-int(s[1]),s[0]))[0])
