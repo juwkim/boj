@@ -1,0 +1,1 @@
+print("Naver",["Whale","D2"][input().lower()=='n'])
