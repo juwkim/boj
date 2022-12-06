@@ -1,0 +1,1 @@
+exec("m,a,b,c,d=map(int,input().split());print(['First 1','Infinity'][abs(a-c)+abs(b-d)>m]);"*int(input()))
