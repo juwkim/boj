@@ -1,0 +1,1 @@
+print(['1.00', "divide by zero"][int(input()) == 0])
