@@ -1,0 +1,1 @@
+for _ in[0]*int(input()):print('Distances:',*[(ord(y)-ord(x))%26 for x,y in zip(*input().split())])
