@@ -1,0 +1,1 @@
+while(s:=input())!='*':print('YN'[bool({*range(97,123)}-{*map(ord,s)})])
