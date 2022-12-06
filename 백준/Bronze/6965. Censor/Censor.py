@@ -1,0 +1,1 @@
+for _ in[0]*int(input()):print(*[[i,'*'*4][len(i)==4]for i in input().split()],'\n')
