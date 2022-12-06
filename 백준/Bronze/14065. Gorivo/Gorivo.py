@@ -1,0 +1,1 @@
+print(235.2145833/float(input()))
