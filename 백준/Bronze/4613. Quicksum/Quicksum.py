@@ -1,0 +1,1 @@
+while(s:=input())!='#':print(sum(max(ord(x)-64,0)*(i+1)for i,x in enumerate(s)))
