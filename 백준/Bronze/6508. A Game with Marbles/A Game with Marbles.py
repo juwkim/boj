@@ -1,0 +1,1 @@
+while int(input()):print(sum(2**i*int(x)for i,x in enumerate(input().split())))
