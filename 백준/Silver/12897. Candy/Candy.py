@@ -1,0 +1,1 @@
+print(pow(3,int(input()),1000000007)-1)
