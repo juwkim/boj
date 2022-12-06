@@ -1,0 +1,1 @@
+for _ in[0]*int(input()):print(input().translate({i+65:ord(c)for i,c in enumerate(input())}))
