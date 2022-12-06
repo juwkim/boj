@@ -5,7 +5,7 @@ for _ in range(int(input())):
         a, b, c = a + 1, 0, 0
         print(a, name)
     elif t == 'subsection':
-        b, c = b + 1, 0
+        b += 1
         print(f'{a}.{b}', name)
     else:
         c += 1

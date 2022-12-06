@@ -9,5 +9,5 @@ def Sieve_of_Eratosthenes(N):
     primes = [num for num in range(2, N+1) if array[num]]
     return primes
 
-primes = Sieve_of_Eratosthenes(10000000)
+primes = Sieve_of_Eratosthenes(479909)
 print(primes[int(input())-1])

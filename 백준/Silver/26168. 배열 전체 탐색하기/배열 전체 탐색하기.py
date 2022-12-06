@@ -1,10 +1,12 @@
-from bisect import*
-import sys
-g=lambda:map(int,sys.stdin.readline().split())
-n,m=g()
-A=sorted(g())
+g = lambda: map(int, input().split())
+from bisect import bisect_left, bisect_right
+n, m = g()
+A = sorted(g())
 for _ in range(m):
- c,*l=g()
- if c==1:print(n-bisect_left(A,l[0]))
- elif c==2:print(n-bisect(A,l[0]))
- else:print(bisect(A,l[1])-bisect_left(A,l[0]))
+    cmd, *l = g()
+    if cmd == 1:
+        print(n - bisect_left(A, l[0]))
+    elif cmd == 2:
+        print(n - bisect_right(A, l[0]))
+    else:
+        print(bisect_right(A, l[1]) - bisect_left(A, l[0]))

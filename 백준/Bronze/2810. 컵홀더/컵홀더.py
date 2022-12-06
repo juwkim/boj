@@ -1,0 +1,1 @@
+print(min(1+((N:=int(input()))+input().count('S'))//2,N))

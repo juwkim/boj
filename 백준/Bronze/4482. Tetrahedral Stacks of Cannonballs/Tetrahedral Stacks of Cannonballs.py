@@ -1,0 +1,1 @@
+for i in range(int(input())):n=int(input());print(f'{i+1}:',n,n*(n+1)*(n+2)//6)

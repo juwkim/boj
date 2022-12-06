@@ -1,5 +1,3 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
 S = input()
 px = [[0] * (len(S) + 1) for _ in range(26)]
 for i in range(1, 1 + len(S)):
