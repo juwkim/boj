@@ -1,0 +1,1 @@
+print(3,1,1,1,int(input())+1)
