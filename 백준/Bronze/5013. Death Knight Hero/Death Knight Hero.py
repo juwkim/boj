@@ -1,0 +1,1 @@
+print(sum('CD'not in input()for _ in[0]*int(input())))
