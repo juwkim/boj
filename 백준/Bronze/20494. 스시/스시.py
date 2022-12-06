@@ -1,0 +1,1 @@
+print(sum(len(input())for _ in[0]*int(input())))
