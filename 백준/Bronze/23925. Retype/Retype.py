@@ -1,0 +1,1 @@
+for i in range(int(input())):N,K,S=map(int,input().split());print(f'Case #{i+1}: {N+K+min(0,K-2*S)}')
