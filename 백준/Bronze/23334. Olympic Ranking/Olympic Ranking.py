@@ -1,0 +1,1 @@
+print(*max([*map(str.split,open(0))][1:],key=lambda a:(int(a[0]),int(a[1]),int(a[2])))[3:])
