@@ -1,0 +1,1 @@
+print(s if (s:=' '.join([k for k in input().split() if k != 'bubble' and k != 'tapioka'])) else 'nothing')
