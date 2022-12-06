@@ -1,0 +1,1 @@
+print(''.join([*zip(*input().split('-'))][0]))
