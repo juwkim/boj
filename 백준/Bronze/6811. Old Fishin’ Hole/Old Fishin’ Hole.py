@@ -1,0 +1,2 @@
+a,b,c,d=map(int,open(0))
+print('Number of ways to catch fish:',len([print('%d Brown Trout, %d Northern Pike, %d Yellow Pickerel'%(i,j,k))for i in range(101)for j in range(101)for k in range(101)if 0<i*a+b*j+c*k<=d]))
