@@ -1,0 +1,1 @@
+for _ in [0]*int(input()):print(len(str(int(bin(max(map(int,input().split()[1:])))[2:][::-1]))))
