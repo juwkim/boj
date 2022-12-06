@@ -1,0 +1,1 @@
+while(D:=int(input().split()[1])):print(['no','yes'][any(map(all,zip(*[[*map(int,input().split())]for _ in[0]*D])))])
