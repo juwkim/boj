@@ -1,0 +1,1 @@
+print(len({*open(0).read().replace('-','').lower().split()})-1)
