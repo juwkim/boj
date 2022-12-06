@@ -1,0 +1,1 @@
+for i in range(int(input())):print(f"String #{i+1}\n{''.join(map(lambda s:chr(65+(ord(s)-64)%26),input()))}\n")
