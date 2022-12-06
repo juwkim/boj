@@ -1,0 +1,1 @@
+for _ in' '*int(input()):t,w=map(int,input().split());B=w*10**4/t/t;print(6-(t>140)-(t>145)-(t>158)*(16<=B<35)-(t>160)*((20<=B<25)+(18.5<=B<30)))
