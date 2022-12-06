@@ -1,0 +1,1 @@
+print(sum(abs(int(i))for i in open(0).read().split()[1:]))
