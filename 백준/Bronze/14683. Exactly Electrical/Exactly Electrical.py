@@ -1,0 +1,5 @@
+g=lambda:map(int,input().split())
+a,b=g()
+c,d=g()
+p=int(input())-abs(a-c)-abs(b-d)
+print('YN'[p<0 or p%2])
