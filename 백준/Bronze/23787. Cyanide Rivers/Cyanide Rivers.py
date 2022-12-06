@@ -1,0 +1,1 @@
+print((1+max(map(len,input().split('1'))))//2)
