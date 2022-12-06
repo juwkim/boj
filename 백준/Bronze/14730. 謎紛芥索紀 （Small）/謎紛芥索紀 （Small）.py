@@ -1,0 +1,1 @@
+print(sum(eval(input().replace(' ','*'))for _ in[0]*int(input())))
