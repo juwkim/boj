@@ -1,0 +1,1 @@
+print(5 * eval(input().replace(' ', '+')))
