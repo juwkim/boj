@@ -1,0 +1,5 @@
+input()
+nums = map(int, input().split())
+n = int(input())
+num = min(nums, key=lambda x: n%x)
+print(num)
