@@ -1,0 +1,1 @@
+print(max(0,199-int(input())))
