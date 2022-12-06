@@ -1,0 +1,1 @@
+I=input;exec("print(len({I()for _ in range(int(I()))}));"*int(I()))
