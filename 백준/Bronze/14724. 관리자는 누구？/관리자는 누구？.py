@@ -1,0 +1,1 @@
+print(['PROBRAIN','GROW','ARGOS','ADMIN','ANT','MOTION','SPG','COMON','ALMIGHTY'][(s:=[max(map(int,input().split()))for _ in[0]*10][1:]).index(max(s))])
