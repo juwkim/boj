@@ -1,0 +1,1 @@
+print(sum(a!=b for a,b in zip('IO'*(int(input())//2)+'I',input())))
