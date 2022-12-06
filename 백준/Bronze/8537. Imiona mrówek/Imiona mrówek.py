@@ -1,0 +1,1 @@
+print(max(len({*input()})for _ in[0]*int(input())))
