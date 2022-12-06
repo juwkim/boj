@@ -1,0 +1,5 @@
+input()
+S=input()
+if len(S)<26:print(S)
+elif'.'in S[11:-12]:print(S[:9]+'.'*6 +S[-10:])
+else:print(S[:11]+'...'+S[-11:])
