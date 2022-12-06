@@ -1,0 +1,1 @@
+while(s:=input().split())[0]!='0':n=[*map(int,input().split())];print(sum(n.count(i+1)>1 for i in range(int(s[0]))))
