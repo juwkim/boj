@@ -1,0 +1,1 @@
+print(sum(' 0'not in' '+input()for _ in' '*int(input().split()[0])))
