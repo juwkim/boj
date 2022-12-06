@@ -1,0 +1,1 @@
+print(abs(int(2*eval(input().replace(' ','/'))-2)))
