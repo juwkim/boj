@@ -1,0 +1,1 @@
+for _ in[0]*int(input()):print(2015-sum({*map(ord,input())}))
