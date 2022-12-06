@@ -1,0 +1,1 @@
+print(*sorted(set(open(0).read().split()[1:]),key=lambda s:(len(s),str(s))))
