@@ -1,0 +1,1 @@
+for _ in[0]*int(input()):s={chr(i)for i in range(97,123)}-{*input().lower()};print(f'missing {"".join(sorted(s))}'if s else'pangram')
