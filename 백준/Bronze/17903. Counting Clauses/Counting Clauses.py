@@ -1,0 +1,1 @@
+print(["unsatisfactory","satisfactory"][int(input().split()[0])>=8])
