@@ -1,0 +1,1 @@
+print(min([input().split()for _ in' '*int(input())],key=lambda x:int(x[1]))[0])
