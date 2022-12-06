@@ -1,0 +1,1 @@
+print(int(''.join(['01'[input()=='O']for _ in range(int(input()))]),2))
