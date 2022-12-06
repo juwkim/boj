@@ -1,0 +1,5 @@
+n, m = map(int, input().split())
+a = ''.join([input() for _ in range(n)])
+input()
+b = ''.join([input() for _ in range(n)])
+print(sum(i == j for i, j in zip(a, b)))
