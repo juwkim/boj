@@ -1,0 +1,1 @@
+for _ in[0]*int(input()):print(f'Hamming distance is {sum(x!=y for x,y in zip(input(),input()))}.')
