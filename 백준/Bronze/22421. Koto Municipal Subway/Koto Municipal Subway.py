@@ -1,0 +1,1 @@
+while(s:=input())[0]!='0':D,E=map(int,s.split());print(min(abs((i**2+(D-i)**2)**.5-E)for i in range(D)))
