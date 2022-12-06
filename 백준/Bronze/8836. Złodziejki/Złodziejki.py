@@ -1,0 +1,1 @@
+for _ in range(int(input())):N,K=map(int,input().split());print(K-2-(N+K-3)%(K-1))
