@@ -1,0 +1,1 @@
+exec("print('%02d'%(1+(round(int(input())+.1,-1)//10-1)%18));"*int(input()))
