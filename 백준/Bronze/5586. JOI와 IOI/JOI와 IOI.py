@@ -1,0 +1,1 @@
+print(f"{(S:=input()).count('JOI')}\n{S.replace('I','II').count('IOI')}")
