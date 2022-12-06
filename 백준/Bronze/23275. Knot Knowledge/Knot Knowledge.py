@@ -1,0 +1,1 @@
+a=input;a();print(*({*a().split()}-{*a().split()}))
