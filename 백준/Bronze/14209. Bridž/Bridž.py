@@ -1,0 +1,1 @@
+print(sum(sum('XJQKA'.index(s) for s in input()) for _ in range(int(input()))))
