@@ -1,0 +1,1 @@
+while n:=int(input()):print(max([input()for _ in range(n)],key=lambda x:sum(x.count(i)for i in'aa ee ii oo uu yy'.split())))
