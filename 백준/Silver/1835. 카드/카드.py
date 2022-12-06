@@ -1,7 +1,4 @@
-from collections import deque
-N = int(input())
-dq = deque([N])
-for card in range(N - 1, 0, -1):
-    dq.appendleft(card)
-    dq.rotate(card)
-print(*dq)
+from collections import*
+N,d=int(input()),deque()
+exec("d.appendleft(N);d.rotate(N);N-=1;"*N)
+print(*d)
