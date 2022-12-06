@@ -1,0 +1,1 @@
+print('not '*(1-input().endswith('driip'))+'cute')
