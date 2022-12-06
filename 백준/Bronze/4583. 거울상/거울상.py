@@ -1,0 +1,1 @@
+while(s:=input())!='#':print('INVALID'if set(s)-set('bdpqiovwx')else s.translate(s.maketrans('bdpq','dbqp'))[::-1])
