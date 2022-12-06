@@ -1,0 +1,1 @@
+print(['NO','YES'][all(i in 'IOSHZXN'for i in input())])
