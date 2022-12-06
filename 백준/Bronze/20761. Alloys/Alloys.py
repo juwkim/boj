@@ -1,0 +1,1 @@
+print(min(1,float(input())**2)/4)
