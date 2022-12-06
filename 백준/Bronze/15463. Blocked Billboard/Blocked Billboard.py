@@ -1,0 +1,6 @@
+g = lambda: map(int, input().split())
+h = lambda x1, y1, x2, y2, m1, n1, m2, n2: max(0, min(x2, m2) - max(x1, m1)) * max(0, min(y2, n2) - max(y1, n1))
+s1, t1, s2, t2 = g()
+m1, n1, m2, n2 = g() 
+x1, y1, x2, y2 = g()
+print((s2-s1)*(t2-t1) + (m2-m1)*(n2-n1) - h(x1, y1, x2, y2, m1, n1, m2, n2) - h(x1, y1, x2, y2, s1, t1, s2, t2))
