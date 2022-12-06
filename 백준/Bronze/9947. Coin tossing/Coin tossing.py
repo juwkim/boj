@@ -1,0 +1,1 @@
+while(s:=input().split())!=['#']*2:n=int(input());k=sum(input()in'H HT T'for _ in[0]*n);print(s[0],k,s[1],n-k)
