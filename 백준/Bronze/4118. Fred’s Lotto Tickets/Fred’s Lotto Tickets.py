@@ -1,0 +1,1 @@
+while(n:=int(input())):print('No'if set(range(1,50))-set.union(*[set(map(int,input().split()))for _ in[0]*n])else'Yes')
