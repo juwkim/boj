@@ -1,0 +1,1 @@
+print(84+abs(73-ord(input())))
