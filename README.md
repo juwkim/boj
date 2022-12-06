@@ -1,5 +1,4 @@
 # Baekjoon Online Judge
-Baekjoon Online Judge solutions
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=faang12594)](https://www.acmicpc.net/user/faang12594)
 
 # Copyright
