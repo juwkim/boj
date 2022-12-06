@@ -1,0 +1,1 @@
+while int(n:=input()):print('yneos'[n!=n[::-1]::2])
