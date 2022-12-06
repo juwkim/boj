@@ -1,0 +1,1 @@
+for _ in[0]*int(input()):P,C=map(float,input().split());print(100*P/(C+100))
