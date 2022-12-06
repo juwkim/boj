@@ -1,0 +1,1 @@
+print(*map(''.join,zip(*[input() for _ in range(int(input().split()[0]))][::-1])))
