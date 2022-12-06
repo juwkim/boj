@@ -1,0 +1,1 @@
+while(s:=input())!='0 0':x,y=map(int,s.split());print([['Undecided','To the convention','Left beehind'][(x>y)-(x<y)],'Never speak again'][x+y==13]+'.')
