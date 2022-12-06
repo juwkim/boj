@@ -1,0 +1,1 @@
+print(' 1723'[int(input())])
