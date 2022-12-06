@@ -1,0 +1,1 @@
+print(*map(lambda x:23*int(x),open(0).read().split()[1:]))
