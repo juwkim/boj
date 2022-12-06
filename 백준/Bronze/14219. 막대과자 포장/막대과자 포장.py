@@ -1,0 +1,1 @@
+print('NO'if eval(input().replace(' ','*'))%3else'YES')
