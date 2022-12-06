@@ -1,0 +1,1 @@
+while(s:=input())!='#':a=s.count('1')%2;print(s[:-1]+str(int(a and s[-1]=='e'or not a and s[-1]=='o')))
