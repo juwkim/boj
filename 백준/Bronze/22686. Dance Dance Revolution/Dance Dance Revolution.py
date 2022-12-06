@@ -1,0 +1,1 @@
+for l in[*open(0)][1:]:print('YNeos'[any(i==j for i,j in zip(l,l[1:]))::2])
