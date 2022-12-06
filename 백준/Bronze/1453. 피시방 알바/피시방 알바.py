@@ -1,0 +1,1 @@
+print(int(input())-len({*input().split()}))
