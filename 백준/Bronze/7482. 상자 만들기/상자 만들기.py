@@ -1,0 +1,1 @@
+for _ in[0]*int(input()):print(f'{float(input())/6:#.10f}')
