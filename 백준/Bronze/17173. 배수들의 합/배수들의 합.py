@@ -1,0 +1,5 @@
+g=lambda:map(int,input().split())
+N,M=g()
+a=set()
+for K in g():a|=set([K*i for i in range(1,N//K+1)])
+print(sum(a))
