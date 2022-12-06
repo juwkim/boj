@@ -1,0 +1,1 @@
+while(k:=input())!='0':print(''.join(chr(65+(ord(s)+ord(k[i%len(k)])-129)%26)for i,s in enumerate(input())))
