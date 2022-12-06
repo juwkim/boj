@@ -1,0 +1,1 @@
+print(sum(sum(s=='F'for j,s in enumerate(input())if not(i+j)%2)for i in range(8)))
