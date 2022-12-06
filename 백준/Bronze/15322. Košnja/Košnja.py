@@ -1,0 +1,1 @@
+for _ in[0]*int(input()):print((int(min(input().split(),key=int))-1)*2)
