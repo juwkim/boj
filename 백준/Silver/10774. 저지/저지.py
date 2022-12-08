@@ -1,3 +1,5 @@
+import sys
+input = lambda: sys.stdin.readline().rstrip()
 dic = {'S': 'SML', 'M': 'ML', 'L': 'L'}
 J = int(input())
 A = int(input())
