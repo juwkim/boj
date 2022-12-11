@@ -1,30 +1,13 @@
 N, M = map(int, input().split())
+p, q = min(N, M) >> 1, max(N, M)
 
-if N & 1:
-    if M & 1:
-        if N < M:
-            p = N // 2
-            x, y = p, M - 1 - p
-        else:
-            p = M // 2
-            x, y = N - 1 - p, p
+if N >= M and M & 1:
+    x, y = q - 1 - p, p
+elif N & 1:
+    if N < M:
+        x, y = p, q - 1 - p
     else:
-        if N < M:
-            p = N // 2
-            x, y = p, M - 1 - p
-        else:
-            p = M // 2
-            x, y = p - 1, p
-else:
-    if M & 1:
-        if N < M:
-            p = N // 2
-            x, y = p - 1, p
-        else:
-            p = M // 2
-            x, y = N - 1 - p, p
-    else:
-        p = min(N, M) // 2
         x, y = p - 1, p
-            
+else:
+    x, y = p - 1, p
 print(x, y)
