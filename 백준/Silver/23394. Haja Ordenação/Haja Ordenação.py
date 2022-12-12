@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 g = lambda: map(int, input().split())
 
 from collections import defaultdict
