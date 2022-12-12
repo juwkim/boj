@@ -1,5 +1,5 @@
 input()
-ans, cnt, prev = 1, 0, ''
+ans, cnt, prev = 0, 0, ''
 for c in input():
     if c == 'V':
         ans = max(ans, cnt)
