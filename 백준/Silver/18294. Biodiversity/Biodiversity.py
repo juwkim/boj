@@ -1,9 +1,8 @@
-from collections import defaultdict
-dic = defaultdict(int)
-for _ in range(int(input())):
-    dic[input()] += 1
-name = max(dic, key=dic.get)
-if 2 * dic[name] > sum(dic.values()):
+from collections import Counter
+_, *l = open(0)
+cnt = Counter(l)
+name = max(cnt, key=cnt.get)
+if 2 * cnt[name] > sum(cnt.values()):
     print(name)
 else:
     print('NONE')
