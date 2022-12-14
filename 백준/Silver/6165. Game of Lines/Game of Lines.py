@@ -1,11 +1,7 @@
-g = lambda: [*map(int, input().split())]
-
 from fractions import Fraction
-ans = set()
-buf = []
-flag = False
+ans, buf, flag = set(), [], False
 for _ in range(int(input())):
-    p = g()
+    p = [*map(int, input().split())]
     for q in buf:
         try:
             ans.add(Fraction(p[0] - q[0], p[1] - q[1]))
