@@ -1,5 +1,4 @@
 from collections import Counter
-_, *l = open(0)
-cnt = Counter(l)
+cnt = Counter([*open(0)][1:])
 name = max(cnt, key=cnt.get)
 print(['NONE', name][2 * cnt[name] > sum(cnt.values())])
