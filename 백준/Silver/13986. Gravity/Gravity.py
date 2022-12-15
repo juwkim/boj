@@ -1,11 +1,15 @@
-g = lambda: [*map(int, input().split())]
-
-N, M = g()
+N, M = map(int, input().split())
 Map = [[*input()] for _ in range(N)]
-for k in range(N-1):
-    for j in range(M):
-        for i in range(N - 1):
-            if (Map[i][j], Map[i + 1][j]) == ('o', '.'):
-                 Map[i][j], Map[i + 1][j] = '.', 'o'
+for j in range(M):
+    pos = N - 1
+    for i in range(N - 1, -1, -1):
+        if Map[i][j] == '#':
+            pos = i - 1
+        elif Map[i][j] == 'o':
+            Map[i][j] = '.'
+            Map[pos][j] = 'o'
+            pos -= 1
+            while Map[pos][j] == '#':
+                pos -= 1
 for line in Map:
     print(''.join(line))
