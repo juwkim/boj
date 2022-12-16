@@ -10,7 +10,6 @@ data = {'CU': 'see you',
         'TY': 'thank-you',
         'YW': "you’re welcome",
         'TTYL':	'talk to you later'}
-while True:
-    n = input()
-    print(data[n] if n in data.keys() else n)
-    if n=='TTYL': quit()
+while (s:= input()) != 'TTYL':
+    print(data[s] if s in data else s)
+print(data[s])
