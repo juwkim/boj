@@ -1,5 +1,6 @@
 p = lambda s: print(s.rstrip())
-for n in map(int, input()):
+for i in input():
+    n = int(i)
     if n == 0:
         p("0000")
         p("0  0")
@@ -7,10 +8,11 @@ for n in map(int, input()):
         p("0  0")
         p("0000")
     elif n == 1:
-        p("1")
-        p("1")
-        p("1")
-        p("1")
+        p("   1")
+        p("   1")
+        p("   1")
+        p("   1")
+        p("   1")
     elif n == 2:
         p("2222")
         p("   2")
@@ -43,6 +45,7 @@ for n in map(int, input()):
         p("6666")
     elif n == 7:
         p("7777")
+        p("   7")
         p("   7")
         p("   7")
         p("   7")
