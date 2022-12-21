@@ -1,33 +1,13 @@
 section .data
-    msg1: db "<(o )___", 10
-    msg1_size EQU $ - msg1
-    msg2: db " ( \_> /", 10
-    msg2_size EQU $ - msg2
-    msg3: db '  "~~~"', 10
-    msg3_size EQU $ - msg3
+    msg: db "<(o )___", 10, " ( \_> /", 10, '  "~~~"', 10
+    msg_size EQU $ - msg
 
 section .text
     global main
-    extern printf
 
 main:
 	mov	rdi, 1
-	mov	rsi, msg1
-	mov	rdx, msg1_size
+	mov	rsi, msg
+	mov	rdx, msg_size
 	mov	rax, 1
 	syscall
-
-	mov	rdi, 1
-	mov	rsi, msg2
-	mov	rdx, msg2_size
-	mov	rax, 1
-	syscall
-	
-	mov	rdi, 1
-	mov	rsi, msg3
-	mov	rdx, msg3_size
-	mov	rax, 1
-    syscall
-    
-    mov	rdi, 0
-	mov	rax, 60
