@@ -1,0 +1,88 @@
+section .data
+   Msg1 db '####################', 10
+   lenMsg1 equ $ - Msg1
+   Msg2 db '##J1############J1##', 10
+   lenMsg2 equ $ - Msg2                 
+   Msg3 db '#########J1#########', 10
+   lenMsg3 equ $ - Msg3     
+   Msg4 db '##J1############J1##', 10
+   lenMsg4 equ $ - Msg4        
+   Msg5 db '#########J1#########', 10
+   lenMsg5 equ $ - Msg5     
+   Msg6 db '#########J1#########', 10
+   lenMsg6 equ $ - Msg6     
+   Msg7 db '##J1############J1##', 10
+   lenMsg7 equ $ - Msg7     
+   Msg8 db '#########J1#########', 10
+   lenMsg8 equ $ - Msg8     
+   Msg9 db '##J1############J1##', 10
+   lenMsg9 equ $ - Msg9     
+   Msg10 db '####################', 10
+   lenMsg10 equ $ - Msg10     
+ 
+section .text
+   global main
+ 
+main:
+   mov eax, 4
+   mov ebx, 1
+   mov ecx, Msg1
+   mov edx, lenMsg1
+   int 80h
+ 
+   mov eax, 4
+   mov ebx, 1
+   mov ecx, Msg2
+   mov edx, lenMsg2
+   int 80h
+ 
+   mov eax, 4
+   mov ebx, 1
+   mov ecx, Msg3
+   mov edx, lenMsg3
+   int 80h
+ 
+   mov eax, 4
+   mov ebx, 1
+   mov ecx, Msg4
+   mov edx, lenMsg4
+   int 80h
+ 
+   mov eax, 4
+   mov ebx, 1
+   mov ecx, Msg5
+   mov edx, lenMsg5
+   int 80h
+ 
+   mov eax, 4
+   mov ebx, 1
+   mov ecx, Msg6
+   mov edx, lenMsg6
+   int 80h
+ 
+   mov eax, 4
+   mov ebx, 1
+   mov ecx, Msg7
+   mov edx, lenMsg7
+   int 80h
+ 
+   mov eax, 4
+   mov ebx, 1
+   mov ecx, Msg8
+   mov edx, lenMsg8
+   int 80h
+ 
+   mov eax, 4
+   mov ebx, 1
+   mov ecx, Msg9
+   mov edx, lenMsg9
+   int 80h
+ 
+   mov eax, 4
+   mov ebx, 1
+   mov ecx, Msg10
+   mov edx, lenMsg10
+   int 80h
+ 
+   mov eax, 0
+   ret
