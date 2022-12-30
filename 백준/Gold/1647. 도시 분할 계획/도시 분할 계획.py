@@ -24,6 +24,7 @@ def kruskal(graph):
             ds.union(u, v)
     return mst
 
+input = __import__('sys').stdin.readline
 g = lambda: [*map(int, input().split())]
 graph = {}
 V, E = g()
@@ -31,5 +32,5 @@ graph['nodes'] = [*range(V + 1)]
 graph['edges'] = [g() for _ in range(E)]
 
 mst = kruskal(graph)
-weight_sum = sum(edge[2] for edge in mst)
-print(weight_sum - max(edge[2] for edge in mst))
+weight = [edge[2] for edge in mst]
+print(sum(weight) - max(weight))
