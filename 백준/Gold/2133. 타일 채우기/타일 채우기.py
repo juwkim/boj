@@ -2,7 +2,7 @@ q, r = divmod(int(input()), 2)
 if r:
     a = 0
 else:
-    a, b, c = 1, 3, 11
+    a, b = 1, 3 
     for _ in range(q):
-        a, b, c = b, c, c * 4 - b
+        a, b = b, b * 4 - a
 print(a)
