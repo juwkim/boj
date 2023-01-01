@@ -1,7 +1,6 @@
-n = int(input())
-ans = 0
-mul = 1 / 2
-for num in sorted(map(int, input().split()), reverse=True):
+n, *l = map(int, open(0).read().split())
+ans, mul = 0, .5
+for num in sorted(l, reverse=True):
     ans += num * mul
     mul /= 2
 print(ans)
