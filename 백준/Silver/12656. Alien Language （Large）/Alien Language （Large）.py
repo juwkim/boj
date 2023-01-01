@@ -18,6 +18,6 @@ L, D, N = map(int, input().split())
 words = [input() for _ in range(D)]
 for t in range(1, N + 1):
     pattern = input()
-    tokens = list(map(set, get_tokens(pattern)))
+    tokens = get_tokens(pattern)
     ans = sum(all(c in token for c, token in zip(word, tokens)) for word in words)
     print(f'Case #{t}: {ans}')
