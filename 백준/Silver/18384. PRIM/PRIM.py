@@ -19,7 +19,7 @@ def sieve_of_eratosthenes(N):
                    
 from bisect import bisect_left
 
-primes = sieve_of_eratosthenes(1500000)
+primes = sieve_of_eratosthenes(1000004)
 for _ in range(int(input())):
     ans = sum(primes[bisect_left(primes, num)] for num in g())
     print(ans)
