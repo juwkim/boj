@@ -1,5 +1,3 @@
-def g(): return [*map(int, input().split())]
-
 def sieve_of_eratosthenes(N):
     is_prime = [True] * N
     spf = [None] * N
@@ -21,5 +19,5 @@ from bisect import bisect_left
 
 primes = sieve_of_eratosthenes(1000004)
 for _ in range(int(input())):
-    ans = sum(primes[bisect_left(primes, num)] for num in g())
+    ans = sum(primes[bisect_left(primes, num)] for num in map(int, input().split()))
     print(ans)
