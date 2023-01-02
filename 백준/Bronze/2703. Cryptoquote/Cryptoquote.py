@@ -1,1 +1,1 @@
-for _ in[0]*int(input()):print(input().translate({i:ord(c)for i,c in enumerate(input(), 65)}))
+exec("print(input().translate({i:ord(c)for i,c in enumerate(input(),65)}));"*int(input()))
