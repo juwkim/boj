@@ -1,3 +1,4 @@
+input = __import__('sys').stdin.readline
 def g(): return [*map(int, input().split())]
 
 N = int(input())
