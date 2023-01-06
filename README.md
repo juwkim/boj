@@ -1,3 +1,5 @@
+# Baekjoon Online Judge
+
 <p align="center">
 	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/juwkim/boj?color=lightblue" />
 	<img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/juwkim/boj?color=critical" />
@@ -6,7 +8,6 @@
 	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/juwkim/boj?color=green" />
 </p>
 
-# Baekjoon Online Judge
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=faang12594)](https://solved.ac/faang12594)
 [![Juwkim profile](http://mazandi.herokuapp.com/api?handle=faang12594&theme=warm)](https://www.acmicpc.net/user/faang12594)
 
