@@ -11,36 +11,36 @@ for t in range(1, int(input()) + 1):
             customer.append((nums[i] - 1, nums[i + 1]))
         customers.append(customer)
 
-    impossible = False
-    solved = False
-    while not impossible and not solved:
-        redo = False
-        for customer in customers:
-            unsatisfied = []
-            for flavor, malt in customer:
-                if shakes[flavor] == malt:
-                    unsatisfied = []
-                    break
-                else:
-                    unsatisfied.append((flavor, malt))
-
-            for flavor, malt in unsatisfied:
-                if malt == 1 and shakes[flavor] == 0:
-                    shakes[flavor] = 1
-                    redo = True
-                    break
-
-            if redo:
+    def check():
+        solved = False
+        while not solved:
+            for customer in customers:
+                satisfied = False
+                change_flavor = None
+                for flavor, malt in customer:
+                    if shakes[flavor] == malt:
+                        satisfied = True
+                        break
+                    elif malt == 1 and shakes[flavor] == 0:
+                        change_flavor = flavor
+    
+    
+                if satisfied:
+                    continue
+    
+                if change_flavor == None:
+                    return False
+                
+                shakes[change_flavor] = 1
                 break
-
-            if len(unsatisfied):
-                impossible = True
-                break
-
-        if not redo:
-            solved = True
+    
+            else:
+                solved = True
+                continue
+        return True
             
-    if impossible:
+    solved = check()
+    if not solved:
         ans = "IMPOSSIBLE"
     else:
         ans = " ".join(map(str, shakes))
