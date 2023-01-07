@@ -1,16 +1,16 @@
+from random import shuffle
+import sys
+input = lambda: sys.stdin.readline()
+
 for t in range(1, 1 + int(input())):
-    
     input()
-    txt = input()
-    if len(txt) == 1:
+    txt_list = input().split()
+    if any(len(txt) == 1 for txt in txt_list):
         ans = 'IMPOSSIBLE'
     else:
-        buf = list(set(txt))
-        for c in map(chr, range(65, 91)):
-            if c not in buf:
-                buf.append(c)
-        
-        buf[0], buf[1] = buf[1], buf[0]
+        buf = [*map(chr, range(65, 91))]
         ans = ''.join(buf)
-
+        while any(txt in ans for txt in txt_list):
+            shuffle(buf)
+            ans = ''.join(buf)
     print(f'Case #{t}: {ans}')
