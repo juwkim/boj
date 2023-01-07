@@ -4,11 +4,11 @@
 
 ### 성능 요약
 
-메모리: 116928 KB, 시간: 188 ms
+메모리: 116656 KB, 시간: 152 ms
 
 ### 분류
 
-그리디 알고리즘(greedy), 정렬(sorting)
+자료 구조(data_structures), 그리디 알고리즘(greedy), 우선순위 큐(priority_queue), 정렬(sorting)
 
 ### 문제 설명
 
