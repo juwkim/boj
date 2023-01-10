@@ -1,2 +1,2 @@
 s=len(N:=input())
-print(int(N)*s+(1-10**s)//9+s)
+print(s+s*int(N)+(1-10**s)//9)
