@@ -1,9 +1,9 @@
-def get_minutes(s):
-    h, m = map(int, s.split(':'))
+def get_minutes():
+    h, m = map(int, input().split(':'))
     return h * 60 + m
 
-a1, a2 = get_minutes(input()), get_minutes(input())
-b1, b2 = get_minutes(input()), get_minutes(input())
+a1, a2 = get_minutes(), get_minutes()
+b1, b2 = get_minutes(), get_minutes()
 
 ans = 'Never'
 for t1 in range(b2):
