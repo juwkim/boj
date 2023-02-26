@@ -11,7 +11,7 @@ def check(mid, C):
             cnt += 1
     return cnt >= C
 
-lo, hi = 1, home[-1] + 1
+lo, hi = 1, (home[-1] - home[0]) // (C - 1) + 1
 while lo + 1 < hi:
     mid = (lo + hi) // 2
     if check(mid, C): lo = mid

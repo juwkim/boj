@@ -2,7 +2,6 @@ from collections import Counter
 N, M = map(int, input().split())
 nums = dict(Counter(sorted(input().split(), key=int)))
 def solve(M, check, buf):
-    global N
     if M == 0:
         print(*buf)
         return
