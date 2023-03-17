@@ -1,21 +1,22 @@
-N, Q = map(int, input().split())
+from itertools import cycle
 
+N, Q = map(int, input().split())
 check = set()
 i = 1
-while i <= N:
-    check.add(i)
-    i += 3
-    if i <= N:
-        check.add(i)
-        i += 3
-        if i <= N:
-            check.add(i)
-            i += 4
 
+for num in cycle((3, 3, 4)):
+    check.add(i)
+    if i + num > N:
+        break
+    i += num
+
+cur = len(check)
 for _ in range(Q):
     X = int(input())
     if X in check:
         check.remove(X)
+        cur -= 1
     else:
         check.add(X)
-    print(len(check))
+        cur += 1
+    print(cur)
