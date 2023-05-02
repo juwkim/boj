@@ -4,5 +4,6 @@ n = int(input())
 if n > 27:
     print(-1)
 else:
+    assert n != 11
     ans = [a + b * i for i in range(n)]
     print(*ans)
