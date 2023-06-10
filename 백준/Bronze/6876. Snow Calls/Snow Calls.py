@@ -10,6 +10,6 @@ for _ in range(int(input())):
             ans.append(dic[c])
         if len(ans) in (3, 7):
             ans.append('-')
-        if len(ans) == 12:
+        elif len(ans) == 12:
             break
     print(*ans, sep='')
