@@ -1,15 +1,7 @@
-import sys
+from statistics import mean
 
-C = int(input())
-for _ in range(C):
-    nums = list(map(int, sys.stdin.readline().split()))
-    N = nums[0]
-    del nums[0]
-    avg = sum(nums) / N
-    
-    total = N
-    for num in nums:
-        if num <= avg:
-            total -= 1
-    
-    print("%.3f%%" % (total * 100 / N))
+for _ in range(int(input())):
+    N, *nums = map(int, input().split())
+    m = mean(nums)
+    ans = sum(num > m for num in nums) * 100 / N + 0.00001
+    print(f"{ans:.3f}%")
