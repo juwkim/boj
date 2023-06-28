@@ -1,18 +1,16 @@
-g = lambda: [*map(int, input().split())]
-
 for case in range(1, 1 + int(input())):
-    L, N = g()
-    ans, prev = 0, 0
-    c = 'C'
+    L, N = map(int, input().split())
+    ans, pos = 0, 0
+    direction = 'C'
     for _ in range(N):
         D, C = input().split()
         D = int(D)
-        cur = prev + [-D, D][C == 'C']
         
-        ans += max(0, abs((cur // L) - (prev // L)) - (c != C and prev % L != 0))
-        
-        if prev // L != cur // L:
-            c = C
-        prev = cur
-
+        if C == direction:
+            cycle, pos = divmod(pos + D, L)
+        else:
+            cycle, pos = divmod(-pos + D, L)
+            if cycle != -1:
+                direction = C
+        ans += cycle
     print(f"Case #{case}: {ans}")
