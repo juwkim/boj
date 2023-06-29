@@ -1,19 +1,11 @@
-g = lambda: [*map(int, input().split())]
-
-step = 1
-nums = []
-idx = 0
-while True:
-    try:
-        nums.extend(g())
-    except:
-        break
+step, off = 1, 0
+nums = [*map(int, open(0).read().split())]
 
 def get_nums(cnt):
-    global idx
+    global off
 
-    ret = nums[idx:idx + cnt]
-    idx += cnt
+    ret = nums[off:off + cnt]
+    off += cnt
     return ret
 
 while (l := get_nums(2)) != [0, 0]:
