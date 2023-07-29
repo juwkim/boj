@@ -6,5 +6,5 @@ k_sum = x + y * (k - 1)
 one_floor = (n // k) * k_sum + (n % k) * y
 for num in g():
     a, b = divmod((num - 1) % one_floor, k_sum)
-    ans = a * k + b // y + 1
+    ans = a * k + b // x + 1
     print(ans)
