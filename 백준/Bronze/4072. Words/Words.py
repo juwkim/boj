@@ -1,1 +1,1 @@
-while(s:=input())!='#':print(*reversed(s[::-1].split()))
+while(s:=input())!='#':print(*s[::-1].split()[::-1])
