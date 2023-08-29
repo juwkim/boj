@@ -7,8 +7,8 @@ getcontext().prec = 30
 for _ in range(int(input())):
     A, B, C, D = map(int, input().split())
     
-    L = Decimal(A) + Decimal(B) ** Decimal('0.5')
-    R = Decimal(C) + Decimal(D) ** Decimal('0.5')
+    L = Decimal(A) + Decimal(B).sqrt()
+    R = Decimal(C) + Decimal(D).sqrt()
     
     if L < R:
         print("Less")
