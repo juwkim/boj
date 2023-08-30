@@ -1,0 +1,1 @@
+print(["Lorna","Johnny"][int(input())&1])
