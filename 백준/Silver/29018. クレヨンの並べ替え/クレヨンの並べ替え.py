@@ -1,1 +1,1 @@
-while(s:=input())!='#':print(*sorted(s,key=lambda c:(c.isnumeric(),c.isupper(),c)),sep='')
+while(s:=input())!='#':print(*sorted(s,key=lambda c:('/'<c<':','@'<c<'[',c)),sep='')
