@@ -5,7 +5,7 @@ while True:
         break
     target_ang = int(target_ang) * 120
     h, m, s = map(int, time.split(':'))
-    ang = ((m * 720 + s * 12) - (h * 3600 + m * 60 + s)) % (360 * 120)
+    ang = (m * 720 + s * 12) - (h * 3600 + m * 60 + s)
 
     ds = (target_ang - ang) % (360 * 120) // dang_per_sec
     t = (h * 3600 + m * 60 + s + ds) % (24 * 60 * 60)
