@@ -1,9 +1,5 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-g = lambda: [*map(int, input().split())]
-
-Y, X = g()
-poster = [list(input()) for _ in range(Y)]
+Y, X = map(int, input().split())
+poster = [input() for _ in range(Y)]
 buf = [['B'] * X for _ in range(Y)]
 ans = "NO"
 if X & 1:
