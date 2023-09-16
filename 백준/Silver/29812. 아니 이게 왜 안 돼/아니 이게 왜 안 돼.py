@@ -1,17 +1,7 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-g = lambda: [*map(int, input().split())]
-
-from collections import Counter
-
-N = int(input())
-S = input()
-P = map(len, S.translate(str.maketrans("HYU", "   ")).split())
-D, M = g()
-ans = 0
-for l in P:
-    ans += min(D * l, M + D)
-cnt = Counter(S)
-HYU = min(cnt['H'], cnt['Y'], cnt['U'])
-print(ans if ans else "Nalmeok")
-print(HYU if HYU else "I love HanYang University")
+input()
+S=input()
+D,M=map(int,input().split())
+a=sum(min(D*len(l),M+D)for l in S.translate(str.maketrans("HYU","   ")).split())
+b=min(S.count(i)for i in"HYU")
+print(a if a else"Nalmeok")
+print(b if b else"I love HanYang University")
