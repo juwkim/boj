@@ -1,18 +1,8 @@
-word = input().upper()
-set_word = set(word)
+from collections import Counter
 
-Max = 0
-Top_alphabet = []
-for alphabet in set_word:
-    num = word.count(alphabet)
-    if num > Max:
-        Max = num
-        Top_alphabet.clear()
-        Top_alphabet.append(alphabet)
-    elif num == Max:
-        Top_alphabet.append(alphabet)
-
-if len(Top_alphabet) == 1:
-    print(Top_alphabet[0])
-else:
+cnt = Counter(input().upper())
+l = cnt.most_common()
+if len(l) > 1 and l[0][1] == l[1][1]:
     print('?')
+else:
+    print(l[0][0])
