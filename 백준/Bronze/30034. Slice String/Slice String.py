@@ -1,0 +1,8 @@
+input()
+sep = set(input().split())
+input()
+sep.update(input().split())
+input()
+sep -= set(input().split())
+input()
+print(*input().translate(str.maketrans({c: ' ' for c in sep})).split())
