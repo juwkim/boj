@@ -1,7 +1,3 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-g = lambda: [*map(int, input().split())]
-
 from fractions import Fraction
 
 buf = ["SAME", "TAOYUAN", "JAKARTA"]
@@ -16,7 +12,6 @@ elif R1 == 1:
 elif R2 == 1:
     ans = buf[2]
 else:
-    a = (R2 - 1) * S1
-    b = (R1 - 1) * S2
+    a, b = (R2 - 1) * S1, (R1 - 1) * S2
     ans = buf[(a > b) - (a < b)]
 print(ans)
