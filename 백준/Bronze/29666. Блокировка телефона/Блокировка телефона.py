@@ -1,0 +1,1 @@
+print(('L','Unl')[''.join(sorted(input()))in'123 456 789 147 258 369 058']+'ocked')
