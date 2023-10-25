@@ -1,15 +1,10 @@
 import sys
 input = lambda: sys.stdin.readline().rstrip()
-g = lambda: [*map(int, input().split())]
-
+g = lambda: map(int, input().split())
 for _ in range(int(input())):
     n, k, x, y = g()
-    if k:
-        l = sorted([[x, 2], [y, k]])
-    else:
-        l = [[x, 2]]
-    cur = 0
-    ans = 'NO'
+    l = sorted([[x, 2], [y, k]]) if k else [[x, 2]]
+    cur, ans = 0, 'NO'
     for num in sorted(g()):
         if num < l[cur][0]:
             continue
