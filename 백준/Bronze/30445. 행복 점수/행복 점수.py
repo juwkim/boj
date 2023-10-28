@@ -1,3 +1,7 @@
+import sys
+input = lambda: sys.stdin.readline().rstrip()
+g = lambda: [*map(int, input().split())]
+
 happy = set("HAPPY")
 sad = set("SAD")
 
@@ -11,4 +15,4 @@ if h == 0 and g == 0:
     ans = 50
 else:
     ans = h * 100 / (h + g)
-print("%.2f" % ans)
+print("%.2f" % (ans + 1e-9))
