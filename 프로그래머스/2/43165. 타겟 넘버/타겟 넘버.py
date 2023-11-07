@@ -1,11 +1,5 @@
-def dfs(idx, cur, numbers, target):
-    if idx == len(numbers):
-        return cur == target
-    ans = 0
-    ans += dfs(idx + 1, cur + numbers[idx], numbers, target)
-    ans += dfs(idx + 1, cur - numbers[idx], numbers, target)
-    return ans
+from itertools import product
 
 def solution(numbers, target):
-    answer = dfs(0, 0, numbers, target)
+    answer = list(map(sum, product(*[(x, -x) for x in numbers]))).count(target)
     return answer
