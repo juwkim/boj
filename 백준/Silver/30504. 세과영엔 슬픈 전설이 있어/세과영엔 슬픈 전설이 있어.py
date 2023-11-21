@@ -1,9 +1,7 @@
 g = lambda: [*map(int, input().split())]
 
 N = int(input())
-A = g()
-B = sorted(g())
-
+A, B = g(), sorted(g())
 order = sorted(range(N), key=lambda i: A[i])
 if any(A[order[i]] > B[i] for i in range(N)):
     print(-1)
