@@ -1,8 +1,4 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-g = lambda: [*map(int, input().split())]
-
-a, c, m, r0 = g()
+a, c, m, r0 = map(int, input().split())
 check = bytearray(m)
 check[r0] = 1
 ans = float('-inf')
