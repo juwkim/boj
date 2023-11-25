@@ -10,6 +10,10 @@
 
 해 구성하기
 
+### 제출 일자
+
+2023년 9월 12일 10:06:54
+
 ### 문제 설명
 
 <p>You are implementing an application for a mobile phone, which has a black-and-white screen. The x-coordinates of the screen start from the left and the y-coordinates from the top, as shown in the figures. For the application, you need various images, which are not all of the same size. Instead of storing the images, you want to create the images using the phone’s graphics library. You may assume that at the start of drawing an image, all pixels of the screen are white. The only graphics operation in the phone’s library is <code>XOR(L,R,T,B)</code>, which will reverse the pixel values in the rectangle with top left coordinate (<code>L</code>,<code>T</code>) and bottom right coordinate (<code>R</code>,<code>B</code>), where <code>L</code> stands for the left, <code>T</code> for the top, <code>R</code> for the right and <code>B</code> for the bottom coordinate. Note that in some other graphics libraries the order of the arguments is different.</p>
