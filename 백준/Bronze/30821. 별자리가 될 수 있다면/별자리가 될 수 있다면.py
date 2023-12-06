@@ -1,2 +1,1 @@
-from math import comb
-print(comb(int(input()),5))
+print(__import__('math').comb(int(input()),5))
