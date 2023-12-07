@@ -1,13 +1,6 @@
-import sys
-from itertools import combinations
-input = lambda: sys.stdin.readline().rstrip()
+from math import gcd
 
-def gcd(a, b):
-    while b:
-        a, b = b, a % b
-    return a
 N, M, *l = map(int, open(0).read().split())
-assert M == len(l)
 ans = 'No'
 g = N
 for num in l:
