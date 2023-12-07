@@ -1,2 +1,2 @@
 N=int(input())
-print(N*N//4)
+print(N*N>>2)
