@@ -1,0 +1,1 @@
+print(0.292893*int(input().split()[0]))
