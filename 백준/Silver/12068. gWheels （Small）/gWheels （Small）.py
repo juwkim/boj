@@ -25,14 +25,7 @@ for tc in range(1, 1 + int(input())):
     l = []
     while len(l) != 3:
         l.extend(g())
-    assert len(l) == 3
-    Np, Ne, Nt = l
-    p = g()
-    assert len(p) == Np
-    e = g()
-    assert len(e) == Ne
-    t = g()
-    assert len(t) == Nt
+    p, e, t = g(), g(), g()
     print(f'Case #{tc}:')
     for _ in range(int(input())):
         print(solve())
