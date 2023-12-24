@@ -1,2 +1,2 @@
 N=int(input())
-print(1+N*(5+7*N))
+print(1+5*N+7*N*N)
