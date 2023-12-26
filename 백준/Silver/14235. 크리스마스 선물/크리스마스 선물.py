@@ -3,15 +3,16 @@ import sys
 input = lambda: sys.stdin.readline().rstrip()
 g = lambda: [*map(int, input().split())]
 
-from queue import PriorityQueue
-qu = PriorityQueue()
+import heapq
+
+qu = []
 for _ in range(int(input())):
     a, *nums = g()
     if a == 0:
-        if qu.empty():
+        if not qu:
             print(-1)
         else:
-            print(-qu.get())
+            print(-heapq.heappop(qu))
     else:
         for num in nums:
-            qu.put(-num)
+            heapq.heappush(qu, -num)
