@@ -18,16 +18,14 @@ def solve(s):
                     case 'a':
                         new[j + 1][k][0] = (new[j + 1][k][0] + cur[j][k][0]) % MOD
                     case 'b':
-                        if j > 0:
-                            new[j][k + 1][1] = (new[j][k + 1][1] + cur[j][k][0]) % MOD
-                        new[j][k + 1][1] = (new[j][k + 1][1] + cur[j][k][1]) % MOD
+                        # if j > 0:
+                        #     new[j][k + 1][1] = (new[j][k + 1][1] + cur[j][k][0]) % MOD
+                        new[j][k + 1][1] = (new[j][k + 1][1] + cur[j][k][1] + (cur[j][k][0] if j > 0 else 0)) % MOD
                     case 'c':
                         if j == 1:
-                            new[0][k][3] = (new[0][k][3] + cur[j][k][1]) % MOD
-                            new[0][k][3] = (new[0][k][3] + cur[j][k][2]) % MOD
+                            new[0][k][3] = (new[0][k][3] + cur[j][k][1] + cur[j][k][2]) % MOD
                         else:
-                            new[j - 1][k][2] = (new[j - 1][k][2] + cur[j][k][1]) % MOD
-                            new[j - 1][k][2] = (new[j - 1][k][2] + cur[j][k][2]) % MOD
+                            new[j - 1][k][2] = (new[j - 1][k][2] + cur[j][k][1] + cur[j][k][2]) % MOD
                     case 'd':
                         if k == 1:
                             new[0][0][0] = (new[0][0][0] + cur[j][k][3]) % MOD
