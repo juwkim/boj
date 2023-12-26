@@ -1,7 +1,7 @@
 import sys
 
 input = lambda: sys.stdin.readline().rstrip()
-MOD = int(1e9 + 7)
+MOD = 10 ** 9 + 7
 
 def solve(s):
     n = len(s)
@@ -14,14 +14,12 @@ def solve(s):
                 if sum(cur[j][k]) == 0:
                     continue
                 # situation 0
-                new[j][k][0] = (new[j][k][0] + cur[j][k][0]) % MOD
+                new[j][k] = [(a + b) % MOD for a, b in zip(new[j][k], cur[j][k])]
                 if s[i] == 'a':
                     new[j + 1][k][0] = (new[j + 1][k][0] + cur[j][k][0]) % MOD
                 elif s[i] == 'b' and j > 0:
                     new[j][k + 1][1] = (new[j][k + 1][1] + cur[j][k][0]) % MOD
 
-                # situation 1
-                new[j][k][1] = (new[j][k][1] + cur[j][k][1]) % MOD
                 if s[i] == 'b':
                     new[j][k + 1][1] = (new[j][k + 1][1] + cur[j][k][1]) % MOD
                 elif s[i] == 'c':
@@ -30,16 +28,12 @@ def solve(s):
                     else:
                         new[j - 1][k][2] = (new[j - 1][k][2] + cur[j][k][1]) % MOD
 
-                # situation 2
-                new[j][k][2] = (new[j][k][2] + cur[j][k][2]) % MOD
                 if s[i] == 'c':
                     if j == 1:
                         new[0][k][3] = (new[0][k][3] + cur[j][k][2]) % MOD
                     else:
                         new[j - 1][k][2] = (new[j - 1][k][2] + cur[j][k][2]) % MOD
 
-                # situation 3
-                new[j][k][3] = (new[j][k][3] + cur[j][k][3]) % MOD
                 if s[i] == 'd':
                     if k == 1:
                         new[0][0][0] = (new[0][0][0] + cur[j][k][3]) % MOD
@@ -48,5 +42,5 @@ def solve(s):
         cur = new
     return (cur[0][0][0] - 1) % MOD
 
-for cas in range(1, int(input()) + 1):
-    print(f"Case #{cas}: {solve(input())}")
+for tc in range(1, int(input()) + 1):
+    print(f"Case #{tc}: {solve(input())}")
