@@ -1,3 +1,6 @@
+import sys
+
+input = lambda: sys.stdin.readline().rstrip()
 MOD = int(1e9 + 7)
 
 def solve(s):
