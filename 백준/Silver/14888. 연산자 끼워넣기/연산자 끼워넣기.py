@@ -1,12 +1,13 @@
+import sys
+
+input = lambda: sys.stdin.readline().rstrip()
 g = lambda: [*map(int, input().split())]
-
-
 
 N = int(input())
 nums = g()
 plus, sub, mul, div = g()
 
-Min, Max = 1e9, -1e9
+Min, Max = 1e9 + 1, -1e9 - 1
 def solve(num, step, p, s, m, d):
     global Min, Max
     if step == N:
@@ -28,4 +29,5 @@ def solve(num, step, p, s, m, d):
         solve(num, step + 1, p, s, m, d + 1)
     
 solve(nums[0], 1, 0, 0, 0, 0)
-print(Max, Min)
+print(Max)
+print(Min)
