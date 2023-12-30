@@ -1,38 +1,21 @@
 import sys
 
-# 2 ~ N - 2 범위에 있는 소수 들을 반환
-def Sieve_of_Eratosthenes(N):
-    array = [True for i in range(N + 1)]
-    for i in range(2, int(N**0.5) + 1):
-        if array[i]:
-            j = 2
-            while i * j <= N:
-                array[i * j] = False
-                j += 1
-    return [num for num in range(2, N - 1) if array[num]]
+input = lambda: sys.stdin.readline().rstrip()
+g = lambda: [*map(int, input().split())]
 
-nums = [*map(int, sys.stdin.read().split())]
-primes = Sieve_of_Eratosthenes(max(nums))
-for num in nums:
-    if num == 0:
-        break
-    
-    first_index = 0
-    while primes[first_index] <= num // 2:
-        first_index += 1
-        
-    second_index = first_index - 1
-    while second_index < len(primes) and primes[second_index] <= num - 2:
-        second_index += 1
-        
-    first = primes[:first_index]
-    second = [*reversed(primes[first_index - 1:second_index])]
-    i, j = 0, 0
-    while(True):
-        if first[i] + second[j] == num:
-            print("%d = %d + %d" % (num, first[i], second[j]))
+def sieve(N):
+    is_prime = [False, False] + [True] * (N - 1)
+    for i in range(2, int(N**.5) + 1):
+        if is_prime[i] == False:
+            continue
+        for j in range(i * i, N + 1, i):
+            is_prime[j] = False
+    return [i for i in range(3, N + 1) if is_prime[i]], is_prime
+
+primes, is_prime = sieve(1000000)
+while num := int(input()):
+    lo, hi = 0, len(primes) - 1
+    for prime in primes:
+        if is_prime[num - prime]:
+            print(f'{num} = {prime} + {num - prime}')
             break
-        elif first[i] + second[j] > num:
-            j += 1
-        else:
-            i += 1
