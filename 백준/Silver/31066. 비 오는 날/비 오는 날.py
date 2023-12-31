@@ -1,10 +1,7 @@
 import sys
-
 input = lambda: sys.stdin.readline().rstrip()
-g = lambda: [*map(int, input().split())]
-
 for _ in range(int(input())):
-    N, M, K = g()
+    N, M, K = map(int, input().split())
     if K == 1 and N > M:
         ans = -1
     else:
