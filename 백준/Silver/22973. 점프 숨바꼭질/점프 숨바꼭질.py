@@ -1,9 +1,8 @@
-num = abs(int(input())) + 1
-if num & (num - 1):
-    print(-1)
-else:
+N = abs(int(input()))
+if N == 0:
+    ans = 0
+elif N&1 == 0:
     ans = -1
-    while num:
-        ans += 1
-        num >>= 1
-    print(ans)
+else:
+    ans = N.bit_length()
+print(ans)
