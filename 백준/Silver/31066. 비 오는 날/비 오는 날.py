@@ -1,5 +1,3 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
 for _ in range(int(input())):
     N, M, K = map(int, input().split())
     if K == 1 and N > M:
