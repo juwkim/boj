@@ -1,13 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-vector<int> A(10000);
-
-int linear_select(int i, int j, int k) {
-    vector<int> nums(A.begin() + i, A.begin() + j + 1);
-    std::nth_element(nums.begin(), nums.begin() + k - 1, nums.end());
-    return nums.at(k - 1);
-}
+int A[10000];
 
 int main() {
     ios_base::sync_with_stdio(false); cin.tie(nullptr);
@@ -17,8 +11,10 @@ int main() {
         int op, i, j, k;
         cin >> op >> i >> j; --i; --j;
         if (op == 1) {
-            cin >> k;
-            cout << linear_select(i, j, k) << '\n';
+            cin >> k; --k;
+            vector<int> nums(A + i, A + j + 1);
+            std::nth_element(nums.begin(), nums.begin() + k, nums.end());
+            cout << nums[k] << '\n';
         } else
             swap(A[i], A[j]);
     }
