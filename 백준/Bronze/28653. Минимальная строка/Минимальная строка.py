@@ -1,2 +1,2 @@
 a=input()
-print(*sorted(a+input())[:len(a)],sep="")
+print(''.join(sorted(a+input())[:len(a)]))
