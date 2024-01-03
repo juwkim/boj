@@ -1,13 +1,10 @@
-for _ in range(int(input())):
-    input()
-    nums = [*map(int, input().split())]
-    max_num = max(nums)
-    cnt = [0] * (1 << 20)
-    for num in nums:
-        cnt[num] += 1
-    dp = cnt.copy()
-    for i in range(20):
-        for mask in range((1 << 20)):
-            if mask & (1 << i):
-                dp[mask] += dp[mask ^ (1 << i)]
-    print(sum(dp[i] * cnt[i] for i in range(1 << 20)))
+I=input
+for _ in range(int(I())):
+ I()
+ m,c=max(n:=[*map(int,I().split())]),[0]*(p:=1<<20)
+ for q in n:c[q]+=1
+ d=c[:]
+ for i in range(20):
+  for s in range(p):
+   if s&(1<<i):d[s]+=d[s^(1<<i)]
+ print(sum(d[i]*c[i]for i in range(p)))
