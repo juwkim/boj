@@ -1,5 +1,5 @@
 I=input
-for _ in range(int(I())):
+for _ in " "*int(I()):
  I()
  m,c=max(n:=[*map(int,I().split())]),[0]*(p:=1<<20)
  for q in n:c[q]+=1
