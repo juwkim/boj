@@ -5,11 +5,11 @@ g = lambda: [*map(int, input().split())]
 
 N, M = g()
 Out = [[] for _ in range(N + 1)]
-In = [set() for _ in range(N + 1)]
+In = [0 for _ in range(N + 1)]
 for _ in range(M):
     A, B = g()
     Out[A].append(B)
-    In[B].add(A)
+    In[B] += 1
 
 ans = []
 solved = [False] * (N + 1)
@@ -22,6 +22,6 @@ while solved_cnt != N:
         solved_cnt += 1
         ans.append(i)
         for j in Out[i]:
-            In[j].remove(i)
+            In[j] -= 1
         break
 print(*ans)
