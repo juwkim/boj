@@ -49,7 +49,6 @@ for i in range(N):
             b1, b2 = y3, y4
         else:
             b1, b2 = val(x3, y3, x4, y4, sx), val(x3, y3, x4, y4, ex)
-        # print((i, j), a1, a2, b1, b2)
         if (a1 - b1) * (a2 - b2) <= 0:
             union(i, j)
     nums.append((x1, y1, x2, y2))
@@ -58,4 +57,3 @@ for i in range(N):
 group = sum(i == parent[i] for i in range(N))
 print(group)
 print(Counter(parent).most_common(1)[0][1])
-# print(parent)
