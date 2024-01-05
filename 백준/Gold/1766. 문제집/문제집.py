@@ -3,6 +3,8 @@ import sys
 input = lambda: sys.stdin.readline().rstrip()
 g = lambda: [*map(int, input().split())]
 
+import heapq
+
 N, M = g()
 Out = [[] for _ in range(N + 1)]
 In = [0 for _ in range(N + 1)]
@@ -12,16 +14,13 @@ for _ in range(M):
     In[B] += 1
 
 ans = []
-solved = [False] * (N + 1)
-solved_cnt = 0
-while solved_cnt != N:
-    for i in range(1, N + 1):
-        if solved[i] or In[i]:
-            continue
-        solved[i] = True
-        solved_cnt += 1
-        ans.append(i)
-        for j in Out[i]:
-            In[j] -= 1
-        break
+heap = [i for i in range(1, N + 1) if In[i] == 0]
+heapq.heapify(heap)
+while heap:
+    num = heapq.heappop(heap)
+    ans.append(num)
+    for nxt in Out[num]:
+        In[nxt] -= 1
+        if In[nxt] == 0:
+            heapq.heappush(heap, nxt)
 print(*ans)
