@@ -1,22 +1,9 @@
-import sys
-
-input = lambda: sys.stdin.readline().rstrip()
-g = lambda: [*map(int, input().split())]
-
-from bisect import bisect_left
-
-N, M, K = g()
-nums = sorted(g())
-parent = [*range(N)]
-
-def find(x):
-    p = x
-    while p != parent[p]:
-        p = parent[p]
-    parent[x] = p
-    return p
-
-for num in g():
-    idx = find(bisect_left(nums, num + 1))
-    print(nums[idx])
-    parent[idx] = find(idx + 1)
+from bisect import*
+g=lambda:[*map(int,input().split())]
+def f(x):
+ t=x
+ while t-p[t]:t=p[t]
+ p[x]=t;return t
+p=[*range(g()[0])]
+a=sorted(g())
+for n in g():i=f(bisect_left(a,n+1));p[i]=f(i+1);print(a[i])
