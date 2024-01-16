@@ -8,8 +8,10 @@ table = [g(), g()]
 ans = 0
 def solve(day, idx, cnt):
     global ans
+    if cnt >= M:
+        ans += 6 ** (N - day)
+        return
     if day == N:
-        ans += cnt >= M
         return
     for i in range(2):
         for j in range(3):
