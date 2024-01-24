@@ -15,6 +15,6 @@ for _ in range(int(input())):
         else:
             r += A
             if cur > 13 and r >= cur - 13:
-                cur = l + cur - 13
+                cur += l - 13
                 break
 print(cur)
