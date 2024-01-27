@@ -9,11 +9,6 @@ val = {
     'Z': 10
 }
 
-def get_score(word, score):
-    for c in word:
-        score += val[c]
-    return score
-
 def find(add):
     global ans, max_score
     if add:
@@ -23,14 +18,13 @@ def find(add):
     s = "".join(sorted(alpha + list(add)))
     if s in dic:
         word = dic[s]
-        score = get_score(dic[s], -start)
-        if score > max_score or (score == max_score and word < ans):
+        score = sum(val[c] for c in word) - start
+        if score > max_score:
             ans, max_score = word, score
 
-T = int(input())
 alpha = []
 vacant = 0
-for _ in range(T):
+for _ in range(int(input())):
     c = input()
     if c == '#':
         vacant += 1
