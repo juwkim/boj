@@ -1,6 +1,6 @@
 import sys
 input = lambda: sys.stdin.readline().rstrip()
-g = lambda: [*map(int, input().split())]
+g = lambda: map(int, input().split())
 
 while N:=int(input()):
     A, B, C, D = g()
@@ -14,17 +14,15 @@ while N:=int(input()):
         elif A <= nx <= C and B <= ny <= D:
             ans += dist_to_box(x, y) - 1
         else:
-            dx = (nx > x) - (nx < x)
-            dy = (ny > y) - (ny < y)
-            cnt1 = 0
-            p, q = x, y
-            for _ in range(abs(nx - x)):
-                p += dx
-                cnt1 += not (A <= p <= C and B <= q <= D)
-            for _ in range(abs(ny - y)):
-                q += dy
-                cnt1 += not (A <= p <= C and B <= q <= D)
-            cnt2 = dist_to_box(nx, ny) + dist_to_box(x, y) - 1
+            dx, dy = (nx > x) - (nx < x), (ny > y) - (ny < y)
+            cnt1 = dist_to_box(nx, ny) + dist_to_box(x, y) - 1
+            cnt2 = 0
+            while x != nx:
+                x += dx
+                cnt2 += not (A <= x <= C and B <= y <= D)
+            while y != ny:
+                y += dy
+                cnt2 += not (A <= x <= C and B <= y <= D)
             ans += min(cnt1, cnt2)
         x, y = nx, ny
     print(ans)
