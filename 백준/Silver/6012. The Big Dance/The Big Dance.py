@@ -1,8 +1,5 @@
-def solve(l, r):
-    if r - l == 0:
-        return 0
-    if r - l == 1:
-        return l * r
-    d = (r - l) // 2
-    return solve(l, l + d) + solve(l + d + 1, r)
-print(solve(1, int(input())))
+def a(l,r):
+ if r==l:return 0
+ if r==l+1:return l*r
+ d=r-l>>1;return a(l,l+d)+a(l+d+1,r)
+print(a(1,int(input())))
