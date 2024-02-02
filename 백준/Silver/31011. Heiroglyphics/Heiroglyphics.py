@@ -36,13 +36,12 @@ def solve(idx, cnt, prev_vowel, with_vowel):
 
 for _ in range(int(input())):
     S = int(input())
-    check = [] # (vowel, symbol)
+    check = []
     for _ in range(S):
         l = input()
         idx = [i for i, x in enumerate(l) if x == '?']
         vowel, symbol = 0, 0
         if not idx:
-            # assert l in vowels or l in symbols
             if l in vowels:    vowel += 1
             elif l in symbols: symbol += 1
         else:
