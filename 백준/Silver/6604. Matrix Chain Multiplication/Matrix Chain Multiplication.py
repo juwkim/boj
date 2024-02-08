@@ -27,7 +27,4 @@ while True:
             st += 1
         else:
             buf.append(mat[c])
-    if ans != "error":
-        print(ans)
-    else:
-        print("error")
+    print(ans if ans != "error" else "error")
