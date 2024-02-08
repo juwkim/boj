@@ -1,4 +1,3 @@
-from collections import Counter
+from collections import*
 cnt = Counter(open(0))
-N = sum(cnt.values())
-print(1 - sum((V / N) ** 2 for V in cnt.values()))
+print(1 - sum(V * V for V in cnt.values()) / sum(cnt.values()) ** 2)
