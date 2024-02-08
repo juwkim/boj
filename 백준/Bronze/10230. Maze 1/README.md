@@ -1,4 +1,4 @@
-# [Bronze III] Maze 1 - 10230 
+# [Bronze II] Maze 1 - 10230 
 
 [문제 링크](https://www.acmicpc.net/problem/10230) 
 
@@ -8,7 +8,11 @@
 
 ### 분류
 
-애드 혹(ad_hoc), 구성적(constructive)
+애드 혹, 해 구성하기
+
+### 제출 일자
+
+2022년 6월 3일 07:21:11
 
 ### 문제 설명
 
