@@ -8,17 +8,15 @@ for i in range(N):
     if x[i] == 0 and y[i] == 0:
         pos = i
         break
-visited = bytearray(N)
-visited[pos] = 1
+pool = {*range(N)}
+pool.remove(pos)
 for _ in range(N - 2):
-    for i in range(N):
-        if visited[i]:
-            continue
+    for i in pool:
         x1, y1, r1 = x[i], y[i], r[i]
         x2, y2, r2 = x[pos], y[pos], r[pos]
         if (x1 - x2) ** 2 + (y1 - y2) ** 2 == (r1 + r2) ** 2:
-            visited[i] = 1
+            pool.remove(i)
             pos = i
             break
-idx = visited.find(0)
+idx = pool.pop()
 print(x[idx], y[idx])
