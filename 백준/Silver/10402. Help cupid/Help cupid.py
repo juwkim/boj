@@ -1,0 +1,5 @@
+N, *T = map(int, open(0).read().split())
+T.sort()
+ans1 = sum(12 - abs(12 - abs(T[i] - T[i - 1])) for i in range(0, N, 2))
+ans2 = sum(12 - abs(12 - abs(T[i] - T[i + 1])) for i in range(0, N, 2))
+print(min(ans1, ans2))
