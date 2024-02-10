@@ -1,5 +1,3 @@
-n = int(input())
-ans = (n - 1) // 2 * n
-if n % 3 == 0:
-    ans -= 2 * n // 3
-print(ans)
+n=int(input())
+a=(n-1)//2*n+[0,-2*n//3][n%3==0]
+print(a)
