@@ -1,4 +1,2 @@
-n, i = int(input()), 0
-for c in input().split('R'):
-    i += len(c) + 1
-    print(*range(i, i - len(c) - 1, -1))
+n,i=int(input()),0
+for l in map(len,input().split('R')):print(*range(i+l+1,i,-1));i+=l+1
