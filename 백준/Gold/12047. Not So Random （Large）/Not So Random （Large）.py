@@ -1,6 +1,6 @@
-for tc in range(1, 1 + int(input())):
+for t in range(int(input())):
     N, X, K, A, B, C = map(int, input().split())
-    AB, BC = (A + B) / 100, (B + C) / 100    
+    AB, BC = (A + B) / 100, (B + C) / 100
     a, b, c = 1, 0, 1
     for _ in range(N):
         a *= BC
@@ -8,4 +8,4 @@ for tc in range(1, 1 + int(input())):
         c = c * AB + (1 - c) * BC
     p = ((0, a), (b, c))
     ans = sum(p[K >> i & 1][X >> i & 1] * (1 << i) for i in range(max(X, K).bit_length()))
-    print(f"Case #{tc}: {ans:.10f}")
+    print(f"Case #{t+1}: {ans:.10f}")
