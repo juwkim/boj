@@ -1,5 +1,3 @@
-import sys
-input = sys.stdin.readline
 ith_bit = lambda x, i: (x >> i) & 1
 for tc in range(1, 1 + int(input())):
     N, X, K, A, B, C = map(int, input().split())
