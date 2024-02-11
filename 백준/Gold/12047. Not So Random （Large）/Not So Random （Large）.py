@@ -6,6 +6,5 @@ for t in range(int(input())):
         a *= BC
         b = b * AB + (1 - b) * BC
         c = c * AB + (1 - c) * BC
-    p = ((0, a), (b, c))
-    ans = sum(p[K >> i & 1][X >> i & 1] * (1 << i) for i in range(max(X, K).bit_length()))
+    ans = sum(((0, a), (b, c))[K >> i & 1][X >> i & 1] * (1 << i) for i in range(max(X, K).bit_length()))
     print(f"Case #{t+1}: {ans:.10f}")
