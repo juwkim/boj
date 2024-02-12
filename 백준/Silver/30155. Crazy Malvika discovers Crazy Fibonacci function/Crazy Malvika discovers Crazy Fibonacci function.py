@@ -1,1 +1,1 @@
-for s in[*open(0)][1:]:A,B,N=map(int,s.split());print([A,B,B-A,-A,-B,A-B][(N-1)%6]%int(1e9+7))
+for s in[*open(0)][1:]:A,B,N=map(int,s.split());print([A-B,A,B,B-A,-A,-B][N%6]%int(1e9+7))
