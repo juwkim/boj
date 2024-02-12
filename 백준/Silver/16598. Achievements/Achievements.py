@@ -1,14 +1,10 @@
-g = lambda: [*map(int, input().split())]
-
-n, p = g()
-d = g()
-l, r = 0, 0
-ans = 0
+n, p, *d = map(int, open(0).read().split())
+ans, l, r = 0, 0, 0
 while r < n:
-    vacant = d[r] - d[l] - (r - l)
-    if vacant <= p:
-        ans = max(ans, d[r] - d[l] + 1 + p - vacant)
-        r += 1
-    else:
+    num = p - d[r] + d[l] + r - l
+    if num < 0:
         l += 1
+    else:
+        ans = max(ans, d[r] - d[l] + num + 1)
+        r += 1
 print(ans)
