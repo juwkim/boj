@@ -1,8 +1,5 @@
-n = int(input()) - 1
+n=int(input())-1
 while True:
-    r = n % 4
-    print(r, flush=True)
-    s = input()
-    if s == "I give up":
-        break
-    n -= r + int(s)
+ print(r:=n%4)
+ if(s:=input())[0]=='I':break
+ n-=r+int(s)
