@@ -1,7 +1,1 @@
-N, *l = open(0)
-for s in l:
-    A, B, N = map(int, s.split())
-    mod = 10 ** 9 + 7
-    for _ in range((N - 1) % 6):
-        A, B = B % mod, B - A
-    print(A % mod)
+for s in[*open(0)][1:]:A,B,N=map(int,s.split());print([A,B,B-A,-A,-B,A-B][(N-1)%6]%int(1e9+7))
