@@ -1,3 +1,6 @@
+import sys
+input = lambda: sys.stdin.readline().rstrip()
+
 while N:=int(input()):
     grill = [input() for _ in range(N)]
     pos = []
