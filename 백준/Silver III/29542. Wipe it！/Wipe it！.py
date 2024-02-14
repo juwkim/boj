@@ -1,8 +1,2 @@
-ans = []
-check = set()
-for c in input():
-    if c in check:
-        continue
-    check.add(c)
-    ans.append(c)
-print(*ans, sep='')
+s=input()
+print(*sorted(set(s),key=s.index),sep='')
