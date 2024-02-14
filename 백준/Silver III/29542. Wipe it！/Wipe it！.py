@@ -1,2 +1,2 @@
 s=input()
-print(*sorted(set(s),key=s.index),sep='')
+print(*sorted({*s},key=s.find),sep='')
