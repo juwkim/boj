@@ -1,9 +1,7 @@
-from collections import Counter
-
 input()
-cnt = [0] * (2000000 + 1)
 a = [*map(int, input().split())]
 MAX = max(a)
+cnt = [0] * (MAX + 1)
 for num in a:
     cnt[num] += 1
 ans = 0
