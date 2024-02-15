@@ -1,11 +1,9 @@
 import sys
 from itertools import pairwise
-input = sys.stdin.readline
+input = lambda: sys.stdin.readline().strip()
 
-while True:
-    n, *nums = map(int, input().split())
-    if n == 0:
-        break
+while (t:=input()) != '0':
+    n, *nums = map(int, t.split())
     seq = [b - a for a, b in pairwise(nums)]
     s = n - 1
     ans = s
