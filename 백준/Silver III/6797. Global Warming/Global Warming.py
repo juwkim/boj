@@ -6,10 +6,8 @@ while True:
     n, *nums = map(int, input().split())
     if n == 0:
         break
-    assert n == len(nums)
-    seq = [b - a for a, b in zip(nums, nums[1:])]
-    s = len(seq)
-    # assert s == n - 1
+    seq = [b - a for a, b in pairwise(nums)]
+    s = n - 1
     ans = s
     for i in range(1, s):
         a = seq[:i]
