@@ -1,6 +1,5 @@
 import sys
-input = lambda: sys.stdin.readline().rstrip()
-
+input = sys.stdin.readline
 for tc in range(1, 1 + int(input())):
     b, x, y = input().split()
     b = int(b)
@@ -9,7 +8,7 @@ for tc in range(1, 1 + int(input())):
     check = [-1] * y
     ans, i = 0, 0
     while True:
-        q, x = divmod(x * b, y)
+        x = x * b % y
         if x == 0:
             break
         if check[x] != -1:
@@ -17,6 +16,4 @@ for tc in range(1, 1 + int(input())):
             break
         check[x] = i
         i += 1
-    print(f"Scenario #{tc}:")
-    print(ans)
-    print()
+    print(f"Scenario #{tc}:\n{ans}\n")
