@@ -1,2 +1,2 @@
-_,*l,a=open(0).read().split()
+_,l,(a,b)=open(0)
 print(l.count(a))
