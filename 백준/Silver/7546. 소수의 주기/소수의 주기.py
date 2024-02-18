@@ -4,7 +4,6 @@ for tc in range(1, 1 + int(input())):
     b, x, y = input().split()
     b = int(b)
     x, y = int(x, b), int(y, b)
-    x %= y
     check = [-1] * y
     ans, i = 0, 0
     while True:
