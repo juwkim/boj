@@ -12,25 +12,20 @@ for tc in range(1, 1 + int(input())):
             if v == 0: continue
             if i + 2 <= R:
                 b[(i + 2) % 4][d] += v
-                b[(i + 2) % 4][d] %= MOD
         for d, v in enumerate(b[i % 4]):
             if v == 0: continue
             if i + 1 <= R:
                 a[(i + 1) % 4][d] += v
-                a[(i + 1) % 4][d] %= MOD
             if i + 2 <= R:
                 if C % 3 == 0:
                     l = lcm(d, 3)
                     a[(i + 2) % 4][l] += 3 * v
-                    a[(i + 2) % 4][l] %= MOD
                 if C % 6 == 0:
                     l = lcm(d, 6)
                     a[(i + 2) % 4][l] += 6 * v
-                    a[(i + 2) % 4][l] %= MOD
             if i + 3 <= R and C % 4 == 0:
                 l = lcm(d, 4)
                 a[(i + 3) % 4][l] += 4 * v
-                a[(i + 3) % 4][l] %= MOD
         a[i % 4], b[i % 4] = [0] * 13, [0] * 13
     ans = 0
     for d, v in enumerate(a[R % 4]):
