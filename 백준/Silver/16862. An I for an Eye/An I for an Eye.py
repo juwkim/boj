@@ -6,20 +6,15 @@ dic3.update({k.capitalize(): v.capitalize() for k, v in dic3.items()})
 dic4.update({k.capitalize(): v.capitalize() for k, v in dic4.items()})
 
 for _ in range(int(input())):
-    s = input()
-    i = 0
+    s, i = input(), 0
     while i < len(s):
-        if s[i:i + 4] in dic4:
-            t = dic4[s[i:i + 4]]
-            i += 4
-        elif s[i:i + 3] in dic3:
-            t = dic3[s[i:i + 3]]
-            i += 3
-        elif s[i:i + 2] in dic2:
-            t = dic2[s[i:i + 2]]
-            i += 2
+        if s[i:i+4] in dic4:
+            t, i = dic4[s[i:i+4]], i + 4
+        elif s[i:i+3] in dic3:
+            t, i = dic3[s[i:i+3]], i + 3
+        elif s[i:i+2] in dic2:
+            t, i = dic2[s[i:i+2]], i + 2
         else:
-            t = s[i]
-            i += 1
+            t, i = s[i], i + 1
         print(t, end="")
     print()
