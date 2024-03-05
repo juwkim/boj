@@ -1,0 +1,1 @@
+print(777*all('7'in s for s in[*open(0)][1:]))
