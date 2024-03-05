@@ -1,4 +1,2 @@
-_, b, a = open(0)
-b = sum(map(int, b.split()))
-a = sum(map(int, a.split()))
-print(a, b)
+_,b,a=open(0)
+print(sum(map(int,a.split())),sum(map(int,b.split())))
