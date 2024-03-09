@@ -1,9 +1,7 @@
-import sys
-
-while mod:=int(sys.stdin.readline()):
+while m:=int(input()):
     a, b = 1, 1
     ans = 1
     while (a, b) != (0, 1):
-        a, b = b, (a + b) % mod
+        a, b = b, (a + b) % m
         ans += 1
-    print(mod, ans)
+    print(m, ans)
