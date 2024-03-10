@@ -1,2 +1,2 @@
 M=int(input())
-print(min(15.0,M/2)+max(0,M*1.5-45))
+print([M*1.5-30,M/2][M<30])
