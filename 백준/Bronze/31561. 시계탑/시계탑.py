@@ -1,2 +1,2 @@
 M=int(input())
-print((M-30)*(M>30)+M/2)
+print(max(0,M-30)+M/2)
