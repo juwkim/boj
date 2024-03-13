@@ -1,2 +1,2 @@
-input()
-print(*sorted({*input().split()}))
+a,b=open(0)
+print(*sorted({*b.split()}))
