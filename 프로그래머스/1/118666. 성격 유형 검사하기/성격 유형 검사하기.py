@@ -1,0 +1,16 @@
+def solution(survey, choices):
+    dic = {c: 0 for c in "RTCFJMAN"}
+    for ((a, b), choice) in zip(survey, choices):
+        if choice == 4:
+            continue
+        if choice <= 3:
+            dic[a] += 4 - choice
+        else:
+            dic[b] += choice - 4
+    answer = ''
+    for a, b in zip("RCJA", "TFMN"):
+        if dic[a] < dic[b]:
+            answer += b
+        else:
+            answer += a
+    return answer
