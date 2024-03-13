@@ -7,10 +7,5 @@ def solution(survey, choices):
             dic[a] += 4 - choice
         else:
             dic[b] += choice - 4
-    answer = ''
-    for a, b in zip("RCJA", "TFMN"):
-        if dic[a] < dic[b]:
-            answer += b
-        else:
-            answer += a
+    answer = "".join(max(l, key=dic.get) for l in zip("RCJA", "TFMN"))
     return answer
