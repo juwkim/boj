@@ -1,8 +1,6 @@
 def solution(survey, choices):
     dic = {c: 0 for c in "RTCFJMAN"}
     for ((a, b), choice) in zip(survey, choices):
-        if choice == 4:
-            continue
         if choice <= 3:
             dic[a] += 4 - choice
         else:
