@@ -1,0 +1,1 @@
+print("YNeos"["ooo"not in open(0).read()::2])
