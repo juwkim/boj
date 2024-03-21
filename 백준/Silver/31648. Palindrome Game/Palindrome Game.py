@@ -1,0 +1,1 @@
+exec("print('BE'[input()[-1]=='0']);"*int(input()))
