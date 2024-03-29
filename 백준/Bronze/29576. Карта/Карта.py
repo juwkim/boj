@@ -1,7 +1,3 @@
-n, k = map(int, input().split())
-if k == 1:
-    print((-1, 0)[n == 1])
-elif (n - 1) % (k - 1) == 0:
-    print((n - 1) // (k - 1))
-else:
-    print(-1)
+n,k=map(int,input().split())
+n-=1;k-=1
+print((-1,n//k)[n%k==0]if k else(-1,0)[n==0])
