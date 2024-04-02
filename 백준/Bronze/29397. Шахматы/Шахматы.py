@@ -1,3 +1,2 @@
-a = sum(map(ord, input()))
-b = sum(map(ord, input()))
-print(["YES", "NO"][(a - b) & 1])
+l=lambda:sum(map(ord,input()))
+print(["YES","NO"][l()-l()&1])
