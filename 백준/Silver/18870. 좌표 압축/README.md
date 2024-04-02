@@ -4,17 +4,21 @@
 
 ### 성능 요약
 
-메모리: 17656 KB, 시간: 492 ms
+메모리: 301680 KB, 시간: 1092 ms
 
 ### 분류
 
-값 / 좌표 압축(coordinate_compression), 정렬(sorting)
+값 / 좌표 압축, 정렬
+
+### 제출 일자
+
+2024년 4월 3일 02:40:37
 
 ### 문제 설명
 
 <p>수직선 위에 N개의 좌표 X<sub>1</sub>, X<sub>2</sub>, ..., X<sub>N</sub>이 있다. 이 좌표에 좌표 압축을 적용하려고 한다.</p>
 
-<p>X<sub>i</sub>를 좌표 압축한 결과 X'<sub>i</sub>의 값은 X<sub>i</sub> > X<sub>j</sub>를 만족하는 서로 다른 좌표의 개수와 같아야 한다.</p>
+<p>X<sub>i</sub>를 좌표 압축한 결과 X'<sub>i</sub>의 값은 X<sub>i</sub> > X<sub>j</sub>를 만족하는 서로 다른 좌표 X<sub>j</sub>의 개수와 같아야 한다.</p>
 
 <p>X<sub>1</sub>, X<sub>2</sub>, ..., X<sub>N</sub>에 좌표 압축을 적용한 결과 X'<sub>1</sub>, X'<sub>2</sub>, ..., X'<sub>N</sub>를 출력해보자.</p>
 
