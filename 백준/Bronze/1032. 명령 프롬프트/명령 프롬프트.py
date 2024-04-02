@@ -1,13 +1,9 @@
 N = int(input())
-lines = []
-for i in range(N):
-    line = input()
-    lines.append(line)
-for j in range(len(lines[0])):
-    s = set()
-    for i in range(N):
-        s.add(lines[i][j])
-    if len(s) == 1:
-        print(s.pop(), end='')
+lines = [input() for _ in range(N)]
+ans = []
+for l in zip(*lines):
+    if len(set(l)) == 1:
+        ans.append(l[0])
     else:
-        print('?', end='')
+        ans.append('?')
+print(''.join(ans))
