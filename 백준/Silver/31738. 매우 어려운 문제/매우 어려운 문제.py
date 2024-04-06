@@ -1,5 +1,4 @@
 N,M=map(int,input().split())
-a=1
-for i in range(2,N+1):
- if(a:=a*i%M)==0:break
+a,i=1,2
+while i<=N and (a:=a*i%M):i+=1
 print(a)
