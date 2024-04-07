@@ -3,7 +3,7 @@ while True:
         s = input()
         if s[0] == '8':
             break
-        mem = [int(x, 16) for x in s.strip()]
+        mem = [int(x, 16) for x in s]
         i = 0
         A, B = 0, 0
         while True:
