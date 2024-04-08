@@ -1,9 +1,6 @@
-import heapq
-
-N, A, *votes = map(int, open(0).read().split())
-votes = [-v for v in votes]
-heapq.heapify(votes)
-dasom, num = A, -1
-while -(num:=heapq.heappushpop(votes, num + 1)) >= A:
-    A += 1
-print(A - dasom)
+from heapq import*
+N,A,*v=map(int,open(0).read().split())
+heapify(v:=[-a for a in v])
+d,a=A,-1
+while-(a:=heappushpop(v,a+1))>=A:A+=1
+print(A-d)
