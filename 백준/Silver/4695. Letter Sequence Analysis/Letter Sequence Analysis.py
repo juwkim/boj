@@ -15,8 +15,7 @@ for l in range(1, 6):
     for p, c in cnt.most_common():
         if c != fre:
             if sec:
-                sec.sort()
-                print(f"Frequency = {fre}, Sequence(s) = ({','.join(sec)})")
+                print(f"Frequency = {fre}, Sequence(s) = ({','.join(sorted(sec))})")
                 i -= 1
             fre, sec = c, [p]
             if i == 0:
@@ -24,6 +23,5 @@ for l in range(1, 6):
         elif c == fre:
             sec.append(p)
     if i and sec:
-        sec.sort()
-        print(f"Frequency = {fre}, Sequence(s) = ({','.join(sec)})")
+        print(f"Frequency = {fre}, Sequence(s) = ({','.join(sorted(sec))})")
     print()
