@@ -9,14 +9,13 @@ for tc in range(1, 1 + int(input())):
         if mote < A:
             A += mote
         else:
-            ans = min(ans, cur + N - i)
             if A == 1:
-                cur = -1
+                cur += N - i
                 break
+            ans = min(ans, cur + N - i)
             while mote >= A:
                 A += A - 1
                 cur += 1
             A += mote
-    if cur != -1:
-        ans = min(ans, cur)
+    ans = min(ans, cur)
     print(f"Case #{tc}: {ans}")
