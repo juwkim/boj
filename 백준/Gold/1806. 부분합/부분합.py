@@ -1,15 +1,13 @@
-N, S = map(int, input().split())
-seq = [*map(int, input().split())]
-left, right, ans = 0, 0, 100000
-check = seq[left]
+N, S, *nums = map(int, open(0).read().split())
+l, r, ans = 0, 0, 1e9
+cur = nums[l]
 while True:
-    if check >= S:
-        ans = min(ans, right - left + 1)
-        check -= seq[left]
-        left += 1
+    if cur >= S:
+        ans = min(ans, r - l + 1)
+        cur -= nums[l]
+        l += 1
+    elif r == N - 1: break
     else:
-        right += 1
-        if right == N:
-            break
-        check += seq[right]
-print(ans if ans != 100000 else 0)
+        r += 1
+        cur += nums[r]
+print(ans if ans != 1e9 else 0)
