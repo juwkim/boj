@@ -1,12 +1,9 @@
 from collections import deque
-from copy import deepcopy
 
 for tc in range(1, 1 + int(input())):
     N1, N2 = map(lambda x: int(x, 16), input().split())
-    N1 = deque([(N1 >> i) & 1 for i in range(32)])
-    N2 = deque([(N2 >> i) & 1 for i in range(32)])
     ans = "Not possible"
-    l, r = deepcopy(N1), deepcopy(N1)
+    l, r = N1, N1
     for cnt in range(17):
         if l == N2 and r == N2:
             ans = f"{cnt} Any"
@@ -17,6 +14,6 @@ for tc in range(1, 1 + int(input())):
         elif r == N2:
             ans = f"{cnt} Right"
             break
-        l.rotate(1)
-        r.rotate(-1)
+        l = ((l & ((1 << 31) - 1)) << 1) | (l >> 31)
+        r = (r >> 1) | ((r & 1) << 31)
     print(f"Case #{tc}: {ans}")
