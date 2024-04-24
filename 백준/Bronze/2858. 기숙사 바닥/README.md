@@ -4,11 +4,15 @@
 
 ### 성능 요약
 
-메모리: 28776 KB, 시간: 64 ms
+메모리: 108080 KB, 시간: 108 ms
 
 ### 분류
 
-사칙연산(arithmetic), 브루트포스 알고리즘(bruteforcing), 수학(math)
+사칙연산, 브루트포스 알고리즘, 수학
+
+### 제출 일자
+
+2024년 4월 24일 13:23:03
 
 ### 문제 설명
 
@@ -18,7 +22,7 @@
 
 <p>아래 그림은 상근이의 방의 크기가 4×3일 때 이다.</p>
 
-<p style="text-align: center;"><img alt="" src="" style="width: 122px; height: 94px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/4600f2e6-6349-4c85-b3c9-e6f3a8e3f79a/-/preview/" style="width: 122px; height: 94px;"></p>
 
 <p>어느 날 상근이네 방에 하근이가 놀러왔다. 하근이는 아름다운 타일 배치에 감동받았다. 다시 방으로 돌아온 하근이는 빨간색과 갈색 타일의 개수는 기억했지만, 방의 크기는 기억해내지 못했다.</p>
 
