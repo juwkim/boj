@@ -4,7 +4,6 @@ def solve(M, buf):
         print(*buf[1:])
         return
     M -= 1
-    for i in range(1, N+1):
-        if i >= buf[-1]:
-            solve(M, buf + [i])
+    for i in range(max(1, buf[-1]), N + 1):
+        solve(M, buf + [i])
 solve(M, [0])
