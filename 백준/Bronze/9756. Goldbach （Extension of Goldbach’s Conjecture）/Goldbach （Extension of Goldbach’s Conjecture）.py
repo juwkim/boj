@@ -1,0 +1,1 @@
+while m:=int(input()):print('Y',m*m-m+1)
