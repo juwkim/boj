@@ -1,28 +1,34 @@
-class DisjointSet:
-    def __init__(self, nodes):
-        self.parent = nodes
-    
-    def find(self, x):
-        if self.parent[x] != x:
-            self.parent[x] = self.find(self.parent[x])
-        return self.parent[x]
-    
-    def union(self, x, y):
-        x_root = self.find(x)
-        y_root = self.find(y)
-        if x_root != y_root:
-            self.parent[x_root] = y_root
-
 import sys
-sys.setrecursionlimit(10 ** 5)
-input = __import__('sys').stdin.readline
-g = lambda: [*map(int, input().split())]
+input = sys.stdin.readline
+n, m = map(int, input().split())
+parent = list(range(n + 1))
+rank = [0] * (n + 1)
 
-n, m = g()
-ds = DisjointSet(list(range(n + 1)))
-for _ in range(m):
-    cmd, a, b = g()
-    if cmd:
-        print(['NO', 'YES'][ds.find(a) == ds.find(b)])
+def find(x):
+    p = x
+    while p != parent[p]:
+        p = parent[p]
+    parent[x] = p
+    return p
+
+def union(x, y):
+    x = find(x)
+    y = find(y)
+    if x == y:
+        return
+    if rank[x] < rank[y]:
+        parent[x] = y
     else:
-        ds.union(a, b)
+        parent[y] = x
+        if rank[x] == rank[y]:
+            rank[x] += 1
+
+for i in range(m):
+    op, a, b = map(int, input().split())
+    if op == 1:
+        if find(a) == find(b):
+            print('YES')
+        else:
+            print('NO')
+    else:
+        union(a, b)
