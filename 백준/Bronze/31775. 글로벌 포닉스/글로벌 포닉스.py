@@ -1,0 +1,1 @@
+print("GPLOONBIAXL"[[*zip(*sorted(open(0)))][0]!=('k','l','p')::2])
