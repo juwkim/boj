@@ -1,6 +1,5 @@
 import sys
-input = sys.stdin.readline
-g = lambda: map(int, input().split())
+g = lambda: map(int, sys.stdin.readline().split())
 
 N, K = g()
 l = [*range(1, N + 1)]
