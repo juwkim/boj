@@ -1,5 +1,1 @@
-for _ in range(int(input())):
-    n, m = map(int, input().split())
-    if n == 1:   print(0)
-    elif n == 2: print(m)
-    else:        print(n + 2 * m - 3)
+exec("n,m=map(int,input().split());print(m*(n>1)+(n+m-3)*(n>2));"*int(input()))
