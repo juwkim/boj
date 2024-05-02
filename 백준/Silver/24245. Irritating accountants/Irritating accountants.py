@@ -1,5 +1,5 @@
 import sys
-input = lambda: sys.stdin.readline().rstrip()
+input = sys.stdin.readline
 from collections import Counter
 
 n, k = map(int, input().split())
@@ -12,6 +12,5 @@ for _ in range(k):
 ans = []
 for order in orders:
     for name in order:
-        for _ in range(cnt[name]):
-            ans.append(name)
+        ans.extend([name] * cnt[name])
 print(*ans)
