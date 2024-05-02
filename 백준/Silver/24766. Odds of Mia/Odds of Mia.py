@@ -24,10 +24,8 @@ while (l:=input()) != "0 0 0 0":
                 p[i] = x
             win += solve(p)
         r = 6**cnt
-        if win == r:
-            print(1)
-        elif win == 0:
-            print(0)
+        if win == r:   print(1)
+        elif win == 0: print(0)
         else:
             g = gcd(win, r)
             print(f"{win//g}/{r//g}")
