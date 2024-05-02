@@ -29,5 +29,5 @@ while (l:=input()) != "0 0 0 0":
         elif win == 0:
             print(0)
         else:
-            g = gcd(win, (r:=6**cnt))
+            g = gcd(win, r)
             print(f"{win//g}/{r//g}")
