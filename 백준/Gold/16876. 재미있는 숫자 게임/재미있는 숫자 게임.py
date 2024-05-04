@@ -16,11 +16,11 @@ def solve(m):
     turn = m & 1
     for i in range(4):
         d[i] = (d[i] + 1) % 10
-        if solve(m + 1) == turn:
-            dp[n][m] = turn
-            d[i] = (d[i] - 1) % 10
-            return dp[n][m]
+        p = solve(m + 1)
         d[i] = (d[i] - 1) % 10
+        if p == turn:
+            dp[n][m] = turn
+            return dp[n][m]
     dp[n][m] = turn ^ 1
-    return dp[n][m]    
+    return dp[n][m]
 print(("cubelover", "koosaga")[solve(1)])
