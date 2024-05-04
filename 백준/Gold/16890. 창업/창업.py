@@ -14,5 +14,4 @@ ans2 = []
 while turn < N:
     ans2.append(l[turn&1].pop())
     turn += 1
-# print(ans1, ans2[::-1])
 print(*ans1, *reversed(ans2), sep='')
