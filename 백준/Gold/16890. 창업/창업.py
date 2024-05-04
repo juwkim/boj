@@ -1,17 +1,11 @@
 a, b = input(), input()
-q, r = divmod(N:=len(a), 2)
-l = sorted(a, reverse=True)[-(q + r):], sorted(b)[-q:]
-ans1 = []
-turn = 0
-while turn < N:
-    if all(l) and l[0][-1] >= l[1][-1]:
-        break
-    ans1.append(l[turn&1].pop())
-    turn += 1
-l[0].reverse()
-l[1].reverse()
-ans2 = []
-while turn < N:
-    ans2.append(l[turn&1].pop())
-    turn += 1
-print(*ans1, *reversed(ans2), sep='')
+N = len(a)
+s = sorted(a, reverse=True)[-((N + 1) // 2):]
+t = sorted(b)[-(N // 2):]
+i = 0
+while i < N and not (s and t and s[-1] >= t[-1]):
+    print(t.pop() if i&1 else s.pop(), end='')
+    i += 1
+s, t = s[::-1], t[::-1]
+ans = [t.pop() if j&1 else s.pop() for j in range(i, N)][::-1]
+print(*ans, sep='')
