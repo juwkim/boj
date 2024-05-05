@@ -1,29 +1,19 @@
 #include <unistd.h>
 #include <string.h>
+#define f() r[c++] = b[i++]
 
 int main() {
-	char res[2000000], buf[1000000 + 1];
-	int  idx = 0, cur = 0, size = read(0, buf, 1000000);
-	while (idx < size) {
-		switch (buf[idx]) {
-		case ' ':
-			++idx;
-			break;
-		case '<': case '>': case '(': case ')':
-			res[cur++] = buf[idx++];
-	        res[cur++] = ' ';
-			break;
-		case '&': case '|':
-			res[cur++] = buf[idx++];
-			res[cur++] = buf[idx++];
-			res[cur++] = ' ';
-			break;
-		default:
-			while (strchr("<>()&| ", buf[idx]) == NULL)
-				res[cur++] = buf[idx++];
-			res[cur++] = ' ';
+	char r[2000000], b[1000001];
+	int  i = 0, c = 0, s = read(0, b, 1000000);
+	while (i < s) {
+		switch (b[i]) {
+		case ' ': ++i; continue;
+		case '<': case '>': case '(': case ')': f(); break;
+		case '&': case '|': f(); f(); break;
+		default: while (strchr("<>()&| ", b[i]) == NULL) f();
 		}
+        r[c++] = ' ';
 	}
-	res[--cur] = '\0';
-    write(1, res, cur);
+	r[--c] = '\0';
+    write(1, r, c);
 }
