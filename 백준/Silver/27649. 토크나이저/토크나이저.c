@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <string.h>
-#define f() r[c++] = b[i++]
+#define f() r[c++] = b[i++];
 
 int main() {
 	char r[2000000], b[1000001];
@@ -8,9 +8,9 @@ int main() {
 	while (i < s) {
 		switch (b[i]) {
 		case ' ': ++i; continue;
-		case '<': case '>': case '(': case ')': f(); break;
-		case '&': case '|': f(); f(); break;
-		default: while (strchr("<>()&| ", b[i]) == NULL) f();
+		case '<': case '>': case '(': case ')': f() break;
+		case '&': case '|': f() f() break;
+		default: while (strchr("<>()&| ", b[i]) == NULL) f()
 		}
         r[c++] = ' ';
 	}
