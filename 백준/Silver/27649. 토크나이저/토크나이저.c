@@ -13,6 +13,5 @@ int main(){
 		}
         r[c++]=' ';
 	}
-	r[--c]='\0';
-    write(1,r,c);
+    write(1,r,c-1);
 }
