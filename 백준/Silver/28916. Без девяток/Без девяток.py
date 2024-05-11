@@ -1,2 +1,2 @@
-l,r=map(lambda x:int(x,9),input().split())
-print(r-l+1)
+l,r=input().split()
+print(int(r,9)-int(l,9)+1)
