@@ -1,0 +1,1 @@
+def solution(word):return sum((781,156,31,6,1)[i]*"AEIOU".index(c)+1 for i,c in enumerate(word))
