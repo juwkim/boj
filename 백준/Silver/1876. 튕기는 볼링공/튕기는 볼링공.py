@@ -1,11 +1,15 @@
-from math import radians, tan, sin, cos
+from math import sin, tan, radians
 
 for _ in range(int(input())):
     T, X = input().split()
-    X = radians(int(X))
-    O = 0.85 / tan(X)
-    T = float(T) % O
-    if abs(T * sin(X) - 0.85 * (2 * T > O) * cos(X)) <= 0.16:
-        print("yes")
+    T, X = float(T), radians(int(X))
+    one_step = 0.85 / tan(X)
+    while T >= one_step:
+        T -= one_step
+    if 2 * T > one_step:
+        T = one_step - T
+    d = T * sin(X)
+    if d <= 0.16:
+        print('yes')
     else:
-        print("no")
+        print('no')
