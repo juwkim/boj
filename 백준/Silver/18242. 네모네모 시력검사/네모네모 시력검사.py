@@ -1,22 +1,15 @@
 input()
-
 while True:
-    tmp = input()
-    i = tmp.find('#')
+    s = input()
+    i = s.find('#')
     if i != -1:
-        S = tmp.count('#')
+        cnt = s.count('#')
         break
-    
 ans = 'DOWN'
-if S % 2 == 0:
-    ans = 'UP'
+if cnt % 2 == 0: ans = 'UP'
 else:
-    for _ in range(S-2):
-        tmp = input()
-        if tmp[i] == '.':
-            ans = 'LEFT'
-            break
-        elif tmp[i+S-1] == '.':
-            ans = 'RIGHT'
-            break
+    for _ in range(cnt // 2 - 1): input()
+    s = input()
+    if s[i] == '.': ans = 'LEFT'
+    elif s[i + cnt - 1] == '.': ans = 'RIGHT'
 print(ans)

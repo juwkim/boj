@@ -4,11 +4,15 @@
 
 ### 성능 요약
 
-메모리: 30840 KB, 시간: 72 ms
+메모리: 31120 KB, 시간: 44 ms
 
 ### 분류
 
-애드 혹(ad_hoc), 구현(implementation)
+애드 혹, 구현
+
+### 제출 일자
+
+2024년 5월 21일 19:12:43
 
 ### 문제 설명
 
@@ -22,7 +26,7 @@
 
 <p>왼쪽 예제의 경우 색칠하지 않은 변이 오른쪽, 오른쪽 예제의 경우 아래쪽에 있는 것을 알 수 있다.</p>
 
-<p style="text-align: center;"><img alt="" src="" style="height: 196px; width: 200px;">                               <img alt="" src="" style="height: 195px; width: 200px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/9f13d3ca-ed40-4f17-bca3-7e674c55796d/-/crop/666x652/1,0/-/preview/" style="height: 196px; width: 200px;">                               <img alt="" src="https://upload.acmicpc.net/db3a661e-3a7b-4e3a-84d8-09a04099dff4/-/crop/670x652/1,0/-/preview/" style="height: 195px; width: 200px;"></p>
 
 <p>조건에 맞는 입력만 주어질 때, 모든 시력 검사 데이터를 통과하는 프로그램을 작성해보자.</p>
 
