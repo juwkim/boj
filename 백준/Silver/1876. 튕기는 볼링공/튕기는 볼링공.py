@@ -6,9 +6,7 @@ for _ in range(int(input())):
     one_step = 0.85 / tan(X)
     while T >= one_step:
         T -= one_step
-    if 2 * T > one_step:
-        T = one_step - T
-    d = T * sin(X)
+    d = min(T, one_step - T) * sin(X)
     if d <= 0.16:
         print('yes')
     else:
