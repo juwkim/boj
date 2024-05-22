@@ -1,3 +1,3 @@
-from itertools import*
 N,K,*A=map(int,open(0).read().split())
-print(sum(sorted(b-a for a,b in pairwise([0]+sorted(A)))[:N-K]))
+A=[0]+sorted(A)
+print(sum(sorted(A[i+1]-A[i]for i in range(N))[:N-K]))
