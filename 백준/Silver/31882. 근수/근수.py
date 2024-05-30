@@ -1,10 +1,6 @@
 input()
-ans, i = 0, 0
+a,i=0,1
 for c in input():
-    if c == '2':
-        i += 1
-    else:
-        ans += i * (i + 1) * (i + 2)
-        i = 0
-ans += i * (i + 1) * (i + 2)
-print(ans // 6)
+ if'2'==c:a+=i*(i+1);i+=1
+ else:i=1
+print(a//2)
