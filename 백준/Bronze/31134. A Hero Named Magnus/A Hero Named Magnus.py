@@ -1,2 +1,1 @@
-n, *nums = map(int, open(0).read().split())
-for x in nums:print(2*x-1)
+for x in[*map(int,open(0).read().split()[1:])]:print(2*x-1)
