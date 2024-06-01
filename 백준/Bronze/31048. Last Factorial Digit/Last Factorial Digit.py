@@ -1,1 +1,1 @@
-for _ in range(int(input())):print("11264000000"[int(input())])
+exec("print('11264000000'[int(input())]);"*int(input()))
