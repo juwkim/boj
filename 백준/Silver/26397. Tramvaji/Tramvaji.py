@@ -8,7 +8,7 @@ for i in range(1, n):
     p = input()
     if p[0] == 'P':
         num = int(p.split()[1])
-        d[i + 1] = num - d[i]
+        d[i + 1] = num - s[i]
         s[i + 1] = num
     else:
         _, y, num = p.split()
