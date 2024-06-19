@@ -1,7 +1,3 @@
-import sys
-input = sys.stdin.readline
-
-for _ in range(int(input())):
-    N, M = sorted(map(int, input().split()))
-    ans = N * (N + 1) * (3 * M - N + 1) // 6
-    print(ans)
+for l in [*open(0)][1:]:
+    N, M = sorted(map(int, l.split()))
+    print(N * (N + 1) * (3 * M - N + 1) // 6)
