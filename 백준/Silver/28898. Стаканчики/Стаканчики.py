@@ -1,3 +1,1 @@
-for l in [*open(0)][1:]:
-    N, M = sorted(map(int, l.split()))
-    print(N * (N + 1) * (3 * M - N + 1) // 6)
+for l in[*open(0)][1:]:N,M=sorted(map(int,l.split()));print(N*(N+1)*(3*M-N+1)//6)
