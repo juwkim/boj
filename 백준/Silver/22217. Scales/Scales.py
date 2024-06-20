@@ -6,13 +6,10 @@ while m:
 b.append(0)
 a = [0] * len(b)
 for i in range(len(b) - 1):
-    if b[i] == 2:
-        b[i] = 0
+    if b[i] >= 2:
+        a[i] = b[i] == 2
         b[i + 1] += 1
-        a[i] = 1
-    elif b[i] == 3:
         b[i] = 0
-        b[i + 1] += 1
 
 def solve(l):
     d = 1
