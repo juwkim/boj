@@ -8,10 +8,7 @@ for l in map(str.rstrip, [*open(0)][:-1]):
     else:
         for c in u:
             if c == 'N':
-                s = WFF.pop()
-                WFF.append(f"{c}{s}")
+                WFF.append(f"{c}{WFF.pop()}")
             elif len(WFF) >= 2:
-                s = WFF.pop()
-                t = WFF.pop()
-                WFF.append(f"{c}{s}{t}")
+                WFF.append(f"{c}{WFF.pop()}{WFF.pop()}")
         print(WFF[-1])
