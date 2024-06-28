@@ -1,1 +1,1 @@
-for n in[*open(0)][1:]:n=int(n);print((n*n-2*n+(n&1))//4)
+for n in[*open(0)][1:]:n=int(n);print(n//2*((n-1)//2))
