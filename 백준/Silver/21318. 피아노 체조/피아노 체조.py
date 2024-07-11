@@ -9,4 +9,4 @@ for i in range(1, N + 1):
     px[i] = px[i - 1] + (i != N and nums[i - 1] > nums[i])
 for _ in range(int(input())):
     x, y = g()
-    print(px[y] - px[x - 1] - (y != N and nums[y - 1] > nums[y]))
+    print(px[y - 1] - px[x - 1])
