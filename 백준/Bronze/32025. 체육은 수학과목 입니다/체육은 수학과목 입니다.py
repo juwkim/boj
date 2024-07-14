@@ -1,0 +1,1 @@
+print(50*min(map(int,open(0))))
