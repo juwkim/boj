@@ -1,3 +1,2 @@
-from math import gcd
-input()
-print(gcd(*map(int, input().split())))
+from math import*
+print(gcd(*map(int,open(0).read().split()[1:])))
