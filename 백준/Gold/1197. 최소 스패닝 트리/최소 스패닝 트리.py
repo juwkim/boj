@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(10**6)
+
 class DisjointSet:
     def __init__(self, nodes):
         self.parent = nodes
