@@ -3,16 +3,17 @@ input = sys.stdin.readline
 
 N, M = map(int, input().split())
 i, s = 1, input().split()
-nums, group, now = [-1, int(s[0]) & 1], [-1], int(s[0]) % 2 == 0
+nums, group, now = [-1, int(s[0]) & 1], [-1], ~int(s[0])&1
 to_group = [-1]
 while i < len(s):
     to_group.append(len(group))
+    num = int(s[i + 1])
     if s[i] == '*':
-        now += int(s[i + 1]) % 2 == 0
+        now += ~num&1
     else:
         group.append(now)
-        now = int(s[i + 1]) % 2 == 0
-    nums.append(int(s[i + 1]) & 1)
+        now = ~num&1
+    nums.append(num & 1)
     i += 2
 to_group.append(len(group))
 group.append(now)
@@ -25,10 +26,8 @@ for _ in range(M):
         idx = to_group[X]
         if Y & 1:
             group[idx] -= 1
-            if group[idx] == 0:
-                ans ^= 1
+            ans ^= (group[idx] == 0)
         else:
             group[idx] += 1
-            if group[idx] == 1:
-                ans ^= 1
+            ans ^= (group[idx] == 1)
     print(("even", "odd")[ans & 1])
