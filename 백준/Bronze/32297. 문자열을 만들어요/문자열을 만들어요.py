@@ -1,0 +1,1 @@
+print(("NO", "YES")["gori" in open(0).read()])
