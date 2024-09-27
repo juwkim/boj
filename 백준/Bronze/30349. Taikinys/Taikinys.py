@@ -1,7 +1,14 @@
 M, N, A, B, X, Y = map(int, open(0).read().split())
-ans = 1e9
-for i in range(X, X + M + 1):
-    for j in range(Y, Y + N + 1):
-        if 0 <= i < A and 0 <= j < B:
-            ans = min(ans, i + j)
-print(ans if ans < 1e9 else "NEPATAIKYS")
+if X + M < 0 or X >= A or Y + N < 0 or Y >= B:
+    print("NEPATAIKYS")
+else:
+    xhit = 0
+    if X <= 0:
+        xhit = 0
+    else:
+        xhit = X
+    if Y <= 0:
+        yhit = 0
+    else:
+        yhit = Y
+    print(xhit + yhit)
