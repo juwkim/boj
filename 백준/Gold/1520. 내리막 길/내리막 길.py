@@ -1,3 +1,7 @@
+import sys
+input = sys.stdin.readline
+sys.setrecursionlimit(10**5)
+
 def num_paths(m, n, heights, i, j, memo):
   # If we've reached the destination point, return 1
   if i == m - 1 and j == n - 1:
