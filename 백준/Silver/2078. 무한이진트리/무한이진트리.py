@@ -1,10 +1,10 @@
 A, B = map(int, input().split())
 L, R = 0, 0
-while A != B:
+while A and B:
     if A < B:
-        R += 1
-        B -= A
+        q, B = divmod(B, A)
+        R += q - (B == 0)
     else:
-        L += 1
-        A -= B
+        q, A = divmod(A, B)
+        L += q - (A == 0)
 print(L, R)
