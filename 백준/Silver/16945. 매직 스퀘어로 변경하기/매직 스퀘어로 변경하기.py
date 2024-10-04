@@ -9,4 +9,4 @@ magics = (
     (6, 7, 2, 1, 5, 9, 8, 3, 4)
 )
 A = [*map(int, open(0).read().split())]
-print(min(sum(abs(A[i] - magic[i]) for i in range(9)) for magic in magics))
+print(min(sum(abs(a - b) for a, b in zip(A, magic)) for magic in magics))
