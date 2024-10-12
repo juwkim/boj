@@ -5,8 +5,7 @@ g = lambda: [*map(int, input().split())]
 r, c, k = g()
 A = [g() for _ in range(3)]
 rl, cl = 3, 3
-time = 0
-transpose = False
+time, transpose = 0, False
 while time < 100:
     if r <= rl and c <= cl and A[r - 1][c - 1] == k:
         break
