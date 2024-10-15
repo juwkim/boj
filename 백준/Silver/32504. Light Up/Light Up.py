@@ -1,6 +1,3 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-
 def solve():
     n = int(input())
     a = [' ' * (n + 2)] + [[*' ' + input() + ' '] for _ in range(n)] + [' ' * (n + 2)]
@@ -12,14 +9,11 @@ def solve():
             elif a[i][j] == '?':
                 for di, dj in ((-1, 0), (1, 0), (0, -1), (0, 1)):
                     ni, nj = i + di, j + dj
-                    while a[ni][nj] in ".!":
+                    while a[ni][nj] in '.!':
                         a[ni][nj] = '!'
                         ni += di
                         nj += dj
                     if a[ni][nj] == '?':
                         return 0
-    if any(any(c == '.' for c in row) for row in a):
-        return 0
-    return 1
-
+    return +all(all(c != '.' for c in row) for row in a)
 print(solve())
