@@ -1,5 +1,5 @@
 N, *a = map(int, open(0).read().split())
-dp = [0] * 1000000
+dp = [0] * 1000001
 for num in a:
     dp[num] = dp[num - 1] + 1
 print(max(dp))
