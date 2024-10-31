@@ -13,14 +13,14 @@ if xs < xp:
         ans.append((P, P))
         ans.append((P, yt))
 else:
-    P = 10001
-    ans.append((P, ys))
+    P = -10001
+    ans.append((-P, ys))
     if xt > xp:
-        ans.append((P, yt))
-    else:
-        ans.append((P, P))
-        ans.append((-P, P))
         ans.append((-P, yt))
+    else:
+        ans.append((-P, P))
+        ans.append((P, P))
+        ans.append((P, yt))
 print(len(ans))
 for x, y in ans:
     print(x, y)
