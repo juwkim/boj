@@ -1,23 +1,26 @@
-xs, ys = map(int, input().split())
-xt, yt = map(int, input().split())
-xp, yp = map(int, input().split())
+g = lambda: map(int, input().split())
+xs, ys = g()
+xt, yt = g()
+xp, yp = g()
 ans = []
 if xs < xp:
-    ans.append((-10001, ys))
+    P = 10001
+    ans.append((-P, ys))
     if xt < xp:
-        ans.append((-10001, yt))
+        ans.append((-P, yt))
     else:
-        ans.append((-10001, 10001))
-        ans.append((10001, 10001))
-        ans.append((10001, yt))
+        ans.append((-P, P))
+        ans.append((P, P))
+        ans.append((P, yt))
 else:
-    ans.append((10001, ys))
+    P = 10001
+    ans.append((P, ys))
     if xt > xp:
-        ans.append((10001, yt))
+        ans.append((P, yt))
     else:
-        ans.append((10001, -10001))
-        ans.append((-10001, -10001))
-        ans.append((-10001, yt))
+        ans.append((P, P))
+        ans.append((-P, P))
+        ans.append((-P, yt))
 print(len(ans))
 for x, y in ans:
     print(x, y)
