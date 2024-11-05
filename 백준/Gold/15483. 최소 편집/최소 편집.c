@@ -3,7 +3,7 @@
 #define MAX_LEN 1001
 
 char A[MAX_LEN], B[MAX_LEN];
-int p[2][MAX_LEN];  // 두 개의 행을 가지는 배열
+short p[2][MAX_LEN];  // 두 개의 행을 가지는 배열
 int current = 0;    // 현재 사용 중인 행 인덱스
 
 // C 스타일의 min 함수 정의
