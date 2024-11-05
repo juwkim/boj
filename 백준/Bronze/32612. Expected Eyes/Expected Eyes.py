@@ -1,1 +1,2 @@
-print((int(input())+sum(map(int,input().split())))/2)
+n,l=open(0)
+print((int(n)+sum(map(int,l.split())))/2)
