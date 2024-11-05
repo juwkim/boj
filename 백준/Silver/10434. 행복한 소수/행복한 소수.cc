@@ -2,6 +2,8 @@
 #include <unordered_set>
 
 int main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
     // Initialize the unordered_set with the given numbers
     std::unordered_set<int> p = {
         7, 13, 19, 23, 31, 79, 97, 103, 109, 139, 167, 193, 239, 263, 293, 313,
