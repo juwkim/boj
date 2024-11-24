@@ -7,26 +7,19 @@ for _ in range(int(input())):
     a = []
     for _ in range(m):
         l, r = map(int, input().split())
-        if l + r <= n:
-            a.append((l, r))
-    if not a:
-        print(1, n - 1)
-        continue
+        if l + r <= n: a.append((l, r))
     a.append((10**9, 10**9))
     a.sort()
+
     keys = sorted({r for _, r in a})
-    l, r = a[0]
-    total, cnt = 1, Counter()
-    cnt[r] = 1
-    ans, Max, prev = (l, n - l), 1, l
-    for l, r in a[1:]:
+    total, cnt = 0, Counter()
+    ans, Max, prev = (1, n - 1), 0, 0
+    for l, r in a:
         if l != prev:
-            while keys[-1] > n - prev:
-                k = keys.pop()
-                total -= cnt[k]
+            while keys and keys[-1] > n - prev:
+                total -= cnt[keys.pop()]
             if total > Max:
-                Max = total
-                ans = (prev, n - prev)
+                ans, Max = (prev, n - prev), total
             prev = l
         cnt[r] += 1
         total += 1
