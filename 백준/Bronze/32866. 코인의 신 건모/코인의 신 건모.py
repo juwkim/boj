@@ -1,3 +1,2 @@
-input()
-X = int(input())
-print(100 * X / (100 - X))
+_,X=map(int,open(0))
+print(100*X/(100-X))
