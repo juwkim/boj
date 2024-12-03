@@ -1,5 +1,5 @@
 N,K=map(int,input().split())
-p=print
-if N==1:p(*[1]*(N*K))
-elif(N,K)==(2,1):p(1,2)
-else:p(-1)
+if N==1:a=N*K*[1]
+elif(N,K)==(2,1):a=1,2
+else:a=-1,
+print(*a)
