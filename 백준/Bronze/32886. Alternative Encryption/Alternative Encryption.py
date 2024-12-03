@@ -1,9 +1,1 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-
-if input()[0] == 'e':
-    d = 1
-else:
-    d = -1
-for _ in range(int(input())):
-    print(*[chr((ord(c) + d - ord('a')) % 26 + ord('a')) for c in input()], sep='')
+for l in[*open(0)][2:]:print("".join(chr((ord(c)-84)%26+97)for c in l[:-1]))
