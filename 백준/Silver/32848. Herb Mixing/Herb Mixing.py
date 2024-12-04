@@ -1,6 +1,3 @@
-green, red = map(int, input().split())
-if red >= green:
-    print(green * 10)
-else:
-    q, r = divmod(green - red, 3)
-    print(red * 10 + q * 10 + (0, 1, 3)[r])
+g, r = map(int, input().split())
+a, b = divmod(max(0, g - r), 3)
+print((a + min(g, r)) * 10 + (0, 1, 3)[b])
