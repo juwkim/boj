@@ -1,0 +1,6 @@
+N = int(input())
+print("? 1", flush=True)
+s = int(input())
+print(f"? {N}", flush=True)
+e = int(input())
+print(f"! {(e > s) - (e < s)}")
