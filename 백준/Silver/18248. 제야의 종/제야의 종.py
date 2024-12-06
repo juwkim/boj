@@ -2,7 +2,7 @@ import sys
 g = lambda: [*map(int, sys.stdin.readline().split())]
 
 N, M = g()
-mat = [[0] * M for _ in range(M)]
+mat = [[1] * M for _ in range(M)]
 def solve():
     for _ in range(N):
         zero, one = [], []
@@ -15,7 +15,6 @@ def solve():
             for q in zero:
                 if mat[p][q] == -1:
                     return "NO"
-                mat[p][q] = 1
                 mat[q][p] = -1
     return "YES"
 print(solve())
