@@ -9,9 +9,6 @@ while len(log) <= K:
     check.add(p)
     cur[A1-1:A2] = cur[A1-1:A2][::-1]
     cur[B1-1:B2] = cur[B1-1:B2][::-1]
-if len(log) == K + 1:
-    ans = log[K]
-else:
-    i = log.index(p)
-    ans = log[(K - i) % (len(log) - i) + i]
+i = log.index(p)
+ans = log[(K - i) % (len(log) - i) + i]
 print(*ans, sep='\n')
