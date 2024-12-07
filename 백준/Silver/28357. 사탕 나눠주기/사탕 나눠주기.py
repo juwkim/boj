@@ -1,5 +1,4 @@
 N, K, *A = map(int, open(0).read().split())
-
 A.sort()
 lo, hi = -1, 10**12
 while lo + 1 < hi:
