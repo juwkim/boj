@@ -11,17 +11,13 @@ for i in range(N):
     x, y = i, 0
     while True:
         y += A[x][y]
-        if y >= M:
-            break
+        if y >= M: break
         x += A[x][y]
-        if x >= N:
-            break
+        if x >= N: break
         y -= A[x][y]
-        if y < 0:
-            break
+        if y < 0: break
         x -= A[x][y]
-        if x < 0:
-            break
+        if x < 0: break
         if visited[x][y]:
             ans.append(i + 1)
             break
