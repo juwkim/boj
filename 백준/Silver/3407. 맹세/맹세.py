@@ -9,6 +9,8 @@ for _ in range(int(input())):
     dp = [1] + [0] * len(s)
     for i in range(len(s)):
         if dp[i] == 0:
+            if dp[i + 1] == 0:
+                break
             continue
         if s[i] in a: dp[i + 1] = 1
         if i < len(s) - 1 and s[i:i+2] in b: dp[i + 2] = 1
