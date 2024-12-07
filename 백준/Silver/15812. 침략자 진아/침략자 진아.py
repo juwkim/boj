@@ -1,5 +1,3 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
 from itertools import combinations
 
 N, M = map(int, input().split())
