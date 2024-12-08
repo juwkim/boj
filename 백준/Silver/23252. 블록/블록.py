@@ -1,3 +1,1 @@
-for _ in range(int(input())):
-    A,B,C=map(int,input().split())
-    print(("No","Yes")[(A>=C)*(A&1==C&1)*(C!=0 or ~B&1 or A>1)])
+for l in[*open(0)][1:]:A,B,C=map(int,l.split());print("YNeos"[(A<C)or(A-C&1)or(C==0)*(B&1)*(A<2)::2])
