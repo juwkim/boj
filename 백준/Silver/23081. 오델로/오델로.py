@@ -10,19 +10,17 @@ for y in range(N):
             continue
         cnt = 0
         for dy, dx in ((-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)):
-            cur, good = 0, False
+            cur = 0
             ny, nx = y + dy, x + dx
             while 0 <= ny < N and 0 <= nx < N:
                 if a[ny][nx] == 'B':
-                    good = True
+                    cnt += cur
                     break
                 elif a[ny][nx] == '.':
                     break
                 cur += 1
                 ny += dy
                 nx += dx
-            if good:
-                cnt += cur
         if cnt > max:
             p, max = (x, y), cnt
 if max:
