@@ -12,11 +12,9 @@ for y in range(N):
         for dy, dx in ((-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)):
             cur = 0
             ny, nx = y + dy, x + dx
-            while 0 <= ny < N and 0 <= nx < N:
+            while 0 <= ny < N and 0 <= nx < N and a[ny][nx] != '.':
                 if a[ny][nx] == 'B':
                     cnt += cur
-                    break
-                elif a[ny][nx] == '.':
                     break
                 cur += 1
                 ny += dy
