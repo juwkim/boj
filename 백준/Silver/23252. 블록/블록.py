@@ -1,1 +1,1 @@
-for l in[*open(0)][1:]:A,B,C=map(int,l.split());print("YNeos"[A<C or A-C&1 or B&1>A::2])
+for l in[*open(0)][1:]:A,B,C=map(int,l.split());print("YNeos"[A-C&1 or max(C,B&1)>A::2])
