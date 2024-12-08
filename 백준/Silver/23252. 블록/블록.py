@@ -1,12 +1,3 @@
 for _ in range(int(input())):
     A, B, C = map(int, input().split())
-    ans = "No"
-    if C:
-        if A >= C and (A - C) % 2 == 0:
-            ans = "Yes"
-    elif B & 1:
-        if A >= 2 and A % 2 == 0:
-            ans = "Yes"
-    elif A % 2 == 0:
-        ans = "Yes"
-    print(ans)
+    print(("No", "Yes")[C and A >= C and (A - C) % 2 == 0 or not C and A % 2 == 0 and (B % 2 == 0 or A > 1)])
