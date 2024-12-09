@@ -1,5 +1,2 @@
-from math import isqrt
-
-for _ in range(int(input())):
-    N = int(input())
-    print((isqrt(2 * N * (N + 1) + 2) + 1) // 2)
+from math import*
+for N in[*open(0)][1:]:N=int(N);print((isqrt(2*(N*N+N+1))+1)//2)
