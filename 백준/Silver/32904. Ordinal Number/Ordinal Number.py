@@ -1,2 +1,2 @@
 s=len(input())+1
-print(len(bin(s//5))-2-(s==3))
+print((s//5).bit_length())
