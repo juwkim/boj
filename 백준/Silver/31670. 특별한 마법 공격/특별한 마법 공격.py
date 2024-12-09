@@ -1,5 +1,4 @@
-N, *R = map(int, open(0).read().split())
-a, b = 0, R[0]
-for i in range(1, N):
-    a, b = b, min(a, b) + R[i]
-print(min(a, b))
+N,b,*R=map(int,open(0).read().split())
+a=0
+for p in R:a,b=b,min(a,b)+p
+print(min(a,b))
