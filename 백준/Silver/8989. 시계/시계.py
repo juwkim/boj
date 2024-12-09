@@ -1,10 +1,5 @@
-import sys
-input = sys.stdin.readline
-
-def solve(s):
-    h, m = map(int, s.split(':'))
-    d = h % 12 * 30 - m * 5.5
-    return min(d % 360, -d % 360), s
-
-for _ in range(int(input())):
-    print(sorted(input().split(), key=solve)[2])
+def f(s):
+ h,m=map(int,s.split(':'))
+ d=h%12*60-m*11
+ return min(d%720,-d%720),s
+for l in[*open(0)][1:]:print(sorted(l.split(),key=f)[2])
