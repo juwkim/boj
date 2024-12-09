@@ -1,2 +1,1 @@
-s=len(input())+1
-print((s//5).bit_length())
+print(((len(input())+1)//5).bit_length())
