@@ -15,20 +15,17 @@ for _ in range(int(input())):
             continue
         match e:
             case 'p':
-                if res[S][1]:
-                    res[S][0] = 1
+                if res[S][1]: res[S][0] = 1
                 else:
                     res[S][1] = arg
                     res[S][2] += d[arg][1]
             case 'r':
-                if not res[S][1]:
-                    res[S][0] = 1
+                if not res[S][1]: res[S][0] = 1
                 else:
                     res[S][2] += d[res[S][1]][2] * int(arg)
                     res[S][1] = ""
             case 'a':
-                if not res[S][1]:
-                    res[S][0] = 1
+                if not res[S][1]: res[S][0] = 1
                 else:
                     res[S][2] += (d[res[S][1]][0] * int(arg) + 99) // 100
     for k in sorted(res):
