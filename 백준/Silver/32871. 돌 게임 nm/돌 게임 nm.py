@@ -1,0 +1,1 @@
+for s in[*open(0)][1:]:n,m=map(int,s.split());print("YNEOS"[(n>1)*(m>1)*((~n^m)&1)::2])
