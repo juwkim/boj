@@ -1,2 +1,2 @@
 N=int(input())
-print((3*N-4,2*N-3)[N<4])
+print(2*N-3+(N-1)*(N>3))
