@@ -1,1 +1,1 @@
-for _ in range(int(input())):l,*a=map(int,input().split());print('YNEOS'[(~l&1)*(abs(sum(a[::2])-sum(a[1::2]))>1)::2])
+for _ in range(int(input())):l,*a=map(int,input().split());print('NYOE S'[(l&1)or(abs(sum(a[::2])-sum(a[1::2]))<2)::2])
