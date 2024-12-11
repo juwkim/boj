@@ -1,6 +1,5 @@
 N,S=open(0)
-cnt = [0, 0, 0]
-for c in S:
-    for i in range(3):
-        cnt[i] += "SPR"[(i + cnt[i]) % 3] == c
-print(int(N)-max(cnt)//3*3)
+l=[0]*3
+for i in range(3):
+ for c in S:l[i]+="SPR"[(i+l[i])%3]==c
+print(int(N)-max(l)//3*3)
