@@ -1,20 +1,9 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip('\n')
-
-
-
-g = lambda: [*map(int, input().split())]
-
-buf = []
-for _ in range(int(input())):
-    s, t = g()
-    buf.append(t)
-
+a = [int(input().split()[1]) for _ in range(int(input()))]
 ans = 1
-s = buf.pop()
-while buf:
-    t = buf.pop()
-    if t <= s:
-        s = t
+pv = a.pop()
+while a:
+    v = a.pop()
+    if v <= pv:
+        pv = v
         ans += 1
 print(ans)

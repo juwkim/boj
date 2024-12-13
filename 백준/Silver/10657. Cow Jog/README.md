@@ -1,14 +1,18 @@
-# [Silver V] Cow Jog - 10657 
+# [Silver IV] Cow Jog - 10657 
 
 [문제 링크](https://www.acmicpc.net/problem/10657) 
 
 ### 성능 요약
 
-메모리: 34692 KB, 시간: 216 ms
+메모리: 112240 KB, 시간: 156 ms
 
 ### 분류
 
-자료 구조(data_structures), 스택(stack)
+자료 구조, 스택
+
+### 제출 일자
+
+2024년 12월 14일 00:02:24
 
 ### 문제 설명
 
