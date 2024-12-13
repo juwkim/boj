@@ -1,0 +1,1 @@
+print(int(input())-1+max(map(int,input().split())))
