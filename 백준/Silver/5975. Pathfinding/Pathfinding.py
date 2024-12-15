@@ -7,7 +7,7 @@ visited = bytearray(N + 1)
 visited[M] = 1
 st = [M]
 print(M)
-while True:
+while st:
     nst = []
     while st:
         x = st.pop()
@@ -16,6 +16,4 @@ while True:
                 visited[i] = 1
                 nst.append(i)
     st = sorted(nst)
-    if not st:
-        break
     print(*st)
