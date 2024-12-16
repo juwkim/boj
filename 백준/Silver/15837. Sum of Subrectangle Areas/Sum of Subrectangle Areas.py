@@ -1,0 +1,1 @@
+for N in[*map(int,open(0))][1:]:print((N*(N+1)*(N+2)//6)**2)
