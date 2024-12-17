@@ -3,7 +3,6 @@ input = sys.stdin.readline
 
 while (l:=[*map(int, input().split())])[1]:
     t, n, *x = l
-    print(f'Sums of {t}:')
     ans, s = [], set()
     def solve(i, num, nums):
         if i == n:
@@ -17,8 +16,8 @@ while (l:=[*map(int, input().split())])[1]:
                 ans.append(p)
         solve(i + 1, num, nums)
     solve(0, 0, [])
+    print(f'Sums of {t}:')
     if ans:
-        for line in ans:
-            print(line)
+        for a in ans: print(a)
     else:
         print('NONE')
