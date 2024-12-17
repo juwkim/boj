@@ -10,4 +10,5 @@ for _ in range(K):
         row[num] ^= 1
     else:
         col[num] ^= 1
-print(sum(row[i] ^ col[j] for i in range(1, M + 1) for j in range(1, N + 1)))
+a, b = sum(row), sum(col)
+print(a * (N - b) + b * (M - a))
