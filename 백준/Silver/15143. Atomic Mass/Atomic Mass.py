@@ -1,6 +1,3 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-
 d = {}
 for _ in range(int(input())):
     s, m = input().split()
@@ -10,17 +7,9 @@ for c in input():
     if c.isdigit():
         cnt = cnt * 10 + int(c)
     elif c.isupper():
-        if prv:
-            if cnt:
-                ans += d[prv] * cnt
-            else:
-                ans += d[prv]
+        if prv: ans += d[prv] * max(cnt, 1)
         prv, cnt = c, 0
     else:
         prv += c
-if prv:
-    if cnt:
-        ans += d[prv] * cnt
-    else:
-        ans += d[prv]
-print(f"{ans:.2f}")
+if prv: ans += d[prv] * max(cnt, 1)
+print(ans)
