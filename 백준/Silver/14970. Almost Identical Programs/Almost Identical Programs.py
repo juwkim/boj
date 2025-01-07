@@ -3,14 +3,12 @@ input = lambda: sys.stdin.readline().rstrip()
 
 while (s1:=input()) != ".":
     s2 = input()
+    ans = "DIFFERENT"
     if s1 == s2:
         ans = "IDENTICAL"
     else:
-        cnt = 0
         p, q = s1.split('"'), s2.split('"')
-        if len(p) != len(q):
-            ans = "DIFFERENT"
-        else:
+        if len(p) == len(q):
             cnt = 0
             for i, (a, b) in enumerate(zip(p, q)):
                 if a == b:
@@ -23,6 +21,4 @@ while (s1:=input()) != ".":
                     break
             if cnt == 1:
                 ans = "CLOSE"
-            else:
-                ans = "DIFFERENT"
     print(ans)
