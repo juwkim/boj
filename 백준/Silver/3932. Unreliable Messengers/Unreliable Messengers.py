@@ -8,10 +8,8 @@ for _ in range(int(input())):
             case 'C':
                 s = s[1:] + s[0]
             case 'E':
-                if len(s) & 1:
-                    s = s[len(s)//2+1:] + s[len(s)//2] + s[:len(s)//2]
-                else:
-                    s = s[len(s)//2:] + s[:len(s)//2]
+                l = len(s)
+                s = s[l//2+1:] + s[l//2] + s[:l//2] if l & 1 else s[l//2:] + s[:l//2]
             case 'A':
                 s = s[::-1]
             case 'P':
