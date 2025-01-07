@@ -12,5 +12,5 @@ def seive(n):
 primes = seive(101000)
 for N, P in map(lambda s: map(int, s.split()), [*open(0)][:-1]):
     idx = bisect(primes, N)
-    nums = sorted(primes[i] + primes[j] for i in range(idx, idx + 25) for j in range(i, idx + 25))
+    nums = sorted(primes[i] + primes[j] for i in range(idx, idx + 23) for j in range(i, idx + 23))
     print(nums[P - 1])
