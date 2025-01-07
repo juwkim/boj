@@ -1,8 +1,3 @@
-a, b, c = input().split()
-if a == c:
-    ans = a + b + c
-elif b == c:
-    ans = a + b + b + a
-else:
-    ans = a + b + c + b + a
-print(ans)
+a,b,c=input().split()
+s=a+b+c
+print(min((l for l in(s,s+a,s+b+a)if l==l[::-1]),key=int))
