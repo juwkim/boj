@@ -1,13 +1,10 @@
 from collections import Counter
 
-m, *a = map(int, open(0).read().split())
-cnt, s = Counter(a), sum(a)
-cur = 0
-for k, v in sorted(cnt.items()):
-    if 2 * (cur + v // 2 * k) == s - k * (v & 1):
-        print(k)
-        break
-    if 2 * (cur + v * k) == s:
-        print(k + 1)
-        break
-    cur += v * k
+n, *w = map(int, open(0))
+cnt = Counter(w)
+m = sum(k * v for k, v in cnt.items())
+a, b, t = 0, cnt[1], 1
+while a + b != m:
+    t += 1
+    a, b = b, b + t * cnt[t]
+print(t)
