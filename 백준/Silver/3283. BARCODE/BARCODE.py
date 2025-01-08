@@ -34,8 +34,7 @@ def solve():
                         l[i] = '.'
                         continue
         return l
-    t = f(t)
-    t = f(t[::-1])[::-1]
+    t = f(f(t)[::-1])[::-1]
     if '?' in t:
         return 'UNDETERMINABLE'
     ans, prv = [], None
