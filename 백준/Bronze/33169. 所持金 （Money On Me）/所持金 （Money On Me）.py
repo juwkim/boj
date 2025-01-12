@@ -1,0 +1,1 @@
+print(1000*int(input())+10000*int(input()))
