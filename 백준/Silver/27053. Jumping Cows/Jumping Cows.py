@@ -5,10 +5,9 @@ for i in range(P - 1):
         if A[i] >= A[i + 1]:
             ans += A[i]
             f = 0
-    else:
-        if A[i] <= A[i + 1]:
-            ans -= A[i]
-            f = 1
+    elif A[i] <= A[i + 1]:
+        ans -= A[i]
+        f = 1
 if f:
     ans += A[-1]
 print(ans)
