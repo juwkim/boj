@@ -1,4 +1,2 @@
 input()
-d = {'J': 'O', 'O': 'I', 'I': 'J'}
-for c in input():
-    print(d[c], end='')
+print(input().translate(str.maketrans('JOI', 'OIJ')))
