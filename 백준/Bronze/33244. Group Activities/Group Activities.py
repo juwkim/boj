@@ -1,4 +1,2 @@
-from math import lcm
-
-n, *nums = map(int, open(0))
-print(lcm(*nums))
+import math
+print(math.lcm(*[*map(int,open(0))][1:]))
