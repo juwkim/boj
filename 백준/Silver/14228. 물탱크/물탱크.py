@@ -12,11 +12,10 @@ while hi - lo > 1e-9:
         if x >= mid:
             cur += t * (x - mid)
             if cur > C:
+                lo = mid
                 break
         else:
             cur -= min(t, cur / (mid - x)) * (mid - x)
     else:
         hi = mid
-        continue
-    lo = mid
 print(hi)
