@@ -14,6 +14,6 @@ for tc in range(1, 1 + int(input())):
         K -= 1
         if K == 0:
             break
-    if K:
+    else:
         ans = "IMPOSSIBLE"
     print(f"Case #{tc}: {ans}")
