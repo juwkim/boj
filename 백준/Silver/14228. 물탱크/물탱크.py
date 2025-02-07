@@ -6,13 +6,13 @@ n, C = g()
 T, X = g(), g()
 lo, hi = 0, 10**6
 while hi - lo > 1e-9:
-    mid = (lo + hi) / 2
+    R = (lo + hi) / 2
     cur = 0
     for t, x in zip(T, X):
-        cur = max(0, cur + t * (x - mid))
+        cur = max(0, cur + t * (x - R))
         if cur > C:
-            lo = mid
+            lo = R
             break
     else:
-        hi = mid
+        hi = R
 print(hi)
