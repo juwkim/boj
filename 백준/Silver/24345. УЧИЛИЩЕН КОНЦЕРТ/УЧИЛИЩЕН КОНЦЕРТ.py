@@ -1,9 +1,9 @@
 N, K, *T = map(int, open(0).read().split())
 lo, hi = 0, (N + K - 1) // K * max(T)
 while lo + 1 < hi:
-    mi = (lo + hi) // 2
-    if sum(mi // t for t in T) < N:
-        lo = mi
+    m = lo + hi >> 1
+    if sum(m // t for t in T) < N:
+        lo = m
     else:
-        hi = mi
+        hi = m
 print(hi)
