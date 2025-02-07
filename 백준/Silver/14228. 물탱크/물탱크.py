@@ -9,13 +9,10 @@ while hi - lo > 1e-9:
     mid = (lo + hi) / 2
     cur = 0
     for t, x in zip(T, X):
-        if x >= mid:
-            cur += t * (x - mid)
-            if cur > C:
-                lo = mid
-                break
-        else:
-            cur -= min(t, cur / (mid - x)) * (mid - x)
+        cur = max(0, cur + t * (x - mid))
+        if cur > C:
+            lo = mid
+            break
     else:
         hi = mid
 print(hi)
