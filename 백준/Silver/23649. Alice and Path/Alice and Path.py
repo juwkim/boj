@@ -1,2 +1,1 @@
-for c in input()[::-1]:
-    print(c * 5, end='')
+print(*[c*5 for c in input()[::-1]],sep='')
