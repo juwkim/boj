@@ -1,12 +1,10 @@
 import sys
 input = sys.stdin.readline
-g = lambda: [*map(int, input().split())]
+g = lambda: map(int, input().split())
 
-n = int(input())
-a = g()
+input()
 ans = 0
-for i in range(n):
+for c in g():
     x, y = g()
-    if a[i]:
-        ans += max(0, y - x)
+    if c: ans += max(0, y - x)
 print(ans)
