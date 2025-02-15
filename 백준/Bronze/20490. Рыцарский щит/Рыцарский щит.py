@@ -1,3 +1,3 @@
-g=lambda:[*map(int,input().split())]
+g=lambda:sorted(map(int,input().split()))
 s,t=g(),g()
-print(sum(s)+sum(t)-2*min(max(s),max(t)))
+print(sum(s)+sum(t)-2*min(s[2],t[2]))
