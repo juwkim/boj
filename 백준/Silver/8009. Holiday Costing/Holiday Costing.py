@@ -1,6 +1,3 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-
 while (s:=input()) != '#':
     name = s.split()[1]
     nums = []
