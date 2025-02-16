@@ -1,6 +1,7 @@
 import sys
 input = sys.stdin.readline
-check = lambda a, b, cur: all(a <= rank <= b for rank, _, _ in cur) and all(s <= i <= t for _, s, t in cur)
+check = lambda a, b, cur: all(a <= rank <= b and s <= i <= t for rank, s, t in cur)
+
 ans, cur = 0, []
 for i in range(1, 1 + int(input())):
     a, b = map(int, input().split())
