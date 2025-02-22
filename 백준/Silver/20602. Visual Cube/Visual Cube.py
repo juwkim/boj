@@ -8,7 +8,7 @@ for _ in range(int(input())):
     for j in range(2 * (a + b), 2 * a, -2):
         for i in range(2 * (a + b) - j + 1, 2 * (a + b + c) - j + 1):
             ans[i][j] = "+|"[i & 1]
-        for i in range(2 * (a + b) - j + 2, 2 * (a + b + c) - j + 2):
+        for i in range(2 * (a + b) - j + 3, 2 * (a + b + c) - j + 2):
             ans[i][j - 1] = "./"[i & 1]
     for i in range(2 * b, 2 * (b + c) + 1):
         for j in range(2 * a + 1):
