@@ -1,2 +1,2 @@
 n=int(input())
-print(("no","yes")[n>1 and all(n%i for i in range(2,int(n**.5)+1))])
+print("yneos"[n<2 or any(n%i==0 for i in range(2,int(n**.5)+1))::2])
