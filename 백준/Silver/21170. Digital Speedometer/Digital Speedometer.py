@@ -13,5 +13,4 @@ for idx in range(1, len(l)):
         cur = i
     else:
         cur = i + 1
-    print(cur)
-    prv = cur
+    print(prv:=cur)
