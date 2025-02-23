@@ -1,6 +1,6 @@
 def solve():
     s, d, m = input(), int(input(), 2), input()
-    if len(m) >= d and len(s) >= d:
+    if min(len(m), len(s)) >= d:
         print("Infinite money!")
         return
     s, m = int(s, 2), int(m, 2)
