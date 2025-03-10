@@ -2,8 +2,8 @@ from collections import Counter
 
 ans = "NO"
 k = int(input())
-s, t = input(), input()
-cnt1 = Counter(t)
+s = input()
+cnt1 = Counter(input())
 cnt2 = Counter(s[:k])
 for i in range(len(s) - k + 1):
     if all(cnt2[c] <= cnt1[c] for c in cnt2):
