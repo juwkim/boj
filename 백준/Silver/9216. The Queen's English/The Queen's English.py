@@ -16,16 +16,9 @@ tc = 1
 while n:=int(input()):
     l = []
     a = solve(n // 1000000, False)
-    if a:
-        l.append(a)
-        l.append("million")
+    if a: l.append(a + " million")
     b = solve(n // 1000 % 1000, False)
-    if b:
-        l.append(b)
-        l.append("thousand")
-    c = solve(n % 1000, bool(l))
-    if c:
-        l.append(c)
-    ans = " ".join(l)
-    print(f"Test {tc}: {ans}")
+    if b: l.append(b + " thousand")
+    l.append(solve(n % 1000, bool(l)))
+    print(f"Test {tc}: {' '.join(l)}")
     tc += 1
