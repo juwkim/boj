@@ -14,7 +14,6 @@ visited = bytearray(n - 2)
 visited[0] = 1
 
 def bfs(edge):
-    
     if len(neighbor[edge]) == 1:
         return 0
 
@@ -26,7 +25,7 @@ def bfs(edge):
         cur = dq.popleft()
         cnt += 1
         a, b, c = nodes[cur]
-        for edge in ((a, b), (a, c), (b, c)):
+        for edge in (a, b), (a, c), (b, c):
             for nxt in neighbor[edge]:
                 if not visited[nxt]:
                     visited[nxt] = 1
@@ -35,17 +34,11 @@ def bfs(edge):
 
 p = bfs(nodes[0][:2])
 q = bfs(nodes[0][1:])
-r = bfs(nodes[0][::2])
-assert p + q + r == n - 3
-# r = n - 3 - p - q
+r = n - 3 - p - q
 
-a, b, c = sorted((p, q, r))
-if a == 0 and b == 0 or (a + b + c) & 1:
+if p + q + r == max(p, q, r) or p + q + r & 1:
     ans = "TAK"
 else:
     ans = "NIE"
 
 print(ans)
-# print(neighbor)
-# print(nodes)
-# print(p, q, r)
