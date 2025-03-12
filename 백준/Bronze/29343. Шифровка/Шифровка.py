@@ -1,0 +1,5 @@
+n = int(input())
+s = input()
+a = [0] * (n + 1)
+for i in range(n): a[i + 1] += a[i] + (s[i].lower() in "aeiou")
+print(sum(a[i] and a[i] + a[n - i] == a[n] for i in range(1, n + 1)))
