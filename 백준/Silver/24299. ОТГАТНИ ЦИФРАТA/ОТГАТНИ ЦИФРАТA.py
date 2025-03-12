@@ -12,13 +12,8 @@ def solve(equation):
     for digit in map(str, range(10)):
         if digit in equation: continue
         num1, op, num2, res = re.match(r'([-0-9]+)([+\-*])([-0-9]+)=([-0-9]+)', equation.replace('?', digit)).groups()
-        if any(not is_valid(x) for x in (num1, num2, res)):
-            continue
-        try:
-            if eval(f"{num1} {op} {num2}") == int(res):
-                return digit
-        except:
-            pass
+        if all(is_valid(x) for x in (num1, num2, res)) and eval(f"{num1} {op} {num2}") == int(res):
+            return digit
     return "mistake"
 
 print(solve(input()))
