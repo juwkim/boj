@@ -1,29 +1,24 @@
-def count_changes(start_upper):
-    changes = 0
-    for i, c in enumerate(letters):
-        should_be_upper = (i % 2 == 0) if start_upper else (i % 2 == 1)
-        if should_be_upper and not c.isupper():
-            changes += 1
-        elif not should_be_upper and not c.islower():
-            changes += 1
-    return changes
-
 S = input()
+def solve(lower):
+    T, cnt = [], 0
+    for c in S:
+        if not c.isalpha():
+            T.append(c)
+            continue
+        if c.isupper() and lower:
+            cnt += 1
+            T.append(c.lower())
+        elif c.islower() and not lower:
+            cnt += 1
+            T.append(c.upper())
+        else:
+            T.append(c)
+        lower ^= 1
+    return "".join(T), cnt
 
-letters = []
-indices = []
-
-for i, c in enumerate(S):
-    if c.isalpha():
-        letters.append(c)
-        indices.append(i)
-
-start_upper = count_changes(True) <= count_changes(False)
-T = list(S)
-for i, c in enumerate(letters):
-    should_be_upper = (i % 2 == 0) if start_upper else (i % 2 == 1)
-    if should_be_upper:
-        T[indices[i]] = c.upper()
-    else:
-        T[indices[i]] = c.lower()
-print("".join(T))
+T1, cnt1 = solve(True)
+T2, cnt2 = solve(False)
+if cnt1 < cnt2:
+    print(T1)
+else:
+    print(T2)
