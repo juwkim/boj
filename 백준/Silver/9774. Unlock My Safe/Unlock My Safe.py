@@ -1,9 +1,1 @@
-import sys
-input = sys.stdin.readline
-from itertools import permutations
-
-for _ in range(int(input())):
-    N = int(input())
-    l = [*permutations(range(1, N + 1))]
-    ans = l[len(l) // 3]
-    print(*ans, sep='')
+for N in[*open(0)][1:]:print(('1','12','213','2314','24513','312456','3412567','36712458')[int(N)-1])
