@@ -1,6 +1,3 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-
 while (s:=input())[0] != 'E':
     N = int(s.split()[1])
     dealer = sum(map(lambda x: int(x, 2), input().split()))
@@ -10,7 +7,7 @@ while (s:=input())[0] != 'E':
     input()
     print(f"HAND {N}")
     for _ in range(4):
-        if dealer >= 510 or dealer >= player:
+        if dealer >= player:
             break
         if dealer < 382:
             dealer += bytes.pop()
