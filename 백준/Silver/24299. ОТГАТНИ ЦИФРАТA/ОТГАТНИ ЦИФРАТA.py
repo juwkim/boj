@@ -1,34 +1,21 @@
 import re
 
-def is_valid_number(num_str):
-    if num_str in ('0', '-0'):
+def is_valid(str):
+    if str in ('0', '-0'):
         return True
-    if num_str.startswith('-'):
-        num_str = num_str[1:]
-    return not (num_str.startswith('0') and len(num_str) > 1)
+    if str[0] == '-':
+        str = str[1:]
+    return str[0] != '0' or len(str) == 1
 
-def solve(equation):
-    match = re.match(r'([-?0-9]+)([+\-*])([-?0-9]+)=(\-?[0-9?]+)', equation)
-    # if not match:
-    #     return "mistake"
-    
-    num1, op, num2, result = match.groups()
-    existing_digits = {*equation} - {'?-+*='}
-    
-    for digit in range(10):
-        digit = str(digit)
-        if digit in existing_digits:
+def solve(equation):    
+    num1, op, num2, res = re.match(r'([-?0-9]+)([+\-*])([-?0-9]+)=(\-?[0-9?]+)', equation).groups()
+    for digit in map(str, range(10)):
+        if digit in equation: continue
+        num1, op, num2, res = re.match(r'([-0-9]+)([+\-*])([-0-9]+)=([-0-9]+)', equation.replace('?', digit)).groups()
+        if any(not is_valid(x) for x in (num1, num2, res)):
             continue
-        replaced_expr = equation.replace('?', digit)
-        match_replaced = re.match(r'([-0-9]+)([+\-*])([-0-9]+)=([-0-9]+)', replaced_expr)
-        if not match_replaced:
-            continue
-        num1_r, op_r, num2_r, result_r = match_replaced.groups()
-        if not (is_valid_number(num1_r) and is_valid_number(num2_r) and is_valid_number(result_r)):
-            continue
-        expression = f"{num1_r} {op_r} {num2_r}"
         try:
-            if eval(expression) == int(result_r):
+            if eval(f"{num1} {op} {num2}") == int(res):
                 return digit
         except:
             pass
