@@ -10,8 +10,6 @@ for _ in range(int(input())):
         nums[s - 1].add(r)
     ans = 0
     for l in nums:
-        if not l:
-            continue
         cnt, prv = 0, -1
         for num in sorted(l):
             if num == prv + 1:

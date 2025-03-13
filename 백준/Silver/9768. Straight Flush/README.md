@@ -1,10 +1,10 @@
-# [Silver II] Straight Flush - 9768 
+# [Silver III] Straight Flush - 9768 
 
 [문제 링크](https://www.acmicpc.net/problem/9768) 
 
 ### 성능 요약
 
-메모리: 212676 KB, 시간: 1716 ms
+메모리: 212676 KB, 시간: 1648 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2025년 3월 14일 05:27:58
+2025년 3월 14일 05:29:01
 
 ### 문제 설명
 
