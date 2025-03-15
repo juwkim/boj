@@ -6,4 +6,4 @@ for _ in range(N):
     if op2 == 'x': op2 = '*'
     l = eval(f"{lo}{op1}{num1}"), eval(f"{lo}{op2}{num2}"), eval(f"{hi}{op1}{num1}"), eval(f"{hi}{op2}{num2}")
     lo, hi = min(l), max(l)
-print(max(lo, hi))
+print(hi)
