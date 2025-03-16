@@ -10,12 +10,6 @@ for _ in range(int(input())):
         else:
             S.sort(reverse=True)
     else:
-        t = t[0]
-        if x == 0:
-            S = [t] + S
-        elif x == len(S):
-            S.append(t)
-        else:
-            S = S[:x] + [t] + S[x:]
+        S.insert(x, t[0])
 print(len(S))
 print(*S)
