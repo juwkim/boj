@@ -4,7 +4,5 @@ if N == 3:
         print(1)
     else:
         print(4)
-elif N & 1 and (R + C) % 2 == 0:
-    print(N * N // 2 + 1)
 else:
-    print(N * N // 2)
+    print(N * N // 2 + (N & 1 and (R + C) % 2 == 0))
