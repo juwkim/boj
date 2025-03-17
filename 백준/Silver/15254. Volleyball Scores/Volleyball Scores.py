@@ -1,12 +1,11 @@
 import sys
-input = lambda: sys.stdin.readline().rstrip()
-g = lambda: [*map(int, input().split())]
+input = sys.stdin.readline
 
 for tc in range(1, 1 + int(input())):
     t = int(input())
     l = input().split()
     score = [0, 0]
-    idx, serve_team = 0, l[0] >= '7'
+    idx, serve_team = 0, 0
     while idx < t:
         if serve_team ^ (int(l[idx]) >= 7):
             break
