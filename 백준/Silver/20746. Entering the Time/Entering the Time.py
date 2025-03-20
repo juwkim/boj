@@ -17,9 +17,9 @@ for i in order:
     else:
         while t1[i] != t2[i]:
             if t1[i] < t2[i]:
-                t1[i] = (t1[i] + 1) % 10
+                t1[i] += 1
             else:
-                t1[i] = (t1[i] - 1) % 10
+                t1[i] -= 1
             ans.append("".join(map(str, t1)))
 print(len(ans))
 for l in ans:
