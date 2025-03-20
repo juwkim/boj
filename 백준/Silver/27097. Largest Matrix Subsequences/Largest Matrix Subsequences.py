@@ -17,13 +17,7 @@ for i in range(R):
     for j in range(C):
         for k in range((Max + C - j - 1) // (C - j), R - i + 1):
             for l in range((Max + k - 1) // k, C - j + 1):
-                def solve():
-                    if px1[i+k][j+l-1] - px1[i+k][j] - px1[i][j+l-1] + px1[i][j]:
-                        return False
-                    if px2[i+k-1][j+l] - px2[i][j+l] - px2[i+k-1][j] + px2[i][j]:
-                        return False
-                    return True
-                if solve():
+                if px1[i+k][j+l-1] - px1[i+k][j] - px1[i][j+l-1] + px1[i][j] == 0 and px2[i+k-1][j+l] - px2[i][j+l] - px2[i+k-1][j] + px2[i][j] == 0:
                     if k * l > Max:
                         ans = [(i + 1, j + 1, k, l)]
                         Max = k * l
