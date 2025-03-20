@@ -1,19 +1,13 @@
-def sieve(num):
-    prime = [True] * (num + 1)
-    prime[0], prime[1] = False, False
-    for i in range(2, int(num ** 0.5) + 1):
-        if prime[i]:
-            for j in range(i * i, num + 1, i):
-                prime[j] = False
-    return prime
-
 T, *nums = map(int, open(0))
-n = max(nums)
-p = sieve(n)
+p = [True] * 10000001
+for i in range(2, 3163):
+    if p[i]:
+        for j in range(i * i, 10000001, i):
+            p[j] = False
 
-a = [0] * (n + 1)
+a = [0] * 10000001
 a[1], a[2] = 1, 1
-for i in range(3, n + 1):
+for i in range(3, 10000001):
     if p[i]:
         a[i] = a[i - 2] + 1
     else:
