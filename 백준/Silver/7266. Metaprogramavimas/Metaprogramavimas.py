@@ -19,6 +19,9 @@ def solve():
     for x, y in nums:
         if (x, y) == (0, 0):
             continue
+        if x == 0:
+            good = False
+            break
         q, r = divmod(y, x)
         if r:
             good = False
@@ -26,8 +29,7 @@ def solve():
         s.add(q)
     if good and len(s) == 1:
         return f"2\nmultiply {s.pop()}\nprint"
-    if N == 1:
-        a, b = nums[0]
+    if len(nums) == 1:
         return f"3\nmultiply 0\nadd {b}\nprint"
     (x1, y1), (x2, y2) = nums[:2]
     if any((x2 - x1) * (y3 - y1) != (x3 - x1) * (y2 - y1) for x3, y3 in nums[2:]):
