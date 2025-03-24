@@ -1,35 +1,41 @@
 import sys
 input = sys.stdin.readline
 
-N = int(input())
-nums = sorted([*map(int, input().split())] for _ in range(N))
-if N == 1:
+def solve():
+    N = int(input())
+    l = [[*map(int, input().split())] for _ in range(N)]
+    dic = {}
+    for a, b in l:
+        if a in dic and dic[a] != b:
+            return -1
+        dic[a] = b
+    nums = list(dic.items())
+    if all(a == b for a, b in nums):
+        return "1\nprint"
     a, b = nums[0]
-    if a == b:
-        print(f"1\nprint")
-    elif b >= a:
-        print(f"2\nadd {b - a}\nprint")
-    else:
-        print(f"3\nmultiply 0\nadd {b}\nprint")
-else:
+    if a <= b and all(b - a == y - x for x, y in nums):
+        return f"2\nadd {b - a}\nprint"
+    s, good = set(), True
+    for x, y in nums:
+        if (x, y) == (0, 0):
+            continue
+        q, r = divmod(y, x)
+        if r:
+            good = False
+            break
+        s.add(q)
+    if good and len(s) == 1:
+        return f"2\nmultiply {s.pop()}\nprint"
+    if N == 1:
+        a, b = nums[0]
+        return f"3\nmultiply 0\nadd {b}\nprint"
     (x1, y1), (x2, y2) = nums[:2]
-    assert x1 != x2
     if any((x2 - x1) * (y3 - y1) != (x3 - x1) * (y2 - y1) for x3, y3 in nums[2:]):
-        print(-1)
-    else:
-        num1 = (y2 - y1) // (x2 - x1)
-        assert (y2 - y1) % (x2 - x1) == 0
-        num2 = y1 - num1 * x1
-        if num1 < 0 or num2 < 0:
-            print(-1)
-        else:
-            if num1 == 1:
-                if num2:
-                    print(f"2\nadd {num2}\nprint")
-                else:
-                    print(f"1\nprint")
-            else:
-                if num2:
-                    print(f"3\nmultiply {num1}\nadd {num2}\nprint")
-                else:
-                    print(f"2\nmultiply {num1}\nprint")
+        return -1
+    num1, r = divmod(y2 - y1, x2 - x1)
+    if num1 < 0 or r:
+        return -1
+    num2 = y1 - num1 * x1
+    return f"3\nmultiply {num1}\nadd {num2}\nprint"
+
+print(solve())
