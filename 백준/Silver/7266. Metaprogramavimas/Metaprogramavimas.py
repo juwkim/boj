@@ -35,9 +35,9 @@ def solve():
     if any((x2 - x1) * (y3 - y1) != (x3 - x1) * (y2 - y1) for x3, y3 in nums[2:]):
         return -1
     num1, r = divmod(y2 - y1, x2 - x1)
-    if num1 < 0 or r:
-        return -1
     num2 = y1 - num1 * x1
+    if r or num1 < 0 or num2 < 0:
+        return -1
     return f"3\nmultiply {num1}\nadd {num2}\nprint"
 
 print(solve())
