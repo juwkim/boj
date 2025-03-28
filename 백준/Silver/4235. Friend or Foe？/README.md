@@ -1,4 +1,4 @@
-# [Silver III] Friend or Foe? - 4235 
+# [Silver I] Friend or Foe? - 4235 
 
 [문제 링크](https://www.acmicpc.net/problem/4235) 
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2025년 3월 29일 02:54:14
+2025년 3월 29일 03:01:34
 
 ### 문제 설명
 
