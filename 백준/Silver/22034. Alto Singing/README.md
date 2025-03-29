@@ -1,0 +1,44 @@
+# [Silver II] Alto Singing - 22034 
+
+[문제 링크](https://www.acmicpc.net/problem/22034) 
+
+### 성능 요약
+
+메모리: 108384 KB, 시간: 88 ms
+
+### 분류
+
+브루트포스 알고리즘
+
+### 제출 일자
+
+2025년 3월 30일 02:41:38
+
+### 문제 설명
+
+<p><a href="https://www.publicdomainpictures.net/se/view-image.php?image=279898"><img alt="" src="https://upload.acmicpc.net/bc6bca59-d94c-4a66-a2b8-a1c77a88c2cf/-/preview/" style="width: 200px; height: 159px; float: right;"></a>Anton is a famous choir singer in the <em>Kongliga Teknologkören</em>, the KTH choir. After years of careful political maneuvering, he managed to become the chairman of the choir. As such he has absolute power of what the choir does -- including what pieces to rehearse.</p>
+
+<p>Anton has chosen a particular song he likes very much that he wants the choir to sing. There is only a slight problem -- the song is not at all suited for his particular vocal range. Anton has the <em>alto</em> vocal range, and wants to make sure that the most important part of the piece is perfect for his voice.</p>
+
+<p>The piece is currently written down using the <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>12</mn></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$12$</span></mjx-container> standard tones, in ascending order C, C#, D, D#, E, F, F#, G, G#, A, A#, B, each followed by an integer denoting the octave the tone appears in. The lowest octave is <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$1$</span></mjx-container>. Immediately after the B tone of octave <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$i$</span></mjx-container>, the C tone of octave <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi><mo>+</mo><mn>1</mn></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$i + 1$</span></mjx-container> follows.</p>
+
+<p>Now, Anton wants to <em>transpose</em> the piece so that all tones in the part are within his vocal range, which is given by the lowest and highest tone he can sing. Transposing means that all tones are shifted either up or down by some fixed number of tones. For example, C#4 (C# in the fourth octave) transposed <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c35"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>5</mn></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$5$</span></mjx-container> tones down would be G#3. Furthermore, Anton is not very good at reading sheet music. Among all valid transpositions, he is only interested in the ones that minimize the number of tones with accidentals (that is, those with a # sign)<sup>1</sup>.</p>
+
+<p>Given the piece and Anton's vocal range, can you determine how many such transpositions there are?</p>
+
+<p><sup>1</sup>For those of you who know music, Anton finds writing down a key for the piece other than C major even more confusing, since he must then remember what tones should be raised or lowered throughout the piece.</p>
+
+### 입력 
+
+ <p>The first line of input contains the number of tones <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$n$</span></mjx-container> (<mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>1000</mn></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$1 \le n \le 1000$</span></mjx-container>) in the piece.  Then follows a line containing two tones, the lowest and the highest tone that Anton can sing (in that order).</p>
+
+<p>The third and final line contains the tones that Anton's piece consists of. The same tone may appear multiple times in the piece. It is guaranteed that Anton can sing at least one transposition of the piece.</p>
+
+<p>Each tone is written as one of the <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>12</mn></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$12$</span></mjx-container> tones C, C#, D, D#, E, F, F#, G, G#, A, A#, B followed immediately by its octave without any space in between. Only octaves between <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$1$</span></mjx-container> and <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c39"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>10</mn><mn>9</mn></msup></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$10^9$</span></mjx-container> are used<sup>2</sup>.</p>
+
+<p><sup>2</sup>Possibly only after centuries of vocal exercises.</p>
+
+### 출력 
+
+ <p>Output a single line with two integers -- the minimum number of accidentals (notes with #) among all transpositions, and the number of transpositions that keeps the piece in Anton's vocal range and has the minimum number of accidentals. If the piece is already in Anton's vocal range, the transposition of <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$0$</span></mjx-container> tones should be counted as well (if that minimizes accidentals).</p>
+
