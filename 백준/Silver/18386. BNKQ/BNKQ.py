@@ -10,7 +10,7 @@ while (s:=input()) != "ENDOFINPUT":
         dic[teller].remove(customer)
         if time:
             hh = int(time[0][:2])
-            if hh <= 3: hh += 12
+            if hh < 4: hh += 12
             cnt[teller][hh - 8] += 1
     else:
         dic[teller].add(customer)
