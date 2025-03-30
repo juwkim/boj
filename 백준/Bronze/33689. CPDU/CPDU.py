@@ -1,0 +1,1 @@
+print(sum(l[0]=='C'for l in open(0)))
