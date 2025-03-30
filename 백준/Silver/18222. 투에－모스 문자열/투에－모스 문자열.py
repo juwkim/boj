@@ -1,1 +1,1 @@
-print(bin(int(input())-1).count('1')&1)
+print((int(input())-1).bit_count()&1)
