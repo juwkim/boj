@@ -18,5 +18,4 @@ for _ in range(int(input())):
     a.sort()
     ans, nums = 1e9, []
     solve(0)
-    print(ans)
-    print()
+    print(f"{ans}\n")
