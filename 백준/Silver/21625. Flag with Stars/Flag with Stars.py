@@ -8,15 +8,11 @@ a, b, i = abs(t - n // t), n - 1, 2
 while i * i <= 2 * n:
     q, r = divmod(i, 2)
     good = False
-    if r:
-        if (n - q) % (2 * q + 1) == 0:
-            k = (n - q) // (2 * q + 1) + 1
-            good = True
-        if (n - q - 1) % (2 * q + 1) == 0:
-            k = (n - q - 1) // (2 * q + 1) + 1
-            good = True
-    elif (n - q) % (2 * q) == 0:
-        k = (n - q) // (2 * q) + 1
+    if r and (n + q + 1) % i == 0:
+        k = (n + q + 1) // i
+        good = True
+    if (n + q) % i == 0:
+        k = (n + q) // i
         good = True
     if good:
         num = abs(i - k)
