@@ -11,33 +11,20 @@ def solve(l):
             b = l[j]
             p = [l[k] for k in range(len(l)) if k not in (i, j)]
 
-            q = tuple(sorted(p + [a + b]))
-            if q not in check:
-                check.add(q)
-                res.append((a, '+', b, a + b))
-                if solve(q): return True
-                res.pop()
-            
-            if a > b:
-                q = tuple(sorted(p + [a - b]))
+            for cmd in '+-*/':
+                match cmd:
+                    case '+': c = a + b
+                    case '*': c = a * b
+                    case '-':
+                        c = a - b
+                        if c <= 0: continue
+                    case '/':
+                        c, r = divmod(a, b)
+                        if r: continue
+                q = tuple(sorted(p + [c]))
                 if q not in check:
                     check.add(q)
-                    res.append((a, '-', b, a - b))
-                    if solve(q): return True
-                    res.pop()
-            
-            q = tuple(sorted(p + [a * b]))
-            if q not in check:
-                check.add(q)
-                res.append((a, '*', b, a * b))
-                if solve(q): return True
-                res.pop()
-            
-            if a % b == 0:
-                q = tuple(sorted(p + [a // b]))
-                if q not in check:
-                    check.add(q)
-                    res.append((a, '/', b, a // b))
+                    res.append((a, cmd, b, c))
                     if solve(q): return True
                     res.pop()
     return False
