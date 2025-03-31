@@ -12,14 +12,9 @@ def solve():
             if a == 3 or b == 3:
                 return "INCONSISTENT"
             b += 1
-        elif i != n - 1 or (s >= 12 and s - t >= 3) or (t >= 12 and t - s >= 3):
+        elif i != n - 1 or (max(s, t) >= 12 and abs(s - t) >= 3):
             return "INCONSISTENT"
     if s < 10 or t < 10:
-        if (s + t) % 4 < 2:
-            return ("HOST", "GUEST")[n & 1]
-        return ("GUEST", "HOST")[n & 1]
-    else:
-        if s + t & 1:
-            return ("GUEST", "HOST")[n & 1]
-        return ("HOST", "GUEST")[n & 1]
+        return ("HOST", "GUEST")[((s + t) % 4 > 1) + n & 1]
+    return ("HOST", "GUEST")[s + t + n & 1]
 print(solve())
