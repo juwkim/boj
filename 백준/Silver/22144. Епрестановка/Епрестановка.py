@@ -1,14 +1,11 @@
 import sys
-from collections import deque
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
 p = [*map(int, input().split())]
-group = [-1] * n
-id = 0
+group, id = [-1] * n, 0
 for i in range(n):
-    if group[i] != -1:
-        continue
+    if group[i] != -1: continue
     group[i], cur = id, p[i] - 1
     while cur != i:
         group[cur] = id
@@ -16,8 +13,7 @@ for i in range(n):
     id += 1
 if group[1] == 1:
     for i in range(1, n):
-        if group[i] == 1:
-            group[i] = 0
+        if group[i] == 1: group[i] = 0
 for _ in range(m):
     a, b = map(int, input().split())
     print(("No", "Yes")[group[a-1] == group[b-1]])
