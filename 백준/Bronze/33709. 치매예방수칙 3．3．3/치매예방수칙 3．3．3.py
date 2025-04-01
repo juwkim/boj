@@ -1,0 +1,1 @@
+print(sum(map(int,[*open(0)][1].translate({124:46,58:46,35:46}).split('.'))))
