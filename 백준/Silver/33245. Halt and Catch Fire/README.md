@@ -1,10 +1,10 @@
-# [Silver II] Halt and Catch Fire - 33245 
+# [Silver I] Halt and Catch Fire - 33245 
 
 [문제 링크](https://www.acmicpc.net/problem/33245) 
 
 ### 성능 요약
 
-메모리: 108384 KB, 시간: 96 ms
+메모리: 108384 KB, 시간: 88 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2025년 4월 2일 19:45:44
+2025년 4월 2일 19:47:50
 
 ### 문제 설명
 

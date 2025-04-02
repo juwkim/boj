@@ -23,7 +23,5 @@ while 0 <= reg["pc"] < n:
             print(cmd, arg1, arg2)
             print(reg["acc"])
             print(reg["cmp"])
-            print(reg["out"])
             break
-else:
-    print(reg["out"])
+print(reg["out"])
