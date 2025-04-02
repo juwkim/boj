@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 for _ in range(int(input())):
     n, a, b = map(int, input().split())
-    if a >= n or b >= n or a > b:
+    if b >= n or a > b:
         print("IMPOSSIBLE")
     else:
         for i in range(2, a + 1):
