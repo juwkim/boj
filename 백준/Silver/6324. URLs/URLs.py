@@ -17,7 +17,6 @@ for tc in range(1, 1 + int(input())):
             path = s[k + 1:]
     else:
         host = s[i + 3:j]
-        k = s.find('/', j + 1)
         if k == -1:
             port = s[j + 1:]
             path = "<default>"
