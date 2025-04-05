@@ -1,3 +1,1 @@
-N, *nums = map(int, open(0).read().split())
-for i, num in sorted(enumerate(nums, 1), key=lambda x: x[1]):
-    print(num - i)
+for i,c in sorted(enumerate(map(int,[*open(0)][1].split()),1),key=lambda x:x[1]):print(c-i)
