@@ -1,9 +1,5 @@
-N = len(s:=input())
-ans, cur = N, 0
-for i in range(N - 1):
-    if cur != s[i].isupper():
-        ans += 1
-        if cur != s[i + 1].isupper():
-            cur ^= 1
-ans += cur != s[-1].isupper()
-print(ans)
+N=len(s:=input())
+a,c=N,0
+for i in range(N-1):
+    if c!=s[i].isupper():a+=1;c^=c!=s[i+1].isupper()
+print(a+(c!=s[-1].isupper()))
