@@ -1,5 +1,3 @@
-from math import trunc
-
 N = int(input())
 S = input()
 A, i, printed = 0, 0, False
@@ -20,13 +18,9 @@ for _ in range(N):
             B = B * 10 + int(S[i])
             i += 1
         match cmd:
-            case 'S':
-                A -= B
-            case 'M':
-                A *= B
-            case 'U':
-                A = trunc(A / B)
-            case 'P':
-                A += B
+            case 'S': A -= B
+            case 'M': A *= B
+            case 'U': A = int(A / B)
+            case 'P': A += B
 if not printed:
     print("NO OUTPUT")
