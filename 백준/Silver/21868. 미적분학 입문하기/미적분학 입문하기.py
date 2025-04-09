@@ -1,2 +1,2 @@
-n,m,a,b,x0=map(int,open(0).read().split())
-print(a*x0+b,n*(a!=0),m*abs(a))
+n,m,a,b,x=map(int,open(0).read().split())
+print(a*x+b,n*(a!=0),m*abs(a))
