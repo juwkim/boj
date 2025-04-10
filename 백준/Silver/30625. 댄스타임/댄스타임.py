@@ -1,9 +1,9 @@
 import sys
 g = lambda: [*map(int, sys.stdin.readline().split())]
 
-mod = 1000000007
+m = 10**9 + 7
 N, M = g()
-cnt = sum(g()[1] for _ in range(N))
-ans = pow(M - 1, cnt, mod) * (1 + (N - cnt) * (M - 1))
-if cnt: ans += cnt * pow(M - 1, cnt - 1, mod)
-print(ans % mod)
+i = sum(g()[1] for _ in range(N))
+ans = pow(M - 1, i, m) * (1 + (N - i) * (M - 1))
+if i: ans += i * pow(M - 1, i - 1, m)
+print(ans % m)
