@@ -1,4 +1,4 @@
-a, b = 2, 1
-for _ in range(int(input()) - 1):
-    a, b = 2 * (a + b) % 1000000007, a
-print((a + b) % 1000000007)
+a, b, m = 1, 0, 1000000007
+for _ in range(int(input())):
+    a, b = 2 * (a + b) % m, a
+print((a + b) % m)
