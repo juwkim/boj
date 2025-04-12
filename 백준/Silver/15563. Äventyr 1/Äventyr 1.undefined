@@ -1,0 +1,114 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+constexpr int MAX_N = 100001;
+constexpr int MAX_L = 17;
+constexpr int INF = 1e9 + 7;
+
+int N, Q;
+vector<int> tree[MAX_N];
+int parent[MAX_N][MAX_L], depth[MAX_N];
+int subtree_size[MAX_N], centroid_par[MAX_N];
+bool is_centroid[MAX_N];
+int dp[MAX_N];
+
+void dfs_lca(int u, int p) {
+    parent[u][0] = p;
+    for (int i = 1; i < MAX_L; ++i)
+        parent[u][i] = parent[parent[u][i - 1]][i - 1];
+
+    for (int v : tree[u]) {
+        if (v == p) continue;
+        depth[v] = depth[u] + 1;
+        dfs_lca(v, u);
+    }
+}
+
+int get_distance(int u, int v) {
+    if (depth[u] < depth[v]) swap(u, v);
+    int dist = 0, diff = depth[u] - depth[v];
+
+    for (int i = 0; diff; ++i, diff >>= 1)
+        if (diff & 1) u = parent[u][i], dist += (1 << i);
+
+    if (u == v) return dist;
+
+    for (int i = MAX_L - 1; i >= 0; --i)
+        if (parent[u][i] != parent[v][i])
+            dist += 2 * (1 << i), u = parent[u][i], v = parent[v][i];
+
+    return dist + 2;
+}
+
+int compute_subtree_size(int u, int p) {
+    subtree_size[u] = 1;
+    for (int v : tree[u]) {
+        if (v == p || is_centroid[v]) continue;
+        subtree_size[u] += compute_subtree_size(v, u);
+    }
+    return subtree_size[u];
+}
+
+int find_centroid(int u, int p, int total) {
+    for (int v : tree[u]) {
+        if (v == p || is_centroid[v]) continue;
+        if (subtree_size[v] > total / 2)
+            return find_centroid(v, u, total);
+    }
+    return u;
+}
+
+void build_centroid_tree(int u, int p) {
+    int total = compute_subtree_size(u, -1);
+    int centroid = find_centroid(u, -1, total);
+    is_centroid[centroid] = true;
+    centroid_par[centroid] = p;
+
+    for (int v : tree[centroid]) {
+        if (is_centroid[v]) continue;
+        build_centroid_tree(v, centroid);
+    }
+}
+
+void update(int node) {
+    for (int u = node; u != 0; u = centroid_par[u])
+        dp[u] = min(dp[u], get_distance(u, node));
+}
+
+void query(int node) {
+    int res = INF;
+    for (int u = node; u != 0; u = centroid_par[u])
+        res = min(res, dp[u] + get_distance(node, u));
+
+    cout << (res == INF ? -1 : res) << '\n';
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cin >> N >> Q;
+    for (int u = 2; u <= N; ++u) {
+        int v;
+        cin >> v;
+        tree[u].push_back(v);
+        tree[v].push_back(u);
+    }
+
+    depth[1] = 0;
+    dfs_lca(1, 0);
+    build_centroid_tree(1, 0);
+
+    fill(dp, dp + N + 1, INF);
+
+    while (Q--) {
+        int type, x;
+        cin >> type >> x;
+        if (type == 1)
+            update(x);
+        else
+            query(x);
+    }
+}
