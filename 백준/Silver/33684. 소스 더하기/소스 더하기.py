@@ -8,8 +8,7 @@ else:
     cnt, m = 1, 1e18
     for i in range(1, N):
         q = (K - A[i]) // A[0]
-        A[i] += q * A[0]
         cnt += q
-        m = min(m, A[i])
+        m = min(m, A[i] + q * A[0])
     cnt += (K - A[0]) // m
     print(cnt)
