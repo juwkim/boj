@@ -1,14 +1,9 @@
-from math import isqrt
+import math
 
 X, Y, c = map(int, input().split())
 d = X**2 + Y**2
-if d == 0:
-    print(0)
-elif d < c**2:
+if 0 < d < c**2:
     print(2)
 else:
-    i = isqrt(d)
-    if i**2 == d:
-        print((i + c - 1) // c)
-    else:
-        print(i // c + 1)
+    i = math.isqrt(d)
+    print((i - (i**2 == d)) // c + 1)
