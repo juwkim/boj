@@ -3,11 +3,7 @@ input = sys.stdin.readline
 
 for _ in range(int(input())):
     N = int(input())
-    nums = []
-    for x in input().split():
-        a, b = x.split('.')
-        nums.append(int(a) * 1000 + int(b) * 10 ** (3 - len(b)))
-    nums.sort()
+    nums = sorted(map(float, input().split()))
     ans, Sum = "NO", nums[0]
     for i in range(1, N):
         if Sum >= nums[i]:
