@@ -7,11 +7,10 @@ input()
 S = [-1e9, 1e9]
 for _ in range(Q):
     c, v = g()
-    i = bisect(S, v)
     if c == 1:
-        if i == 0 or S[i - 1] != v:
-            insort(S, v)
+        insort(S, v)
     elif len(S) == 2:
         print(-1)
     else:
+        i = bisect(S, v)
         print(min(S[i] - v, v - S[i - 1]))
