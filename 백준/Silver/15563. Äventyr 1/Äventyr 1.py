@@ -1,21 +1,17 @@
 import sys
 g = lambda: map(int, sys.stdin.readline().split())
-import bisect
+from bisect import bisect, insort
 
 N, Q = g()
 input()
-S = []
+S = [-1e9, 1e9]
 for _ in range(Q):
     c, v = g()
+    i = bisect(S, v)
     if c == 1:
-        if bisect.bisect_left(S, v) == bisect.bisect_right(S, v):
-            bisect.insort(S, v)
+        if i == 0 or S[i - 1] != v:
+            insort(S, v)
+    elif len(S) == 2:
+        print(-1)
     else:
-        if not S:
-            print(-1)
-            continue
-        i = bisect.bisect_left(S, v)
-        n = float('inf')
-        if i < len(S): n = min(n, S[i] - v)
-        if i > 0: n = min(n, v - S[i - 1])
-        print(n)
+        print(min(S[i] - v, v - S[i - 1]))
