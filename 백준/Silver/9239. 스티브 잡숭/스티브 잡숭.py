@@ -1,6 +1,6 @@
 a, b = input().split('.')
 ans = []
-if len(a) == 1:
+if int(a) < 5:
     w = 10**len(b)
     num = (10 - int(a)) * w - int(b)
     for i in range(1, 10):
