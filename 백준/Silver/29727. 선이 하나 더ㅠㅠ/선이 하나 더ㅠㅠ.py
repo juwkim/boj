@@ -6,4 +6,5 @@ if xa == xb:
 elif ya == yb:
     xa, xb = sorted((xa, xb))
     d = max(0, min(n, xb) - max(-1, xa))
-print((n * (n + 1) >> 1)**2 + d * (d - 1) * (n + 1) // 2)
+a = n + 1
+print(a * (a * n**2 // 2 + d**2 - d) >> 1)
