@@ -1,10 +1,6 @@
-n, xa, ya, xb, yb = map(int, open(0).read().split())
-d = 0
-if xa == xb:
-    ya, yb = sorted((ya, yb))
-    d = max(0, min(n, yb) - max(-1, ya))
-elif ya == yb:
-    xa, xb = sorted((xa, xb))
-    d = max(0, min(n, xb) - max(-1, xa))
-a = n + 1
-print(a * (a * n**2 // 2 + d**2 - d) >> 1)
+n,x,y,X,Y=map(int,open(0).read().split())
+d=0
+if x==X:d=min(n,max(y,Y))-max(-1,min(y,Y))
+elif y==Y:d=min(n,max(x,X))-max(-1,min(x,X))
+a,d=n+1,max(0,d)
+print(a*(a*n*n//2+d*d-d)>>1)
