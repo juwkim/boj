@@ -23,3 +23,8 @@
 # Awards
 
 * (2023) 경인지역 6개대학 연합 프로그래밍 경시대회 shake! / 성균관대학교 대표 출전
+
+# Made Problems
+
+- [토크나이저 (BOJ 27649)](https://www.acmicpc.net/problem/27649)  
+- [정렬 (BOJ 27657)](https://www.acmicpc.net/problem/27657)
