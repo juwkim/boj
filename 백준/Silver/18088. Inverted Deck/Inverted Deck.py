@@ -10,7 +10,7 @@ for i in range(n):
     if v[i] != Min[i][0]:
         r = Min[i][1] + 1
         v[i:r] = v[i:r][::-1]
-        if v == sorted(v):
+        if all(v[i] <= v[i + 1] for i in range(n - 1)):
             print(i + 1, r)
         else:
             print("impossible")
