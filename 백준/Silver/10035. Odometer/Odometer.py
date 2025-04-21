@@ -1,7 +1,7 @@
 X, Y = map(int, input().split())
 ans = 0
 def solve(cur, num, other_used):
-    if cur > 10**16:
+    if cur > Y:
         return
     global ans
     ans += other_used and X <= cur <= Y
