@@ -10,10 +10,10 @@ for i in range(2, int(MAX**.5) + 1):
 
 for _ in range(int(input())):
     N = int(input())
-    A = 2
+    A = 3
     while True:
         B = 2 * N - A
         if is_prime[A] and is_prime[B]:
             print(A, B)
             break
-        A = (A + 2, 3)[A == 2]
+        A += 2
