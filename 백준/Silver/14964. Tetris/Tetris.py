@@ -1,9 +1,7 @@
 def normalize(shape):
-    xs = [x for x,y in shape]
-    ys = [y for x,y in shape]
+    xs, ys = zip(*shape)
     mx, my = min(xs), min(ys)
-    norm = sorted((x-mx, y-my) for x,y in shape)
-    return tuple(norm)
+    return tuple(sorted((x - mx, y - my) for x, y in shape))
 
 shapes = []
 for shape in ((0, 0), (0, 1), (1, 0), (1, 1)), ((0, 0), (1, 0), (2, 0), (3, 0)), ((0, 1), (0, 2), (1, 0), (1, 1)), ((0, 1), (1, 1), (1, 0), (2, 0)), ((0, 1), (1, 0), (1, 1), (1, 2)):
