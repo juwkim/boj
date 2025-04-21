@@ -11,9 +11,6 @@ for i in range(2, int(MAX**.5) + 1):
 for _ in range(int(input())):
     N = int(input())
     A = 3
-    while True:
-        B = 2 * N - A
-        if is_prime[A] and is_prime[B]:
-            print(A, B)
-            break
+    while not is_prime[A] or not is_prime[2 * N - A]:
         A += 2
+    print(A, 2 * N - A)
