@@ -11,17 +11,15 @@ def scuffle(pos):
     return pos - 1
 
 n, i, j = map(int, input().split())
-visited = [-1] * (2 * n + 1)
-visited[i] = 0
+dist = [-1] * (2 * n + 1)
+dist[i] = 0
 dq = deque([i])
-ans = -1
 while dq:
     cur = dq.popleft()
     if cur == j:
-        ans = visited[cur]
         break
     for nxt in riffle(cur), scuffle(cur):
-        if visited[nxt] == -1:
-            visited[nxt] = visited[cur] + 1
+        if dist[nxt] == -1:
+            dist[nxt] = dist[cur] + 1
             dq.append(nxt)
-print(ans)
+print(dist[j])
