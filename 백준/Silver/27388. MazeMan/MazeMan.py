@@ -10,8 +10,7 @@ for i in range(n):
         dot = False
         while st:
             x, y = st.pop()
-            for dx, dy in ((-1, 0), (1, 0), (0, -1), (0, 1)):
-                nx, ny = x + dx, y + dy
+            for nx, ny in (x-1, y), (x+1, y), (x, y-1), (x, y+1):
                 if 0 <= nx < n and 0 <= ny < m and maze[nx][ny] in '. ':
                     dot |= maze[nx][ny] == '.'
                     maze[nx][ny] = 'X'
