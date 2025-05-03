@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int T; cin >> T;
+    while (T--) {
+        int n; cin >> n;
+        vector<int> a(n);
+        map<int, vector<int>> dic;
+        for (int i = 0; i < n; ++i) {
+            cin >> a[i];
+            dic[a[i]].push_back(i);
+        }
+        int cnt = 0;
+        for (int i = 0; i < n - 2; ++i) {
+            for (int j = i + 1; j < n - 1; ++j) {
+                int target = 2 * a[j] - a[i];
+                if (dic.find(target) != dic.end()) {
+                    const vector<int>& vec = dic[target];
+                    auto it = lower_bound(vec.begin(), vec.end(), j + 1);
+                    cnt += vec.end() - it;
+                }
+            }
+        }
+        cout << cnt << '\n';
+    }
+    return 0;
+}
