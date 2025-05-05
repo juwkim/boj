@@ -16,4 +16,4 @@ for _ in range(int(input())):
         elif cell == '*':
             return (dfs(r + 1, c - 1) + dfs(r + 1, c + 1)) / 2
         return int(cell)
-    print(max(dfs(0, j) for j, c in enumerate(grid[0])))
+    print(max(dfs(0, j) for j in range(w)))
