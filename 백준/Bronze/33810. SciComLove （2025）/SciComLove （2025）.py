@@ -1,0 +1,1 @@
+print(sum(a!=b for a,b in zip("SciComLove",input())))
