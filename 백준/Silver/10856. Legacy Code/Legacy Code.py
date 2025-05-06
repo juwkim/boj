@@ -9,7 +9,6 @@ for _ in range(int(input())):
     method_set.add(name)
     for method in input().split():
         graph[method].append(name)
-        method_set.add(method)
 visited = set()
 for method in method_set:
     if method.endswith(":PROGRAM"):
