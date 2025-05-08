@@ -13,4 +13,4 @@ for _ in range(int(input())):
             lo = mid
         else:
             hi = mid
-    print(f"{lo:.4f}")
+    print(lo)
