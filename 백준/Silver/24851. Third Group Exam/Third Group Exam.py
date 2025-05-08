@@ -2,16 +2,12 @@ g = lambda: map(int, input().split())
 
 n, a, b = g()
 ans = [''] * n
-total = 0
-count_t, count_p = 0, 0
+cnt = [0, 0]
+tot = 0
 for i, (x, y) in sorted([(i, p) for i, p in enumerate(zip(g(), g()))], key=lambda x: -abs(x[1][0] - x[1][1])):
-    if n - count_p == a or (n - count_t != b and x > y):
-        ans[i] = 'T'
-        count_t += 1
-        total += x
-    else:
-        ans[i] = 'P'
-        count_p += 1
-        total += y
-print(total)
+    j = n - cnt[0] == a or (n - cnt[1] != b and x > y)
+    ans[i] = 'PT'[j]
+    cnt[j] += 1
+    tot += (y, x)[j]
+print(tot)
 print(*ans)
