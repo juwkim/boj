@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <math.h>
-
+long long x, y, r;
 int main() {
-    long long x, y, r;
     while (1) {
         scanf("%d %d %d", &x, &y, &r);
         if (x == 0) break;
