@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 int dist2(int x, int y) {
     return x * x + y * y;
@@ -7,22 +6,20 @@ int dist2(int x, int y) {
 
 int main() {
     int k, r; scanf("%d %d", &k, &r);
-    int x1 = 0;
-    int y1 = (r - 1) / k;
-    int x2 = (int)(r / (k * sqrt(2)));
-    int y2 = x2;
+    int x = 0;
+    int y = (r - 1) / k;
     double p = (double)(r) / k;
     p *= p;
     int cnt = 4;
-    while (x1 != x2 || y1 != y2) {
+    while (y > x) {
         cnt += 8;
-        if (p > dist2(x1 + 1, y1))
-            x1 += 1;
-        else if (dist2(x1, y1 - 1) < p && p < dist2(x1 + 1, y1))
-            y1 -= 1;
+        if (p > dist2(x + 1, y))
+            x += 1;
+        else if (dist2(x, y - 1) < p && p < dist2(x + 1, y))
+            y -= 1;
         else {
-            x1 += 1;
-            y1 -= 1;
+            x += 1;
+            y -= 1;
         }
     }
     printf("%d", cnt);
