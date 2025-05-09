@@ -6,8 +6,7 @@ int dist2(int x, int y) {
 
 int main() {
     int k, r; scanf("%d %d", &k, &r);
-    int x = 0;
-    int y = (r - 1) / k;
+    int x = 0, y = (r - 1) / k;
     double p = (double)(r) / k;
     p *= p;
     int cnt = 4;
