@@ -14,17 +14,17 @@ int main() {
     double p = (double)(r) / k;
     p *= p;
     int cnt = 4;
-    while (!(x1 == x2 && y1 == y2)) {
+    while (x1 != x2 || y1 != y2) {
         cnt += 8;
-        if (p > dist2(x1 + 1, y1)) {
+        if (p > dist2(x1 + 1, y1))
             x1 += 1;
-        } else if (dist2(x1, y1 - 1) < p && p < dist2(x1 + 1, y1)) {
+        else if (dist2(x1, y1 - 1) < p && p < dist2(x1 + 1, y1))
             y1 -= 1;
-        } else {
+        else {
             x1 += 1;
             y1 -= 1;
         }
     }
-    printf("%d\n", cnt);
+    printf("%d", cnt);
     return 0;
 }
