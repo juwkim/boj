@@ -10,12 +10,7 @@ for i in range(4):
     else:
         print(len(block), len(block[0]))
         for row in block:
-            for c in row:
-                if c == '#':
-                    print('.', end='')
-                else:
-                    print('#', end='')
-            print()
+            print(*['#.'[c == '#'] for c in row], sep='')
         break
     block = [l[::-1] for l in zip(*block)]
 else:
