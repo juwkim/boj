@@ -8,23 +8,22 @@ def simulate(retired):
     votes = [0] * (M + 1)
     for county in prefs:
         for cand in county:
-            if not (retired >> cand) & 1:
+            if not retired & 1 << cand - 1:
                 votes[cand] += 1
                 break
     return max(range(1, M + 1), key=lambda x: votes[x])
 
-print(winner:=simulate(0))
+print(simulate(0))
 dq = deque([(0, 0)])
-visited = {0}
+visited = [0] * (1 << M)
 while dq:
     retired, cnt = dq.popleft()
-    winner = simulate(retired)
-    if winner == K:
+    if simulate(retired) == K:
         print(cnt)
         break
-    for i in range(1, M + 1):
-        if not (retired >> i) & 1 and i != K:
-            new_retired = retired | (1 << i)
-            if new_retired not in visited:
-                visited.add(new_retired)
+    for i in range(M):
+        if i + 1 != K and not retired & 1 << i:
+            new_retired = retired | 1 << i
+            if not visited[new_retired]:
+                visited[new_retired] = 1
                 dq.append((new_retired, cnt + 1))
