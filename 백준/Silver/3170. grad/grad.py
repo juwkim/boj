@@ -6,20 +6,16 @@ def dist2(x1, y1, x2, y2):
 X, Y = g()
 N = int(input())
 cranes = [g() for _ in range(N)]
-
-entrance = X // 2, 0
+cranes.append((X >> 1, 0, 0))
 reachable = set()
-visited = bytearray(N)
-st = []
-for i, (cx, cy, r) in enumerate(cranes):
-    if dist2(cx, cy, entrance[0], entrance[1]) <= r * r:
-        st.append(i)
-        reachable.add(i)
-        visited[i] = True
+visited = bytearray(N + 1)
+visited[N] = True
+st = [N]
 while st:
     x1, y1, r1 = cranes[st.pop()]
-    for i, (x2, y2, r2) in enumerate(cranes):
+    for i in range(N):
         if not visited[i]:
+            x2, y2, r2 = cranes[i]
             if dist2(x1, y1, x2, y2) <= (r1 + r2)**2:
                 visited[i] = True
                 reachable.add(i)
