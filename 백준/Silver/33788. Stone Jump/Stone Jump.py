@@ -1,10 +1,1 @@
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-
-for _ in range(int(input())):
-    n = int(input())
-    s = input()
-    if s[0] == 'L' and s[-1] == 'R':
-        print("NO")
-    else:
-        print("YES")
+for l in[*open(0)][2::2]:print("YNEOS"[l[0]<l[-2]::2])
