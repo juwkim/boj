@@ -1,18 +1,18 @@
 def solve():
-    seq = input()[::-1]
-    if seq[0] != 'O' or "OO" in seq:
+    a = input()[::-1]
+    if a[0] != 'O' or "OO" in a:
         return "INVALID"
-    num = 16
+    l = 16
     while True:
-        cur = num
-        for c in seq:
-            if c == 'O':
-                cur, r = divmod(cur - 1, 3)
-                if r or cur & (cur - 1) == 0:
-                    break
+        n = l
+        for c in a:
+            if c == 'E':
+                n <<= 1
             else:
-                cur <<= 1
+                n, r = divmod(n - 1, 3)
+                if r or n & (n - 1) == 0:
+                    break
         else:
-            return cur
-        num <<= 1
+            return n
+        l <<= 1
 print(solve())
