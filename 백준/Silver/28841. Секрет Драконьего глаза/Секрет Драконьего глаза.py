@@ -7,7 +7,9 @@ s = input()
 a, b = solve('0'), solve('1')
 if a[0] == -1 and b[0] == -1:
     print(-1)
-elif b[0] == -1 or (a[1] - a[0] > b[1] - b[0]) or (a[1] - a[0] == b[1] - b[0] and a[0] > b[0]):
+elif b[0] == -1:
     print(*a)
-else:
+elif a[0] == -1:
     print(*b)
+else:
+    print(*max(a, b, key=lambda x: x[1] - x[0]))
