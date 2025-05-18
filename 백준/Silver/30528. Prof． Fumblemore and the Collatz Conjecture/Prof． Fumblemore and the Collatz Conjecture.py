@@ -1,7 +1,7 @@
-seq = input()[::-1]
-if seq[0] != 'O' or "OO" in seq:
-    print("INVALID")
-else:
+def solve():
+    seq = input()[::-1]
+    if seq[0] != 'O' or "OO" in seq:
+        return "INVALID"
     num = 16
     while True:
         cur = num
@@ -13,7 +13,6 @@ else:
             else:
                 cur <<= 1
         else:
-            ans = cur
-            break
+            return cur
         num <<= 1
-    print(ans)
+print(solve())
