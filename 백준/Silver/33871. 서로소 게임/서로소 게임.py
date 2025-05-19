@@ -1,0 +1,1 @@
+print(("Song","Soomin")[int(input())&1])
