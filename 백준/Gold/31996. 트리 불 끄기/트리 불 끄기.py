@@ -19,16 +19,12 @@ def dfs(x):
             S[x] ^= 1
             ans.append(y)
             dfs(y)
-            S[y] ^= 1
             ans.append(x)
-            if S[y]:
+            if not S[y]:
                 S[x] ^= 1
-                S[y] ^= 1
-                ans.append(y)
-                ans.append(x)
+                ans.extend((y, x))
 ans = []
 dfs(a)
-if S[a]:
-    ans.append(tree[a][0])
+if S[a]: ans.append(tree[a][0])
 print(len(ans))
 print(*ans)
