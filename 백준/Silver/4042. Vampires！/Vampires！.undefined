@@ -1,0 +1,155 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve(int c, int v, int o, int m) {
+  vector<pair<int, int>> vampires;
+  unordered_map<int, vector<pair<int, int>>> row;
+  unordered_map<int, vector<pair<int, int>>> col;
+
+  char dir;
+  int x0, y0, x1, y1;
+  for (int i = 0; i < v; ++i) {
+    cin >> x0 >> y0;
+    vampires.push_back({x0, y0});
+    row[y0].push_back({x0, 0});
+    col[x0].push_back({y0, 0});
+  }
+
+  for (int i = 0; i < o; ++i) {
+    cin >> x0 >> y0;
+    row[y0].push_back({x0, 1});
+    col[x0].push_back({y0, 1});
+  }
+
+  for (int i = 0; i < m; ++i) {
+    int dircode;
+    cin >> dir >> x0 >> y0 >> x1 >> y1;
+    switch (dir) {
+    case 'W':
+      dircode = 2;
+      break;
+    case 'S':
+      dircode = 3;
+      break;
+    case 'N':
+      dircode = 4;
+      break;
+    case 'E':
+      dircode = 5;
+    }
+
+    if (dircode == 3 || dircode == 4) {
+      int from = min(x0, x1);
+      int to = max(x0, x1);
+      int y = y0;
+
+      for (int j = from; j <= to; ++j) {
+        col[j].push_back({y, dircode});
+        row[y].push_back({j, dircode});
+      }
+    } else {
+      int from = min(y0, y1);
+      int to = max(y0, y1);
+      int x = x0;
+
+      for (int j = from; j <= to; ++j) {
+        col[x].push_back({j, dircode});
+        row[j].push_back({x, dircode});
+      }
+    }
+  }
+
+  bool flag = true;
+  cout << "Case " << c << ":\n";
+  for (int i = 0; i < v; ++i) {
+    string status = "";
+    int x = vampires[i].first;
+    int y = vampires[i].second;
+
+    for (const auto &element : row[y]) {
+      if (element.second == 2 && element.first > x) {
+        bool safe = false;
+        for (const auto &shield : row[y]) {
+          if (shield.second != 2 && shield.second != 0 && shield.first > x &&
+              shield.first < element.first) {
+            safe = true;
+            break;
+          }
+        }
+        if (!safe) {
+          status += " east";
+          break;
+        }
+      }
+    }
+
+    for (const auto &element : col[x]) {
+      if (element.second == 3 && element.first > y) {
+        bool safe = false;
+        for (const auto &shield : col[x]) {
+          if (shield.second != 3 && shield.second != 0 && shield.first > y &&
+              shield.first < element.first) {
+            safe = true;
+            break;
+          }
+        }
+        if (!safe) {
+          status += " north";
+          break;
+        }
+      }
+    }
+
+    for (const auto &element : col[x]) {
+      if (element.second == 4 && element.first < y) {
+        bool safe = false;
+        for (const auto &shield : col[x]) {
+          if (shield.second != 4 && shield.second != 0 && shield.first < y &&
+              shield.first > element.first) {
+            safe = true;
+            break;
+          }
+        }
+        if (!safe) {
+          status += " south";
+          break;
+        }
+      }
+    }
+
+    for (const auto &element : row[y]) {
+      if (element.second == 5 && element.first < x) {
+        bool safe = false;
+        for (const auto &shield : row[y]) {
+          if (shield.second != 5 && shield.second != 0 && shield.first < x &&
+              shield.first > element.first) {
+            safe = true;
+            break;
+          }
+        }
+        if (!safe) {
+          status += " west";
+          break;
+        }
+      }
+    }
+
+    if (status.size()) {
+      cout << "vampire " << i + 1 << status << "\n";
+      flag = false;
+    }
+  }
+  if (flag)
+    cout << "none\n";
+}
+int main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int c = 1;
+  int v, o, m;
+  while (true) {
+    cin >> v >> o >> m;
+    if (v == 0 && o == 0 && m == 0) break;
+    solve(c++, v, o, m);
+  }
+}
