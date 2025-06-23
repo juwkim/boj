@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int n, m, k;
+vector<vector<int>> orders;
+vector<int> load;
+int max_profit;
+
+void solve(int idx, int profit) {
+    if (idx == k) {
+        max_profit = max(max_profit, profit);
+        return;
+    }
+    solve(idx + 1, profit);
+    int s = orders[idx][0], e = orders[idx][1], c = orders[idx][2];
+    bool can = true;
+    for (int j = s; j < e; ++j) {
+        if (load[j] + c > n) {
+            can = false;
+            break;
+        }
+    }
+    if (can) {
+        for (int j = s; j < e; ++j) load[j] += c;
+        solve(idx + 1, profit + c * (e - s));
+        for (int j = s; j < e; ++j) load[j] -= c;
+    }
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
+    while (true) {
+        cin >> n >> m >> k;
+        if (n == 0) break;
+        orders.assign(k, vector<int>(3));
+        for (int i = 0; i < k; ++i) {
+            cin >> orders[i][0] >> orders[i][1] >> orders[i][2];
+        }
+        load.assign(m, 0);
+        max_profit = 0;
+        solve(0, 0);
+        cout << max_profit << '\n';
+    }
+    return 0;
+}
