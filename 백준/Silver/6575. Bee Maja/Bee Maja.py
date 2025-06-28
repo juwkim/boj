@@ -1,20 +1,14 @@
 for n in map(int, open(0)):
-    level, total = 0, 1
-    while True:
-        next_total = total + 6 * level
-        if next_total >= n:
-            break
-        total = next_total
+    level, cur = 0, 1
+    while cur + 6 * level < n:
+        cur += 6 * level
         level += 1
-    idx_in_ring = n - total
     x, y = level, 0
-    cnt = 0
     for dx, dy in (-1, 1), (-1, 0), (0, -1), (1, -1), (1, 0), (0, 1):
-        if idx_in_ring == 0:
+        if n == cur:
             break
-        step = min(idx_in_ring, level)
-        cnt += 1
+        step = min(n - cur, level)
         x += dx * step
         y += dy * step
-        idx_in_ring -= step
+        cur += step
     print(x, y)
