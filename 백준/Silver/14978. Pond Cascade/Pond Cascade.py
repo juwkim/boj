@@ -20,7 +20,7 @@ for i in range(0, len(l), 2):
     C = list(map(int, l[i + 1].split()))
 
     lo, hi = 0, max(c / F for c in C)
-    for _ in range(100):
+    for _ in range(30):
         mid = (lo + hi) / 2
         if is_possible1(C, N, F, mid):
             hi = mid
@@ -29,7 +29,7 @@ for i in range(0, len(l), 2):
     print(hi, end=' ')
 
     lo, hi = 0, max(c / F for c in C)
-    for _ in range(100):
+    for _ in range(30):
         mid = (lo + hi) / 2
         if is_possible2(C, N, F, mid):
             hi = mid
