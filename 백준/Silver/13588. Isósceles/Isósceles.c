@@ -24,12 +24,11 @@ int main() {
     for (int i = 0; i < N; ++i)
         scanf("%d", heights + i);
     int lo = 1, hi = (N + 1) / 2;
-    int max_height = 0;
-    int max_val = heights[0];
+    int max_height = heights[0];
     for (int i = 1; i < N; ++i) {
-        if (heights[i] > max_val) max_val = heights[i];
+        if (heights[i] > max_height) max_height = heights[i];
     }
-    if (hi > max_val) hi = max_val;
+    if (hi > max_height) hi = max_height;
     hi += 1;
     while (hi > lo + 1) {
         int mid = (lo + hi) / 2;
