@@ -1,3 +1,1 @@
-for _ in range(int(input())):
-    n = int(input())
-    print(2 * n * (n - 2) + 5 + min(0, 3 * n - 4))
+for n in[*open(0)][1:]:n=int(n);print(2*n*(n-2)+min(5,3*n+1))
