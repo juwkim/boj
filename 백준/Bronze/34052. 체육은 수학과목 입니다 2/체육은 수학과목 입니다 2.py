@@ -1,1 +1,1 @@
-print(("Yes", "No")[sum(map(int, open(0))) > 1500])
+print("YNeos"[sum(map(int, open(0)))>1500::2])
