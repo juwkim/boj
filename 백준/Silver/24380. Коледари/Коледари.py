@@ -1,18 +1,12 @@
 k, n, *a = map(int, open(0).read().split())
-
-mod_index = {0: -1}
-prefix = 0
-
+px, idx = 0, [None] * k
+idx[0] = -1
+ans = "no kravaiche"
 for i in range(n):
-    prefix += a[i]
-    mod = prefix % k
-
-    if mod in mod_index:
-        start = mod_index[mod] + 1
-        end = i + 1
-        print(' '.join(str(idx + 1) for idx in range(start, end)))
+    px += a[i]
+    mod = px % k
+    if idx[mod] is not None:
+        ans = " ".join(str(idx) for idx in range(idx[mod] + 2, i + 2))
         break
-    else:
-        mod_index[mod] = i
-else:
-    print("no kravaiche")
+    idx[mod] = i
+print(ans)
