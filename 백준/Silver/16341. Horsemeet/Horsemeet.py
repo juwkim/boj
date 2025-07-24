@@ -1,2 +1,1 @@
-a=lambda:sum(map(int,input().split()))
-print('bwlhaictke'[a()-a()&1::2])
+print('bwlhaictke'[sum(map(int,open(0).read().split()))&1::2])
