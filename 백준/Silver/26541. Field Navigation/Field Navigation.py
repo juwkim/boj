@@ -1,5 +1,4 @@
 import sys
-from collections import deque
 input = lambda: sys.stdin.readline().rstrip()
 
 def solve(field, s, mask):
@@ -9,11 +8,11 @@ def solve(field, s, mask):
                 if field[i][j] == 'S':
                     return i, j
     i, j = find()
-    dq = deque([(i, j)])
+    st = [(i, j)]
     visited = [bytearray(s) for _ in range(s)]
     visited[i][j] = True
-    while dq:
-        x, y = dq.popleft()
+    while st:
+        x, y = st.pop()
         if field[x][y] == 'X':
             return True
         for nx, ny in (x+1, y), (x-1, y), (x, y+1), (x, y-1):
@@ -23,7 +22,7 @@ def solve(field, s, mask):
             if c in 'GBR' and not mask & {'G': 1, 'B': 2, 'R': 4}[c]:
                 continue
             visited[nx][ny] = True
-            dq.append((nx, ny))
+            st.append((nx, ny))
     return False
 
 for _ in range(int(input())):
