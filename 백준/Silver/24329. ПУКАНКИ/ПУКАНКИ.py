@@ -12,8 +12,8 @@ def check(limit):
                 return False
     return True
 
-lo = (max(P) + S - 1) // S - 1
-hi = (sum(P) + S - 1) // S
+lo = (max(P) - 1) // S
+hi = (sum(P) - 1) // S + 1
 while hi > lo + 1:
     mid = lo + hi >> 1
     if check(mid):
