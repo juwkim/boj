@@ -1,2 +1,2 @@
-u, v, w = sorted(map(int, input().split()))
-print(w / (4 - max(0, (u**2 + v**2 - w**2) / (u * v))**2)**.5)
+a,b,c=sorted(map(int,input().split()))
+print(c/(4-max(0,(a*a+b*b-c*c)/a/b)**2)**.5)
