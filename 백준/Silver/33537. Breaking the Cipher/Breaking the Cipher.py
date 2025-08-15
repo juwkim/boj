@@ -1,0 +1,2 @@
+p, q, e, C = map(int, open(0).read().split())
+print(pow(C, pow(e, -1, (p - 1) * (q - 1)), p * q))
